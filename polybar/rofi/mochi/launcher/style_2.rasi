@@ -1,0 +1,136 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+configuration {
+      font:			   "Cousine Nerd Font 9";
+    show-icons:                     true;
+    icon-theme: 	            "Papirus";
+    display-drun: 		    " ";
+    drun-display-format:            " {name}";
+    disable-history:                false;
+    fullscreen:                     false;
+    hide-scrollbar: 		    true;
+    sidebar-mode: 		    false;
+}
+
+@import "colors.rasi"
+
+element-icon {
+ background-color: inherit;
+ icon-color: inherit;
+}
+
+element-text {
+ background-color: inherit;
+ text-color: inherit;
+}
+
+*{
+  background-color: @bg;
+}
+
+window {
+    transparency:                   "false";
+    background-color:               @bg;
+    text-color:                     @fg1;
+    border:			    20px;
+    border-color:		    @bg;
+    border-radius:                  0px;
+    height:                         470px;
+    width:		            280px;
+    location:                       northwest;
+    x-offset:                       6;
+    y-offset:                       38;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 					0.3px 1px 0px 1px;
+        border-color:                                   @bg1;
+        border:                                         8px;
+        border-radius:                                  20px;
+        background-color: 				@bg1;
+	text-color: 					@fg1;
+	font:						"Cousine Nerd Font 12";
+}
+
+entry {
+    border: 8px;
+    border-radius: 20px;
+    border-color:  @bg1;
+    background-color:               @bg1;
+    text-color:                     @fg1;
+    placeholder-color:              @bg;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "";
+    padding:                        1px 1px 0px 5px;
+    blink:                          false;
+}
+
+inputbar {
+    children: 						[ prompt, entry ];
+    background-color:               @bg;
+    text-color:                     @bg;
+    expand:                         false;
+    border:			    0px -20px 0px -20px;
+    border-radius:                  0px;
+    border-color:					@bg1;
+    margin:                         0px 0px 0px 0px;
+    padding:                        20px;
+}
+
+listview {
+    background-color:               @bg;
+    padding:                        0px;
+    columns:                        1;
+    lines:                          5;
+    spacing:                        0%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @bg;
+	border:							0% 0% 0% 0%;
+    border-radius:                  0% 0% 0% 0%;
+	border-color:					@ac;
+    children:                       [ listview, inputbar ];
+    spacing:                        0%;
+    padding:                        0%;
+}
+
+element {
+    background-color:               @bg;
+    text-color:                     @bg2;
+    orientation:                    horizontal;
+    border-radius:                  70px;
+    padding:                        10px 10px 10px 10px;
+}
+
+element-icon {
+    size:                           24px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         0% 0.25% 0% 0.25%;
+}
+
+element selected {
+    background-color:               @bg1;
+    text-color:                     @fg1;
+	border:			    0px 0px 0px 0px;
+    border-radius:                  20px;
+    border-color:                   @bg;
+}

@@ -1,0 +1,64 @@
+[global]
+monitor = HDMI2
+follow = none
+
+width = 280
+height = 80
+
+origin = top-center
+geometry = "0x0-20+50"
+offset = 10x50
+scale = 0
+
+indicate_hidden = yes
+shrink = no
+
+separator_height = 4
+
+separator_color = auto
+
+padding = 15
+horizontal_padding = 15
+frame_width = 2
+sort = no
+idle_threshold = 120
+font = Cousine Nerd Font 9
+line_height = 4
+markup = full
+
+format = %s\n%b
+alignment = center
+show_age_threshold = 60
+
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = yes
+show_indicators = no
+icon_position = left
+max_icon_size = 24
+sticky_history = yes
+history_length = 20
+browser = x-www-browser -new-tab
+always_run_script = true
+
+title = Dunst
+class = Dunst
+
+[urgency_low]
+timeout = 2
+background = "#0e0e0e"
+foreground = "#949494"
+frame_color = "#171717"
+
+[urgency_normal]
+timeout = 5
+background = "#0e0e0e"
+foreground = "#949494"
+frame_color = "#0e0e0e"
+
+[urgency_critical]
+timeout = 0
+background = "#bf817a"
+foreground = "#0e0e0e"
+frame_color = "#0e0e0e"

@@ -1,0 +1,36 @@
+stay_alive           = 0
+tint2_look           = 0
+position_mode        = pointer
+terminal_exec        = kitty
+terminal_args        = -e
+
+menu_width           = 200
+menu_padding_top     = 10
+menu_padding_right   = 4
+menu_padding_bottom  = 6
+menu_padding_left    = 4
+menu_radius          = 0
+menu_border          = 0
+menu_halign          = left
+
+sub_hover_action     = 1
+
+item_margin_y        = 5
+item_height          = 30
+item_padding_x       = 8
+item_radius          = 0
+item_border          = 0
+
+sep_height           = 5
+
+font                 = Cousine Nerd Font 12px
+icon_theme           = WhiteSur
+icon_size            = 20
+
+color_menu_bg       = #0E0E0E 100
+color_norm_bg       = #0E0E0E 0
+color_norm_fg       = #c5c5c5 100
+color_menu_border   = #171717 100
+color_sel_bg        = #171717 100
+color_sel_fg        = #c5c5c5 100
+color_sep_fg        = #212121 400

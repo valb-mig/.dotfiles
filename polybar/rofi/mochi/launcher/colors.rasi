@@ -1,0 +1,15 @@
+/* colors */
+
+* {
+  bg:   #0E0E0E;
+  bg1:  #171717;
+  bg2:  #212121;
+  fg1:  #B9B9B9;
+  fg3:  #7E7E7E;
+  blu:  #594ba0;
+  prp:  #7451a4;
+  pnk:  #b36797;
+  org:  #c78080;
+  rose: #cf9d71;
+  yel:  #e2cc86;
+}
