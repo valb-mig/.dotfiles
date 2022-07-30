@@ -43,8 +43,7 @@ use "lukas-reineke/indent-blankline.nvim"
 use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
 -- Lsp
-use 'wbthomason/packer.nvim' -- Package manager
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
 -- Auto complete
 use 'hrsh7th/cmp-nvim-lsp'
@@ -54,6 +53,12 @@ use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/nvim-cmp'
 use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
+
+-- Git Signs
+use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release' -- To use the latest release
+}
 
 end)
 
