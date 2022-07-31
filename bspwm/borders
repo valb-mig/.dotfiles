@@ -3,7 +3,7 @@
 # needs chwb2 from wmutils/opt
 
 outer='0x070707'   # outer
-inner1='0xa0846b'  # focused
+inner1='0x2E2E2E'  # focused
 inner2='0x171717'  # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
@@ -14,9 +14,9 @@ targets() {
 		normal)  bspc query -N -n .\!focused.\!fullscreen
 	esac
 }
-bspc config border_width 5
+bspc config border_width 7
 
-draw() { $HOME/src/opt/chwb2 -I "$inner" -O "$outer" -i "2" -o "3" $*; }
+draw() { $HOME/src/opt/chwb2 -I "$inner" -O "$outer" -i "2" -o "5" $*; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
