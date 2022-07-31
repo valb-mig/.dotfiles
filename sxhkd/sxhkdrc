@@ -7,7 +7,6 @@
 #            __/ |                        
 #           |___/                         
 
-
 #    _                
 #   /_\  _ __ _ __ ___
 #  / _ \| '_ \ '_ (_-<
@@ -38,6 +37,10 @@ super + d
 
 #  Powermenu launcher
 super + k
+     bash ~/.config/polybar/rofi/code/powermenu/run.sh 
+#  Jgmenu
+super + grave
+    jgmenu
 
 #  Quick links
 super + q 

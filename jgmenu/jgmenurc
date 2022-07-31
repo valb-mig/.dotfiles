@@ -1,10 +1,10 @@
 stay_alive           = 0
 tint2_look           = 0
 position_mode        = pointer
-terminal_exec        = kitty
-terminal_args        = -e
+terminal_exec        = kitty &
+terminal_args        = 
 
-menu_width           = 200
+menu_width           = 170
 menu_padding_top     = 10
 menu_padding_right   = 4
 menu_padding_bottom  = 6
@@ -16,7 +16,7 @@ menu_halign          = left
 sub_hover_action     = 1
 
 item_margin_y        = 5
-item_height          = 30
+item_height          = 28
 item_padding_x       = 8
 item_radius          = 0
 item_border          = 0
