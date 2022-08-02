@@ -12,7 +12,6 @@
 - .
 - .
 - .
-- .
 
 
 <h2 align="left">To "Install".</h2>
