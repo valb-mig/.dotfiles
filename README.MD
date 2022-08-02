@@ -11,6 +11,7 @@
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 
 ## To "install".
+
 - Execute setup.sh
 - Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim (opitional)
 
