@@ -31,9 +31,9 @@ configuration {
 window {
     border: 		0px;
     border-color:       @bg;
-    padding: 	        3;
-    width: 		30%;
-    height:             30%;
+    padding: 	        5;
+    width: 		500px;
+    height:             300px;
     x-offset:           0;
     y-offset:           0;
     location:           center;
@@ -98,7 +98,7 @@ element {
 }
 element normal.normal {
     background-color: 				@bg;
-    text-color:       				@fg1;
+    text-color:       				@bg2;
 }
 element normal.urgent {
     background-color: 				@bg;
@@ -112,7 +112,7 @@ element selected.normal {
     border-color:        @bg2;
     border:              0px;
     border-radius:       7px;
-    background-color: 				@bg2;
+    background-color: 				@bg;
     text-color:       				@fg1;
 }
 element selected.urgent {
@@ -126,7 +126,7 @@ element selected.active {
 }
 element alternate.normal {
     background-color: 				@bg;
-    text-color:       				@fg1;
+    text-color:       				@bg2;
 }
 element alternate.urgent {
     background-color: 				@bg;

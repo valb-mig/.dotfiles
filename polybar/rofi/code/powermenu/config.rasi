@@ -24,12 +24,12 @@ configuration {
 window {
     border: 		0px;
     border-color:       @bg;
-    padding: 	        2px;
-    width: 		3%;
-    height:             22%;
-    x-offset:           -3;
-    y-offset:           40;
-    location:           northeast;
+    padding: 	        5;
+    width: 		94px;
+    height:             280px;
+    x-offset:           0;
+    y-offset:           0;
+    location:           center;
 }
 
 prompt {
@@ -51,13 +51,13 @@ case-indicator {
 inputbar {
     spacing:    					0px;
     text-color: 					@fg;
-    padding:    					7px;
+    padding:    					10px;
     children: 						[ ];
 }
 
 mainbox {
     border: 						2px;
-    border-color: 					@bg1;
+    border-color: 					@orange;
     padding: 						0px 0px 0px 0px;
 }
 
@@ -67,9 +67,9 @@ listview {
     fixed-height: 					0;
     border: 						0px;
     border-color: 					@red;
-    spacing: 						10px;
+    spacing: 						14px;
     scrollbar: 						false;
-    padding: 						0px 0px 0px 0px;
+    padding: 						0px 0px 0px 30px;
 }
 
 element-text, element-icon {
@@ -84,7 +84,7 @@ element {
 }
 element normal.normal {
     background-color: 				@bg;
-    text-color:       				@fg1;
+    text-color:       				@bg2;
 }
 
 element normal.active {
@@ -95,7 +95,7 @@ element selected.normal {
     border-color:        @bg2;
     border:              0px 0px 0px 0px;
     border-radius:       7px;
-    background-color: 				@bg2;
+    background-color: 				@bg;
     text-color:       				@fg1;
 }
 element selected.urgent {
@@ -109,7 +109,7 @@ element selected.active {
 }
 element alternate.normal {
     background-color: 				@bg;
-    text-color:       				@fg1;
+    text-color:       				@bg2;
 }
 element alternate.urgent {
     background-color: 				@bg;
@@ -130,7 +130,7 @@ button {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     background-color:             	@bg;
-    margin: 						5px;
+    margin: 						0%;
     padding: 						0px 0px 0px 0px;
     text-color: 					@bg2;
     border: 						0px;
