@@ -10,6 +10,7 @@
 - Lock: [BetterLockScreen](https://github.com/betterlockscreen/betterlockscreen)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 
+<br>
 ## To "install".
 
 - Execute setup.sh
