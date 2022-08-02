@@ -9,6 +9,11 @@
 - Menu: [Jgmenu](https://github.com/johanmalm/jgmenu)
 - Lock: [BetterLockScreen](https://github.com/betterlockscreen/betterlockscreen)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+- .
+- .
+- .
+- .
+
 
 <h2 align="left">To "Install".</h2>
 
