@@ -1,5 +1,5 @@
 
-@import "~/.config/polybar/rofi/code/powermenu/colors.rasi"
+@import "~/.config/rofi/code/colors.rasi"
 
 * {
     background-color:       @bg;

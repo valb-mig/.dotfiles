@@ -2,7 +2,7 @@
 
 theme="code.rasi"
 
-dir="$HOME/.config/polybar/rofi/code"
+dir="$HOME/.config/rofi/code"
 styles="code.rasi"
 color="colors.rasi"
 

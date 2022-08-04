@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font: 				"Cousine Nerd Font 12";
+    font: 				"Cousine Nerd Font 14";
     fixed-num-lines: 	 	        true;
     show-icons: 			false;
     sidebar-mode: 			true;
@@ -33,7 +33,7 @@ window {
     border-color:       @bg;
     padding: 	        5;
     width: 		500px;
-    height:             300px;
+    height:             500px;
     x-offset:           0;
     y-offset:           0;
     location:           center;
@@ -180,3 +180,4 @@ message {
 textbox {
     text-color: 					@fg;
 }
+

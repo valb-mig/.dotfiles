@@ -33,11 +33,20 @@ super + Return
 
 #  Program launcher
 super + d
-     bash ~/.config/polybar/rofi/code/launcher.sh
+     bash ~/.config/rofi/code/launcher.sh
+
+#  Emoji launcher
+super + e
+     bash ~/.config/rofi/code/emoji/run.sh
 
 #  Powermenu launcher
 super + k
-     bash ~/.config/polybar/rofi/code/powermenu/run.sh 
+     bash ~/.config/rofi/code/powermenu/run.sh 
+
+#  Powermenu launcher
+super + n
+     bash ~/.config/rofi/code/nfonts/rofi-nerdfonts.sh 
+
 #  Jgmenu
 super + grave
     jgmenu

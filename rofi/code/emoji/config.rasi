@@ -8,14 +8,16 @@
  */
 
 configuration {
-    font: 				"Cousine Nerd Font 20";
+    font: 				"Cousine Nerd Font 15";
     fixed-num-lines: 	 	        true;
     show-icons: 			false;
     sidebar-mode: 			true;
+    window-format: 			"[{w}] ··· {c} ···   {t}";
     click-to-exit: 			true;
+    display-emoji:                      " ﲃ ";
 }
 
-@import "colors.rasi"
+@import "../colors.rasi"
 
 * {
     background-color:   @bg;
@@ -25,8 +27,8 @@ window {
     border: 		0px;
     border-color:       @bg;
     padding: 	        5;
-    width: 		94px;
-    height:             280px;
+    width: 		50%;
+    height:             60%;
     x-offset:           0;
     y-offset:           0;
     location:           center;
@@ -35,7 +37,14 @@ window {
 prompt {
     spacing: 						0;
     border: 						0;
-    text-color: 					@bg1;
+    text-color: 					@orange;
+}
+
+textbox-prompt-colon {
+    expand: 						false;
+    str: 						"";
+    margin:						0px 4px 0px 0px;
+    text-color: 					inherit;
 }
 
 entry {
@@ -51,25 +60,25 @@ case-indicator {
 inputbar {
     spacing:    					0px;
     text-color: 					@fg;
-    padding:    					10px;
-    children: 						[ ];
+    padding:    					0px;
+    children: 						[ entry ];
 }
 
 mainbox {
     border: 						2px;
     border-color: 					@orange;
-    padding: 						0px 0px 0px 0px;
+    padding: 						30;
 }
 
 listview {
-    lines:						5;
-    columns:						1;
+    lines:						10;
+    columns:						3;
     fixed-height: 					0;
     border: 						0px;
     border-color: 					@red;
-    spacing: 						14px;
+    spacing: 						0px;
     scrollbar: 						false;
-    padding: 						0px 0px 0px 30px;
+    padding: 						5px 5px 0px 5px;
 }
 
 element-text, element-icon {
@@ -80,20 +89,23 @@ element-text, element-icon {
 element {
     border: 						0px;
     border-radius: 					0px;
-    padding: 						0px;
+    padding: 						5px;
 }
 element normal.normal {
     background-color: 				@bg;
     text-color:       				@bg2;
 }
-
+element normal.urgent {
+    background-color: 				@bg;
+    text-color:       				@bg2;
+}
 element normal.active {
     background-color: 				@bg;
     text-color:       				@bg2;
 }
 element selected.normal {
     border-color:        @bg2;
-    border:              0px 0px 0px 0px;
+    border:              0px;
     border-radius:       7px;
     background-color: 				@bg;
     text-color:       				@fg1;
@@ -130,8 +142,8 @@ button {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     background-color:             	@bg;
-    margin: 						0%;
-    padding: 						0px 0px 0px 0px;
+    margin: 						0px;
+    padding: 						0px;
     text-color: 					@bg2;
     border: 						0px;
     border-radius: 					4px;
@@ -147,10 +159,10 @@ button selected {
 }
 
 scrollbar {
-    width:        					4px;
+    width:        					0px;
     border:       					0px;
     handle-color: 					@fg;
-    handle-width: 					8px;
+    handle-width: 					0px;
     padding:      					0;
 }
 
@@ -163,3 +175,4 @@ message {
 textbox {
     text-color: 					@fg;
 }
+

@@ -5,33 +5,16 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-# Available Styles
-# >> Created and tested on : rofi 1.6.0-1
-#
-# column_circle     column_square     column_rounded     column_alt
-# card_circle     card_square     card_rounded     card_alt
-# dock_circle     dock_square     dock_rounded     dock_alt
-# drop_circle     drop_square     drop_rounded     drop_alt
-# full_circle     full_square     full_rounded     full_alt
-# row_circle      row_square      row_rounded      row_alt
-
-theme="column_rounded.rasi"
-dir="$HOME/.config/polybar/rofi/powermenu"
-
-# random colors
-#styles=($(ls -p --hide="colors.rasi" $dir/styles))
-#color="${styles[$(( $RANDOM % 8 ))]}"
-
-uptime=$(uptime -p | sed -e 's/up //g')
-
+theme="config.rasi"
+dir="$HOME/.config/rofi/code/powermenu"
 rofi_command="rofi -theme $dir/$theme"
 
 # Options
-shutdown=" "
-reboot=" "
+shutdown="襤"
+reboot="累"
 lock=""
-suspend=""
-logout=""
+suspend=""
+logout=""
 
 # Confirmation
 confirm_exit() {

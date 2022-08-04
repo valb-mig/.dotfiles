@@ -8,6 +8,7 @@ ln -s ~/.dotfiles/kitty ~/.config
 ln -s ~/.dotfiles/nvim ~/.config
 ln -s ~/.dotfiles/jgmenu ~/.config
 ln -s ~/.dotfiles/dunst ~/.config
+ln -s ~/.dotfiles/rofi ~/.config
 # X
 
 # Move to ${HOME}
