@@ -17,9 +17,9 @@ require('theme')
 require'lspconfig'.pyright.setup{}
 
 -- Tab
-vim.bo.expandtab = true
-vim.bo.shiftwidth =  2
-vim.bo.softtabstop = 2
+vim.o.expandtab = true
+vim.o.shiftwidth =  2
+vim.o.softtabstop = 2
 
 -- Numbers
 vim.o.number = true
