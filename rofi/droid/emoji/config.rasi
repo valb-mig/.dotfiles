@@ -107,7 +107,7 @@ element selected.normal {
     border-color:        @bg2;
     border:              0px;
     border-radius:       7px;
-    background-color: 				@bg1;
+    background-color: 				@bg;
     text-color:       				@fg1;
 }
 element selected.urgent {

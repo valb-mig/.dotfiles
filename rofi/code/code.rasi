@@ -14,12 +14,9 @@ configuration {
     sidebar-mode: 			true;
     window-format: 			"[{w}] ··· {c} ···   {t}";
     click-to-exit: 			true;
-    display-window: 		        "  ";
-    display-windowcd: 		        " windcd";
-    display-run: 			"  ";
-    display-ssh: 			" Ssh";
-    display-drun: 			" ";
-    display-combi: 			" Combi";
+    display-window: 		        " ";
+    display-run: 			" ";
+    display-drun: 			"";
 }
 
 @import "colors.rasi"
@@ -40,39 +37,44 @@ window {
 }
 
 prompt {
+    background-color:                                   @bg1;
     spacing: 						0;
-    border: 						0;
-    text-color: 					@orange;
+    border: 						5;
+    text-color: 					@fg;
 }
 
 textbox-prompt-colon {
     expand: 						false;
-    str: 						":";
-    margin:						0px 4px 0px 0px;
+    margin:						0px 10px 0px 0px;
     text-color: 					inherit;
 }
 
 entry {
+    margin:                                             5px 0px 0px 7px;
     spacing:    					0;
+    background-color:                                   @bg1;
     text-color: 					@fg1;
+    border-radius:                                      0px;
 }
 
 case-indicator {
     spacing:    					0;
-    text-color: 					@fg;
+    text-color: 					@green;
 }
 
 inputbar {
-    spacing:    					0px;
+    border-radius:                                      7px;
+    spacing:    					0px; 
+    background-color:                                   @bg1;
     text-color: 					@fg;
-    padding:    					1px;
-    children: 						[ prompt,textbox-prompt-colon,entry,case-indicator ];
+    padding:    					5px;
+    children: 						[ prompt,entry ];
 }
 
 mainbox {
     border: 						2px;
     border-color: 					@orange;
-    padding: 						30;
+    padding: 					        12;
 }
 
 listview {
@@ -80,10 +82,10 @@ listview {
     columns:						1;
     fixed-height: 					0;
     border: 						0px;
-    border-color: 					@red;
+    border-color: 					@bg2;
     spacing: 						0px;
     scrollbar: 						false;
-    padding: 						5px 5px 0px 5px;
+    padding: 						15px 0px 0px 5px;
 }
 
 element-text, element-icon {
@@ -137,16 +139,10 @@ element alternate.active {
     text-color:       				@fg;
 }
 
-sidebar {
-    border:       					0px;
-    border-color: 					@ac;
-    border-radius: 					0px;
-}
-
 button {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    background-color:             	@bg;
+    background-color:             	                @bg;
     margin: 						5px;
     padding: 						5px;
     text-color: 					@bg2;
@@ -156,7 +152,7 @@ button {
 }
 
 button selected {
-    background-color:              	                @bg;
+    background-color:              	                @bg1;
     text-color: 					@orange;
     border: 						0px;
     border-radius: 					4px;
@@ -174,7 +170,7 @@ scrollbar {
 message {
     border: 						0px;
     border-color: 					@ac;
-    padding: 						1px;
+    padding: 						0px;
 }
 
 textbox {
