@@ -20,15 +20,14 @@
 xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1366x768 --rotate normal --left-of HDMI2
 
 #| Code / bar
-#| polybar...
- $bash ~/.config/polybar/code/launch.sh &
+$bash ~/.config/polybar/code/launch.sh &
 
 #| Wallpaper
- $bash ./.fehbg
+$bash ./.fehbg
 
 #| X Cursor Fix
- xsetroot -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr &
 
 #| 2° Borders
-  bash ~/.config/bspwm/borders
+bash ~/.config/bspwm/borders
 

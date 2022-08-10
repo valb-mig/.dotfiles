@@ -15,7 +15,7 @@ bspc monitor eDP1 -d  1
 #| \__/\___/_//_/_//_/\_, / 
 #|                   /___/  
 
-bspc config window_gap 9
+bspc config window_gap 10
 #bspc config border_width 2
 
 bspc config focused_border_color        "#070707"

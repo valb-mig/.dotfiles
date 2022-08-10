@@ -15,12 +15,12 @@
 
 #  Firefox
 super + z
-    firefox
+  bash ~/.config/sxhkd/alerts/firefox.sh
 
 #  Thunar
 super + a
-     thunar
-
+    bash ~/.config/sxhkd/alerts/thunar.sh
+ 
 #  Terminal emulator
 super + Return
       kitty
@@ -51,8 +51,13 @@ super + n
 super + grave
     jgmenu
 
-#  Quick links
-super + q 
+#  Program launcher
+super + r
+     kitty ranger
+
+#  Update
+super + u
+  bash ~/.config/bspwm/scripts/update.sh
 
 #  Volume
 super + v
@@ -63,9 +68,13 @@ super + v
 # |___/\_, /__/\__\___|_|_|_|
 #      |__/                         
 
-# Print
+# Print Like Mac
 super + p
-    scrot 'shot_%H%M%S.png' -e '~/Pictures/screenshots/'
+  bash ~/.config/sxhkd/alerts/mac_print.sh
+
+# Print
+Print
+  bash ~/.config/sxhkd/alerts/print.sh
 
 # lockscreen
 alt + shift + x

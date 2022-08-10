@@ -7,7 +7,7 @@ height = 80
 
 origin = top-center
 geometry = "0x0-20+50"
-offset = 10x50
+offset = 8x8
 scale = 0
 
 indicate_hidden = yes
