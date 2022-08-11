@@ -48,5 +48,9 @@ bspc rule -a Plank layer=above manage=on border=off
 nm-applet &
 
 #| Auto run
+
 bash ~/.config/bspwm/autorun/run.sh
+
+eww daemon 
+picom &
 

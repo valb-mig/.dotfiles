@@ -29,5 +29,5 @@ $bash ./.fehbg
 xsetroot -cursor_name left_ptr &
 
 #| 2° Borders
-bash ~/.config/bspwm/borders
+#bash ~/.config/bspwm/borders
 
