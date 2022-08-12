@@ -3,11 +3,11 @@ monitor = HDMI2
 follow = none
 
 width = 280
-height = 80
+height = 100
 
-origin = top-center
-geometry = "0x0-20+50"
-offset = 8x8
+origin = center
+geometry = "300x900-12+65"
+offset = 1000x1000
 scale = 0
 
 indicate_hidden = yes
@@ -17,9 +17,17 @@ separator_height = 4
 
 separator_color = auto
 
+progress_bar = true
+progress_bar_height = 10
+progress_bar_frame_width = 2
+progress_bar_min_width = 20
+progress_bar_max_width = 200
+
 padding = 15
 horizontal_padding = 15
-frame_width = 2
+frame_width = 0
+corner_radius = 12
+
 sort = no
 idle_threshold = 120
 font = Cousine Nerd Font 9

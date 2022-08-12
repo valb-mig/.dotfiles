@@ -1,0 +1,1 @@
+../../../texmf/fonts/afm/public/lm/lmb10.afm

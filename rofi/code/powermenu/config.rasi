@@ -56,6 +56,7 @@ inputbar {
 }
 
 mainbox {
+    border-radius:                                      0px;
     border: 						2px;
     border-color: 					@orange;
     padding: 						0px 0px 0px 0px;
