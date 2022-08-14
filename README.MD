@@ -1,6 +1,6 @@
 <h1 align="center">Code Dotfiles</h1>
 
-<img src="Dotfiles_Images/screen.png" align="left" width="508">
+<img src="Repo_assets/screen.png" align="left" width="508">
 
 - Os: [Pop-os](https://pop.system76.com/)
 - Wm: [Bspwm](https://github.com/baskerville/bspwm)
