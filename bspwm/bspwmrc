@@ -38,14 +38,16 @@ nm-applet &
 
 #| Auto run
 bash ~/.config/bspwm/autorun/run.sh
-eww daemon 
 
+# Dock
+Plank &
 
 #|    ___       __       
 #|   / _ \__ __/ /__ ___ 
 #|  / , _/ // / / -_|_-< 
 #| /_/|_|\_,_/_/\__/___/ 
 
+bspc rule -a gnome-calculator state=floating follow=off focus=off
 bspc rule -a Spotify follow=off focus=off
 bspc rule -a firefox follow=off focus=off
 bspc rule -a discord follow=off focus=off

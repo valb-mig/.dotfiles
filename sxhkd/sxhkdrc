@@ -25,6 +25,14 @@ super + a
 super + Return
       kitty
 
+#  plank
+shift + p
+      plank
+
+#  kill plank
+shift + o
+      killall plank
+
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
 # \__ \/ _| '_| | '_ \  _(_-<
@@ -33,19 +41,20 @@ super + Return
 
 #  Program launcher
 super + d
-     bash ~/.config/rofi/code/launcher.sh
+#   bash ~/.config/rofi/code/launcher.sh
+    bash ~/.config/rofi/code/launcher.sh
 
 #  Emoji launcher
 super + e
-     bash ~/.config/rofi/code/emoji/run.sh
+    bash ~/.config/rofi/code/emoji/run.sh
 
 #  Powermenu launcher
 super + k
-     bash ~/.config/rofi/code/powermenu/run.sh 
+    bash ~/.config/rofi/code/powermenu/run.sh 
 
-#  Powermenu launcher
+#  Nerd Fonts launcher
 super + n
-     bash ~/.config/rofi/code/nfonts/rofi-nerdfonts.sh 
+    bash ~/.config/rofi/code/nfonts/rofi-nerdfonts.sh 
 
 #  Jgmenu
 super + grave
@@ -54,10 +63,6 @@ super + grave
 #  Program launcher
 super + r
      kitty ranger
-
-#  Update
-super + u
-  bash ~/.config/bspwm/scripts/update.sh
 
 #  Volume
 super + v
@@ -162,3 +167,4 @@ super + alt + shift + {Left,Down,Up,Right}
 # move a floating window
 super + {Left,Down,Up,Right}
         bspc node -v {-20 0,0 20,0 -20,20 0}
+

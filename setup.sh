@@ -16,11 +16,11 @@ ln -s ~/.dotfiles/src ~/
 ln -s ~/.dotfiles/.spicetify ~/
 # X
 
+# Fonts
+#mv ~/.dotfiles/fonts/ /usr/share/fonts
+
 # Images
-mv ~/.dotfiles/wallpapers ~/Pictures
+mv ~/.dotfiles/wallpaper ~/Pictures
 # X
 
-# Wallpaper Set
-feh --bg-fill ~/Pictures/wallpapers/code_black.png
-# X
 

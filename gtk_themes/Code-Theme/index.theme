@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Code-Theme
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Code-Theme
+MetacityTheme=Code-Theme
+IconTheme=Tela-circle-dark
+CursorTheme=MacOS
+ButtonLayout=close,minimize,maximize:menu

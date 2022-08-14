@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-theme="code.rasi"
+## Author : Aditya Shakya (adi1090x)
+## Github : @adi1090x
 
 dir="$HOME/.config/rofi/code"
-styles="code.rasi"
-color="colors.rasi"
+theme='config'
 
-rofi -no-lazy-grab -show drun \
--modi run,drun,window \
--theme $dir/"$theme"
+## Run
+rofi \
+    -show drun \
+    -theme ${dir}/${theme}.rasi
 

@@ -5,16 +5,15 @@ follow = none
 width = 280
 height = 100
 
-origin = center
-geometry = "300x900-12+65"
-offset = 1000x1000
+origin = top
+geometry = "300x300-300+300"
+offset = 820x49
 scale = 0
 
 indicate_hidden = yes
 shrink = no
 
 separator_height = 4
-
 separator_color = auto
 
 progress_bar = true
@@ -25,7 +24,7 @@ progress_bar_max_width = 200
 
 padding = 15
 horizontal_padding = 15
-frame_width = 0
+frame_width = 2
 corner_radius = 12
 
 sort = no
@@ -57,13 +56,13 @@ class = Dunst
 timeout = 2
 background = "#070707"
 foreground = "#949494"
-frame_color = "#CF9D71"
+frame_color = "#101010"
 
 [urgency_normal]
 timeout = 5
 background = "#070707"
 foreground = "#949494"
-frame_color = "#CF9D71"
+frame_color = "#101010"
 
 [urgency_critical]
 timeout = 0

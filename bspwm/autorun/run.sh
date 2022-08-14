@@ -1,4 +1,4 @@
-#                        ,////,
+                        ,////,
 #                        /// 6|
 #                        //  _|
 #                       _/_,-'
@@ -33,4 +33,3 @@ xsetroot -cursor_name left_ptr &
 
 #| 2° Borders
 bash ~/.config/bspwm/borders
-
