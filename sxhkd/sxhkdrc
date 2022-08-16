@@ -26,12 +26,12 @@ super + Return
       kitty
 
 #  plank
-shift + p
-      plank
+F8
+  plank
 
 #  kill plank
-shift + o
-      killall plank
+F9
+  killall plank
 
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
