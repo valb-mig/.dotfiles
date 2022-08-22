@@ -35,6 +35,13 @@
 <img src="Repo_Assets/firefox.png" align="center" width="1000">
 
 <h2>🎨 Palette</h2>
-<img src="Repo_Assets/palette/red.png" align="center" width="50">
 
-
+<div align="center">
+  <img src="Repo_Assets/palette/yellow.png" width="50">
+  <img src="Repo_Assets/palette/red.png" width="50">
+  <img src="Repo_Assets/palette/purple.png" width="50">
+  <img src="Repo_Assets/palette/pink.png" width="50">
+  <img src="Repo_Assets/palette/orange.png" width="50">
+  <img src="Repo_Assets/palette/green.png" width="50">
+  <img src="Repo_Assets/palette/cyan.png" width="50">
+</div>
