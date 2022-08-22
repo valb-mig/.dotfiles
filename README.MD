@@ -6,12 +6,8 @@
 - Wm: [Bspwm](https://github.com/baskerville/bspwm)
 - Bar: [Polybar](https://github.com/polybar/polybar)
 - Launcher: [Rofi](https://github.com/davatorium/rofi)
-- Menu: [Jgmenu](https://github.com/johanmalm/jgmenu)
 - Lock: [BetterLockScreen](https://github.com/betterlockscreen/betterlockscreen)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
-- .
-- .
-- .
 
 
 <h2 align="left">To "Install".</h2>

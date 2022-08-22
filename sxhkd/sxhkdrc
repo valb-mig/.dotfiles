@@ -41,7 +41,6 @@ F9
 
 #  Program launcher
 super + d
-#   bash ~/.config/rofi/code/launcher.sh
     bash ~/.config/rofi/code/launcher.sh
 
 #  Emoji launcher
