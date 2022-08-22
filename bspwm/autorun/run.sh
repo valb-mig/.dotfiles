@@ -22,6 +22,9 @@ xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 -
 #|
 #picom &
 
+#| Fix java
+bash ~/.config/bspwm/scripts/java_fix.sh
+
 #| Code / bar
 $bash ~/.config/polybar/code/launch.sh &
 
