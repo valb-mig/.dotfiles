@@ -39,9 +39,6 @@ nm-applet &
 #| Auto run
 bash ~/.config/bspwm/autorun/run.sh
 
-# Dock
-Plank &
-
 #|    ___       __       
 #|   / _ \__ __/ /__ ___ 
 #|  / , _/ // / / -_|_-< 
