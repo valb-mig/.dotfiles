@@ -13,6 +13,14 @@
 <br><br>
 <h2 align="left">⚙️ To Install.</h2>
 
+<h2>🤏 First install the <b>dependencies</b></h2>
+
+```
+sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty dunst scrot jgmenu cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl xprop wmctrl slop xclip
+```
+
+<br>
+
 - Execute setup.sh
 - Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim (opitional)
 
