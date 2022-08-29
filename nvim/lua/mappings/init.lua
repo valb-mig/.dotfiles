@@ -1,6 +1,3 @@
--- Keybinds '<c-s> = :w'
--- Keybinds setup ('MODE', 'KEYS', 'COMMAND', {OPTIONS})
-
 local keymap = vim.api.nvim_set_keymap
 
 -- Telescope
@@ -35,4 +32,4 @@ keymap('n', '<c-RIGHT>', '<c-w>l', opts)
 
 -- Move buffer
 keymap('n', '<TAB>', ':BufferLineCycleNext<CR>', {})
---keymap('n', '<c-w>', ':BufferLinePickClose<CR>', {})
+

@@ -13,14 +13,12 @@ ln -s ~/.dotfiles/rofi ~/.config
 
 # Move to ${HOME}
 ln -s ~/.dotfiles/src ~/
-ln -s ~/.dotfiles/.spicetify ~/
 # X
 
 # Fonts
 #mv ~/.dotfiles/fonts/ /usr/share/fonts
 
 # Images
-mv ~/.dotfiles/wallpaper ~/Pictures
+cp ~/.dotfiles/wallpapers/macd2.jpg ~/Pictures
+cp ~/.dotfiles/wallpapers/wallpaper_switch_1.png ~/Pictures
 # X
-
-

@@ -30,6 +30,9 @@ vim.o.termguicolors = true
 -- Line 
 vim.o.cursorline = true
 
+-- Copy
+vim.o.clipboard = unnamed
+
 -- Theme_Load
 require('onedark').load()
 
