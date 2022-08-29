@@ -22,7 +22,7 @@ sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty
 <br>
 
 - Execute setup.sh
-- Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim (opitional)
+- Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim <b>(opitional)</b>
 
 <details>
   <summary><h3>🖥️ Desktop</h3></summary>
