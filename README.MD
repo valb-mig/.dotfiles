@@ -13,7 +13,7 @@
 <br><br>
 <h2 align="left">⚙️ To Install.</h2>
 
-<h2>🤏 First install the <b>dependencies</b></h2>
+<h3>🤏 First install the <b>dependencies</b></h3>
 
 ```
 sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty dunst scrot jgmenu cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl xprop wmctrl slop xclip
@@ -25,21 +25,21 @@ sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty
 - Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim (opitional)
 
 <details>
-  <summary><h2>🖥️ Desktop</h2></summary>
+  <summary><h3>🖥️ Desktop</h3></summary>
   <img src=".assets/desktop.png" align="center" width="1000">
 </details>
 
 <details>
-  <summary><h2>💾 Neovim</h2></summary>
+  <summary><h3>💾 Neovim</h3></summary>
   <img src=".assets/neovim.png" align="center" width="1000">
 </details>
 
 <details>
-  <summary><h2>📁 Thunar</h2></summary>
+  <summary><h3>📁 Thunar</h3></summary>
   <img src=".assets/thunar.png" align="center" width="1000">
 </details>
 
 <details>
-  <summary><h2>🦊 Firefox</h2></summary>
+  <summary><h3>🦊 Firefox</h3></summary>
   <img src=".assets/firefox.png" align="center" width="1000">
 </details>
