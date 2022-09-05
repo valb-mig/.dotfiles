@@ -25,14 +25,6 @@ super + a
 super + Return
       kitty
 
-#  plank
-F8
-  plank
-
-#  kill plank
-F9
-  killall plank
-
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
 # \__ \/ _| '_| | '_ \  _(_-<
@@ -63,9 +55,6 @@ super + grave
 super + r
      kitty ranger
 
-#  Volume
-super + v
-        
 #  ___         _             
 # / __|_  _ __| |_ ___ _ __  
 # \__ \ || (_-<  _/ -_) '  \ 

@@ -45,9 +45,9 @@ bash ~/.config/bspwm/autorun/run.sh
 #| /_/|_|\_,_/_/\__/___/ 
 
 bspc rule -a gnome-calculator state=floating follow=off focus=off
-bspc rule -a Spotify follow=off focus=off
-bspc rule -a firefox follow=off focus=off
-bspc rule -a discord follow=off focus=off
+bspc rule -a Spotify desktop='^4' follow=off focus=off
+bspc rule -a firefox desktop='^2' follow=off focus=off
+bspc rule -a discord desktop='^2' follow=off focus=off
 bspc rule -a Code    desktop='^3' follow=off focus=off
 bspc rule -a Gimp    follow=off focus=off
 bspc rule -a Toolkit state=floating follow=on
