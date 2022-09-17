@@ -56,7 +56,14 @@ case $chosen in
         fi
         ;;
     $lock)
-	bash /home/valb/betterlockscreen-main/betterlockscreen --lock blur
+	        ans=$(confirm_exit &)
+		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+			betterlockscreen -l
+		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
+			exit 0
+        else
+			msg
+        fi
         ;;
     $suspend)
 		ans=$(confirm_exit &)
