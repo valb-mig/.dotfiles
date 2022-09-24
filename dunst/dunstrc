@@ -1,4 +1,5 @@
 [global]
+
 monitor = HDMI2
 follow = none
 
@@ -6,7 +7,7 @@ width = 280
 height = 100
 
 origin = top
-geometry = "300x300-300+300"
+geometry = "300x300-808+049"
 offset = 820x49
 scale = 0
 
@@ -29,7 +30,7 @@ corner_radius = 12
 
 sort = no
 idle_threshold = 120
-font = Cousine Nerd Font 9
+font = CaskaydiaCove Nerd Font 10
 line_height = 4
 markup = full
 
@@ -53,6 +54,7 @@ title = Dunst
 class = Dunst
 
 [urgency_low]
+
 timeout = 2
 background = "#070707"
 foreground = "#949494"

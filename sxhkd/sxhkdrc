@@ -18,7 +18,7 @@ super + z
   bash ~/.config/sxhkd/alerts/firefox.sh
 
 #  Thunar
-super + a
+super + shift + a
     bash ~/.config/sxhkd/alerts/thunar.sh
  
 #  Terminal emulator
@@ -51,6 +51,10 @@ super + d
 super + e
     bash ~/.config/rofi/code/emoji/run.sh
 
+#  App launcher
+super + a
+    bash ~/.config/rofi/launchers/type-5/launcher.sh
+
 #  Powermenu launcher
 super + k
     bash ~/.config/rofi/code/powermenu/run.sh 
@@ -62,6 +66,14 @@ super + n
 #  Program launcher
 super + r
      kitty ranger
+
+#  Launch Dock
+F9
+  plank
+
+#  Kill Dock
+F8
+  killall plank
 
 #  ___         _             
 # / __|_  _ __| |_ ___ _ __  
