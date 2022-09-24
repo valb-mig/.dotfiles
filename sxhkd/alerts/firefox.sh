@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 # Notification
-notify-send "ctrl + z = Firefox"
+notify-send "Firefox"
+
 # Open firefox
 firefox
 

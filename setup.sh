@@ -9,16 +9,19 @@ ln -s ~/.dotfiles/nvim ~/.config
 ln -s ~/.dotfiles/jgmenu ~/.config
 ln -s ~/.dotfiles/dunst ~/.config
 ln -s ~/.dotfiles/rofi ~/.config
-# X
+ln -s ~/.dotfiles/plank ~/.config
+
+# If u want my theme / Make sure you have a .theme folder in your ~/ (HOME DIR) 
+mv ~/.dotfiles/gtk_themes/Code-Theme ~/.themes
 
 # Move to ${HOME}
 ln -s ~/.dotfiles/src ~/
-# X
 
 # Fonts
+
 #mv ~/.dotfiles/fonts/ /usr/share/fonts
 
 # Images
 cp ~/.dotfiles/wallpapers/macd2.jpg ~/Pictures
 cp ~/.dotfiles/wallpapers/wallpaper_switch_1.png ~/Pictures
-# X
+

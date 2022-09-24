@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
 # Notification
-notify-send "Code"
+notify-send "Files"
 
 # Open
-code
+nautilus
 

@@ -14,28 +14,20 @@
 #       |_|  |_|       
 
 #  Firefox
-super + z
+super + shift + z
   bash ~/.config/sxhkd/alerts/firefox.sh
 
-#  Thunar
-super + shift + a
-    bash ~/.config/sxhkd/alerts/thunar.sh
+#  Files / Gnome Files
+super + shift + x
+    bash ~/.config/sxhkd/alerts/files.sh
  
+#  Code
+super + shift + c
+    bash ~/.config/sxhkd/alerts/code.sh
+
 #  Terminal emulator
 super + Return
       kitty
-
-#  Code
-super + c
-    bash ~/.config/sxhkd/alerts/code.sh
-
-#  Codium
-super + shift + c
-    bash ~/.config/sxhkd/alerts/codium.sh
-
-#  InteliJ
-super + i
-    bash ~/.config/sxhkd/alerts/intelij.sh
 
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
