@@ -8,7 +8,7 @@
 - Launcher: [Rofi](https://github.com/davatorium/rofi)
 - Lock: [BetterLockScreen](https://github.com/betterlockscreen/betterlockscreen)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
-- Notifications: [dunst](https://github.com/dunst-project/dunst)
+- Notifications: [Dunst](https://github.com/dunst-project/dunst)
 
 
 <br><br>
