@@ -35,7 +35,7 @@ sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty
 </details>
 
 <details>
-  <summary><h3>📁 Thunar</h3></summary>
+  <summary><h3>📁 Gtk Theme</h3></summary>
   <img src=".assets/thunar.png" align="center" width="1000">
 </details>
 
