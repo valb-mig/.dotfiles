@@ -18,7 +18,7 @@
 <h3>🤏 First install the <b>dependencies</b></h3>
 
 ```
-sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty dunst scrot jgmenu cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl xprop wmctrl slop xclip
+sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty dunst scrot jgmenu cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip
 ```
 
 <br>
