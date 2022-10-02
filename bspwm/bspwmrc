@@ -38,6 +38,8 @@ nm-applet &
 #| Auto run
 bash ~/.config/bspwm/autorun/run.sh
 
+bspc config border_width 2
+
 #|    ___       __       
 #|   / _ \__ __/ /__ ___ 
 #|  / , _/ // / / -_|_-< 

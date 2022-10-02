@@ -59,6 +59,15 @@ super + n
 super + r
      kitty ranger
 
+
+#  Monitor on
+super + ctrl + F11
+     bash ~/.config/sxhkd/alerts/monitor_on.sh
+
+#  Monitor off
+super + ctrl + F12
+     bash ~/.config/sxhkd/alerts/monitor_off.sh
+
 #  Launch Dock
 F9
   plank

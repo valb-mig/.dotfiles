@@ -64,4 +64,3 @@ ItemMoveTime=450
 CascadeHide=true
 #The color (RGBA) of the badge displaying urgent count
 BadgeColor=7;;7;;7;;255
-
