@@ -471,7 +471,7 @@ actionbar > revealer > box .linked > button:disabled:not(.suggested-action):not(
 }
 
 actionbar > revealer > box .linked > button:checked:not(.suggested-action):not(.destructive-action), button:checked {
-  background-color: #CF9D71;
+  background-color: #101010;
   color: #A5A5A5;
 }
 
@@ -656,7 +656,7 @@ button.suggested-action:focus {
 
 button.suggested-action.flat {
   background-color: transparent;
-  color: #CF9D71;
+  color: #101010;
 }
 
 button.suggested-action.flat:disabled {
@@ -857,7 +857,7 @@ list > row button.image-button:not(.flat).destructive-action {
  * Links *
  *********/
 link {
-  color: #F24949;
+  color: #101010;
 }
 
 link:visited {
@@ -865,7 +865,7 @@ link:visited {
 }
 
 button.link:link, button.link:link:focus, button.link:link:hover, button.link:link:active {
-  color: #F24949;
+  color: #101010;
 }
 
 button.link:visited, button.link:visited:focus, button.link:visited:hover, button.link:visited:active {
@@ -1741,7 +1741,7 @@ treeview.view header.button.dnd {
   box-shadow: none;
   background-color: #101010;
   background-clip: border-box;
-  color: #CF9D71;
+  color: #101010;
 }
 
 columnview.view acceleditor > label,
@@ -2559,7 +2559,7 @@ check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
   color: #A5A5A5;
-  background-color: #CF9D71;
+  background-color: #101010;
 }
 
 check:checked:hover, check:indeterminate:hover,
@@ -2798,7 +2798,7 @@ scale fill:disabled {
 scale slider {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 9999px;
-  color: #CF9D71;
+  color: #101010;
   background-color: #101010;
   box-shadow: inset 0 0 0 2px #CF9D71;
 }
@@ -3569,7 +3569,7 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 }
 
 .app-notification button.text-button:not(:disabled) {
-  color: #CF9D71;
+  color: #101010;
 }
 
 .app-notification.frame,
@@ -3707,7 +3707,7 @@ window.dialog.message .dialog-action-area > button:not(:last-child) {
 }
 
 window.dialog.message .dialog-action-area > button:not(:disabled) {
-  color: #CF9D71;
+  color: #101010;
 }
 
 window.dialog.message .dialog-action-area > button.destructive-action:not(:disabled) {
@@ -3940,11 +3940,11 @@ placessidebar .navigation-sidebar > row.sidebar-placeholder-row {
 }
 
 placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row {
-  color: #CF9D71;
+  color: #101010;
 }
 
 placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row image.sidebar-icon {
-  color: #CF9D71;
+  color: #101010;
 }
 
 placessidebar .navigation-sidebar > row:drop(active) {
@@ -4362,14 +4362,14 @@ treeview.view:selected, row:selected, calendar:selected, calendar > grid > label
 }
 
 flowbox > flowboxchild:selected, calendar > grid > label.today {
-  color: #CF9D71;
+  color: #101010;
   background-color: rgba(007, 007, 007, 0.2);
 }
 
 textview text selection:focus, textview text selection, label > selection,
 entry > text > selection, spinbutton:not(.vertical) > text > selection, spinbutton.vertical > text > selection, calendar > grid > label.today:selected {
   color: #A5A5A5;
-  background-color: #CF9D71;
+  background-color: #101010;
 }
 
 .monospace {
@@ -4380,7 +4380,7 @@ entry > text > selection, spinbutton:not(.vertical) > text > selection, spinbutt
  * Touch Copy & Paste *
  **********************/
 cursor-handle {
-  color: #CF9D71;
+  color: #101010;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/cursor-handle-symbolic.svg"));
 }
 
@@ -4510,7 +4510,7 @@ button.emoji-section {
 }
 
 button.emoji-section:checked {
-  color: #CF9D71;
+  color: #101010;
 }
 
 popover.emoji-picker emoji {

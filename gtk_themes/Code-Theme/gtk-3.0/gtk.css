@@ -960,7 +960,7 @@ button.color {
  * Links *
  *********/
 *:link {
-  color: #F24949;
+  color: #CF9D71;
 }
 
 *:visited {
@@ -968,7 +968,7 @@ button.color {
 }
 
 button.link:link, button.link:link:focus, button.link:link:hover, button.link:link:active {
-  color: #F24949;
+  color: #CF9D71;
 }
 
 button.link:visited, button.link:visited:focus, button.link:visited:hover, button.link:visited:active {
@@ -7735,7 +7735,7 @@ base background color of selections */
 @define-color theme_selected_bg_color #CF9D71;
 /*
 text/foreground color of selections */
-@define-color theme_selected_fg_color #A5A5A5;
+@define-color theme_selected_fg_color #101010;
 /*
 base background color of insensitive widgets */
 @define-color insensitive_bg_color #0e0e0e;
