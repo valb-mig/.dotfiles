@@ -15,7 +15,7 @@
 
 #  Firefox
 super + shift + z
-  bash ~/.config/sxhkd/alerts/firefox.sh
+    bash ~/.config/sxhkd/alerts/firefox.sh
 
 #  Files / Gnome Files
 super + shift + x
@@ -27,7 +27,7 @@ super + shift + c
 
 #  Terminal emulator
 super + Return
-      kitty
+    kitty
 
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
@@ -37,19 +37,19 @@ super + Return
 
 #  Program launcher
 super + d
-    bash ~/.config/rofi/code/launcher.sh
+    bash ~/.config/rofi/search/launcher.sh
 
 #  Emoji launcher
 super + e
     bash ~/.config/rofi/code/emoji/run.sh
 
 #  App launcher
-super + a
+ super + a
     bash ~/.config/rofi/launchers/type-5/launcher.sh
 
 #  Powermenu launcher
 super + k
-    bash ~/.config/rofi/code/powermenu/run.sh 
+    bash ~/.config/rofi/search/powermenu/run.sh 
 
 #  Nerd Fonts launcher
 super + n
@@ -67,14 +67,6 @@ super + ctrl + F11
 #  Monitor off
 super + ctrl + F12
      bash ~/.config/sxhkd/alerts/monitor_off.sh
-
-#  Launch Dock
-F9
-  plank
-
-#  Kill Dock
-F8
-  killall plank
 
 #  ___         _             
 # / __|_  _ __| |_ ___ _ __  
