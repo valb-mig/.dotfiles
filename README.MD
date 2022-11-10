@@ -45,3 +45,8 @@ sudo apt install tree feh rofi npm ranger cava polybar git build-essential kitty
   <summary><h3>🦊 Firefox</h3></summary>
   <img src=".assets/firefox.png" align="center" width="1000">
 </details>
+
+<details>
+  <summary><h3>🔋 Scripts</h3></summary>
+  ``` Wait ```
+</details>
