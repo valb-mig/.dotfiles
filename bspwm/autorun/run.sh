@@ -22,7 +22,7 @@ xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 -
 #| Fix java
 bash ~/.config/bspwm/scripts/java_fix.sh
 
-#| Code bar
+#| Polybar
 $bash ~/.config/polybar/code/launch.sh &
 
 #| Wallpaper
@@ -33,7 +33,3 @@ xsetroot -cursor_name left_ptr &
 
 #| Picom
 picom &
-
-#| 2° Borders
-#| bash ~/.config/bspwm/borders
-

@@ -16,7 +16,7 @@ bspc monitor eDP1 -d  1
 #| \__/\___/_//_/_//_/\_, / 
 #|                   /___/  
 
-bspc config window_gap 10
+bspc config window_gap 5
 
 bspc config focused_border_color  "#232323"
 bspc config normal_border_color   "#101010"
@@ -36,8 +36,9 @@ nm-applet &
 
 #| Auto run
 
+bspc config border_width 0 
+
 bash ~/.config/bspwm/autorun/run.sh
-bspc config border_width 2
 
 #|    ___       __       
 #|   / _ \__ __/ /__ ___ 
