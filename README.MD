@@ -45,6 +45,10 @@ sudo apt install tree npm ranger cava git build-essential kitty cmake libtool li
 🥸 How to make neovim work correctly
 </h2><br>
 
+<details>
+  <summary><h3>🔋 Scripts</h3></summary>
+  ``` Wait ```
+</details>
 - First clone the oficial neovim repo
 
 ```
