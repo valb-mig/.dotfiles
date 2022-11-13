@@ -39,26 +39,13 @@ super + Return
 super + d
     bash ~/.config/rofi/search/launcher.sh
 
-#  Emoji launcher
-super + e
-    bash ~/.config/rofi/code/emoji/run.sh
-
-#  App launcher
- super + a
-    bash ~/.config/rofi/launchers/type-5/launcher.sh
-
 #  Powermenu launcher
 super + k
-    bash ~/.config/rofi/search/powermenu/run.sh 
-
-#  Nerd Fonts launcher
-super + n
-    bash ~/.config/rofi/code/nfonts/rofi-nerdfonts.sh 
+    bash ~/.config/rofi/powermenu/type-5/launcher.sh 
 
 #  Program launcher
 super + r
      kitty ranger
-
 
 #  Monitor on
 super + ctrl + F11
