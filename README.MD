@@ -82,3 +82,44 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   <summary><h3>🦊 Firefox</h3></summary>
   <img src=".assets/firefox.png" align="center" width="1000">
 </details>
+
+<details>
+  <summary><h3>✨ Pop Setup</h3></summary>
+  <img src=".assets/pop.png" align="center" width="1000">
+
+  <br><h2>
+    ⚙️ Some modifications i make in pop setup, like
+  </h2><br>
+
+  - Remove launcher hint color
+  
+  ```
+  sudo vim /usr/share/gnome-shell/extensions/pop-shell@system76.com/launcher.js
+
+  In line 47 change ext.overlay.visible = true; to false.
+  ```
+
+</details>
+
+<br><h2>
+  🐸 If you want spicetify
+</h2><br>
+<p>
+🚧 This page is in construction !!
+</p>
+
+```
+curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+
+sudo chmod a+wr /usr/share/spotify
+
+sudo chmod a+wr /usr/share/spotify/Apps -R
+
+cd .spicetify
+
+./spicetify backup apply enable-devtool
+
+./spicetify restart
+
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
+```
