@@ -20,7 +20,7 @@ USE_ICON=YES
 
 /*****----- Main Window -----*****/
 window {
-    font:                       "CaskaydiaCove Nerd Font 10";
+    font:                       "JetBrainsMono Nerd Font 10";
     transparency:                "real";
     location:                    northeast;
     fullscreen:                  false;
@@ -30,7 +30,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
-    border-radius:               0px;
+    border-radius:               14px;
     border-color:                #101010;
     cursor:                      "default";
     background-color:            #080808;
@@ -120,7 +120,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "CaskaydiaCove Nerd Font 20";
+    font:                        "JetBrainsMono Nerd Font 20";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
