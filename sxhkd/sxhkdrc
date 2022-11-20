@@ -29,6 +29,10 @@ super + shift + c
 super + Return
     kitty
 
+#  Pick Color
+super + ctrl + p  
+    gpick
+
 #   ___         _      _      
 # / __| __ _ _(_)_ __| |_ ___
 # \__ \/ _| '_| | '_ \  _(_-<
@@ -41,7 +45,7 @@ super + d
 
 #  Powermenu launcher
 super + k
-    bash ~/.config/rofi/powermenu/type-5/launcher.sh 
+    bash ~/.config/rofi/powermenu/launcher.sh 
 
 #  Program launcher
 super + r
@@ -70,7 +74,7 @@ Print
   bash ~/.config/sxhkd/alerts/print.sh
 
 # lockscreen
-alt + shift + x
+super + l
     betterlockscreen --lock blur
 
 # Reload Keybinds

@@ -1,12 +1,8 @@
 #!bin/bash
 
-# Kill some programs
+# Kill polybar
 
 killall polybar
-
-killall plank
-
-killall picom
 
 # Configure one monitor
 
@@ -15,6 +11,10 @@ xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 -
 # Wallpaper
 
 $bash ./.fehbg
+
+# Load polybar one monitor
+
+$bash ~/.config/polybar/code_one_monitor/launch.sh &
 
 # Notify
 
