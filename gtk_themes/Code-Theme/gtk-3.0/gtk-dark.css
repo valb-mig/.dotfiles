@@ -49,7 +49,7 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, box.vertical > 
 
 .nemo-window .view selection, .nemo-window .view:selected, .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window.background.csd notebook widget.view:selected, flowbox flowboxchild:selected {
   color: #CF9D71;
-  background-color: rgba(007, 007, 007, 0.2);
+  background-color: rgba(007, 007, 007, 2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
@@ -97,13 +97,16 @@ entry selection, label selection, textview text selection:focus, textview text s
 /***************
  * Base States *
  ***************/
+
+/* Tree View Bar - Code = A03 */
+
 .background {
-  background-color: #0e0e0e;
+  background-color: #0b0b0b;
   color: #A5A5A5;
 }
 
 .background.csd {
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 0px 0px;
 }
 
 .background.maximized, .background.solid-csd {
@@ -157,7 +160,7 @@ entry selection, label selection, textview text selection:focus, textview text s
 }
 
 window.background.csd > stack.view {
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 0px 0px;
 }
 
 textview text {
@@ -172,6 +175,8 @@ textview border {
 iconview:hover, iconview:selected {
   border-radius: 6px;
 }
+
+/* Left Click Selection - Code = A07 */
 
 .rubberband,
 rubberband,
@@ -188,8 +193,8 @@ flowbox treeview.view rubberband,
 flowbox rubberband,
 flowbox treeview.view rubberband,
 treeview.view flowbox rubberband {
-  border: 2px solid #0e0e0e;
-  background-color: rgba(025, 025, 025, 0.3);
+  border: 2px solid rgba(007, 007, 007, 0.7);
+  background-color: rgba(007, 007, 007, 0.7);
 }
 
 flowbox flowboxchild {
@@ -1518,8 +1523,10 @@ headerbar {
   padding: 0 6px;
 }
 
+/* Title Bar - Code = A01 */
+
 box.vertical headerbar {
-  background-color: #101010;
+  background-color: #070707;
 }
 
 headerbar entry,
@@ -1856,15 +1863,17 @@ menubar > menuitem > window.popup.background > menu menuitem,
   background-color: transparent;
 }
 
+/* Left Click Menu - Code = A02 */ 
+
 menu,
 .menu,
 .context-menu {
   margin: 6px;
   padding: 6px;
-  background-color: #0e0e0e;
+  background-color: #070707;
   background-clip: border-box;
   border-radius: 12px;
-  border: 2px solid #0e0e0e;
+  border: 2px solid #070707;
 }
 
 .csd menu, .csd .menu, .csd .context-menu {
@@ -2119,9 +2128,11 @@ frame > paned > notebook > header, notebook.frame > header {
   background-color: rgba(215, 215, 215, 0.04);
 }
 
+/* Bottom Title Bar Frame - Code = A04 */
+
 notebook, notebook.frame {
   background-color: #101010;
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 notebook.frame frame > border {
@@ -3791,7 +3802,7 @@ tooltip {
 }
 
 tooltip.background {
-  background-color: rgba(12, 13, 13, 0.9);
+  background-color: rgba(12, 12, 12, 0.9);
   color: #A5A5A5;
 }
 
@@ -4265,13 +4276,15 @@ popover.emoji-completion .emoji:hover {
   border-radius: 0;
 }
 
+/* Floating Status Bar Bottom Screen - Code = A05 */
+
 .nautilus-window .floating-bar {
   min-height: 32px;
   padding: 0;
   margin: 6px;
   border-style: none;
   border-radius: 6px;
-  background-color: #101010;
+  background-color: #070707;
   color: #A5A5A5;
 }
 
@@ -4397,6 +4410,8 @@ popover.emoji-completion .emoji:hover {
 .nautilus-window flowboxchild:selected {
   background-color: transparent;
 }
+
+/* Selection Left Click - Code = A06 */
 
 .nautilus-window notebook :not(treeview).view {
   border-radius: 6px;
