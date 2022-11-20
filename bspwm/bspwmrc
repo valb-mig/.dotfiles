@@ -9,14 +9,13 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor HDMI2 -d 2 3 4 5
 bspc monitor eDP1 -d  1
 
-
 #|                 ____     
 #|  _______  ___  / _(_)__ _
 #| / __/ _ \/ _ \/ _/ / _ `/
 #| \__/\___/_//_/_//_/\_, / 
 #|                   /___/  
 
-bspc config window_gap 5
+bspc config window_gap 7
 
 bspc config focused_border_color  "#232323"
 bspc config normal_border_color   "#101010"
@@ -36,9 +35,9 @@ nm-applet &
 
 #| Auto run
 
-bspc config border_width 0 
-
 bash ~/.config/bspwm/autorun/run.sh
+
+bspc config border_width 2 
 
 #|    ___       __       
 #|   / _ \__ __/ /__ ___ 
@@ -49,6 +48,7 @@ bspc rule -a firefox  desktop='^2' follow=on focus=off
 bspc rule -a discord  desktop='^2' follow=on focus=off
 bspc rule -a VSCodium desktop='^3' follow=on focus=off
 bspc rule -a Code     desktop='^3' follow=on focus=off
+bspc rule -a Gpick    state=floating
 
 bspc rule -a gimp    follow=off focus=off
 bspc rule -a Toolkit state=floating follow=on
