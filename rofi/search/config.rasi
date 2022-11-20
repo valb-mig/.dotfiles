@@ -55,8 +55,8 @@ window {
     location:                    northwest;
     fullscreen:                  false;
     width:                       420px;
-    x-offset:                    10px;
-    y-offset:                    50px;
+    x-offset:                    7px;
+    y-offset:                    51px;
 
     /* properties for all widgets */
 
