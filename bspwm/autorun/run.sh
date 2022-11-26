@@ -32,5 +32,5 @@ $bash ./.fehbg
 xsetroot -cursor_name left_ptr &
 
 #| Picom
-# picom --experimental-backends
+# picom --experimental-backends & <- Bad pc ;-;
 

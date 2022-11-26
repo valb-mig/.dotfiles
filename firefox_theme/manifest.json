@@ -1,8 +1,7 @@
 {
-
-  "name": "Cascade",
-  "version": "2.7.6",
-  "description": "Minimalist, Simple, Keyboard Centered and heavily based on SimpleFox. 🦊",
+  "name": "CodeTheme",
+  "version": "0.0.1",
+  "description": "Code theme for Codders",
   "manifest_version": 2,
 
   "applications": {
@@ -14,5 +13,4 @@
   "theme_experiment": {
     "stylesheet": "userChrome.css"
   }
-
 }

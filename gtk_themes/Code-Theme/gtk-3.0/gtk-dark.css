@@ -4212,9 +4212,10 @@ popover.emoji-completion .emoji:hover {
 /************
  * Nautilus *
  ************/
+
 .nautilus-window.background.csd {
   border-radius: 0 0 12px 12px;
-  background-color: #101010;
+  background-color: #0b0b0b;
 }
 
 .nautilus-window.background.csd:backdrop {

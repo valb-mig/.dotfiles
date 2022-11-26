@@ -12,10 +12,10 @@ configuration {
     font:                       "JetBrainsMono Nerd Font 12";
     modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               " ";
-    display-run:                " ";
-    display-filebrowser:        " ";
-    display-window:             " ";
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
 }
@@ -55,8 +55,8 @@ window {
     location:                    northwest;
     fullscreen:                  false;
     width:                       420px;
-    x-offset:                    7px;
-    y-offset:                    51px;
+    x-offset:                    8px;
+    y-offset:                    54px;
 
     /* properties for all widgets */
 
@@ -64,7 +64,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
-    border-radius:               14px;
+    border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
     background-color:            @background-colour;
