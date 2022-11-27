@@ -1,6 +1,6 @@
 <h1 align="center">Code Dotfiles</h1>
 
-<img src=".assets/dots.png" align="left" width="508">
+<img src="assets/dots.png" align="left" width="508">
 
 - Os: [Pop-os](https://pop.system76.com/)
 - Wm: [Bspwm](https://github.com/baskerville/bspwm)
@@ -18,7 +18,7 @@
 <h3>🤏 First install the <b>dependencies</b></h3>
 
 ```
-sudo apt install tree npm ranger cava git build-essential kitty scrot cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson unzip feh rofi polybar bspwm sxhkd dunst 
+sudo apt install tree npm ranger cava git build-essential kitty scrot cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson unzip feh rofi polybar bspwm sxhkd dunst jq
 ```
 
 <h3>🫴 Without bspwm</b></h3>
@@ -34,12 +34,12 @@ sudo apt install tree npm ranger cava git build-essential kitty cmake libtool li
 
 <details>
   <summary><h3>🖥️ Desktop</h3></summary>
-  <img src=".assets/desktop.png" align="center" width="1000">
+  <img src="assets/desktop.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>💾 Neovim</h3></summary>
-  <img src=".assets/neovim.png" align="center" width="1000">
+  <img src="assets/neovim.png" align="center" width="1000">
 
 <br><h2>
 🥸 How to make neovim work correctly
@@ -75,17 +75,17 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 <details>
   <summary><h3>📁 Gtk Theme</h3></summary>
-  <img src=".assets/thunar.png" align="center" width="1000">
+  <img src="assets/thunar.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>🦊 Firefox</h3></summary>
-  <img src=".assets/firefox.png" align="center" width="1000">
+  <img src="assets/firefox.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>✨ Pop Setup</h3></summary>
-  <img src=".assets/pop.png" align="center" width="1000">
+  <img src="assets/pop.png" align="center" width="1000">
 
   <br><h2>
     ⚙️ Some modifications i make in pop setup, like

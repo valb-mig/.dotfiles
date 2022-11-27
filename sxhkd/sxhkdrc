@@ -51,6 +51,10 @@ super + k
 super + r
      kitty ranger
 
+#  Switch Windows
+super + {grave, tab}
+    bash ~/.config/rofi/switch/launcher.sh
+
 #  Monitor on
 super + ctrl + F11
      bash ~/.config/sxhkd/alerts/monitor_on.sh
@@ -119,9 +123,9 @@ super + bracket{left,right}
  
 # focus the last node desktop
 
-super + {grave,Tab}                                                                                                                                                                                                   
-        bspc {node,desktop} -f last                                                                                                                                                                                   
-                                                                                                                                                                                                                      
+#super + grave               
+
+#        bspc {node,desktop} -f last                                                                                                                  
 # focus the older or newer node in the focus history                                                                                                                                                                  
 super + {o,i}                                                                                                                                                                                                         
         bspc wm -h off; \                                                                                                                                                                                             
