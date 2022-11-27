@@ -10,12 +10,12 @@
 /*****----- Configuration -----*****/
 configuration {
     font:                       "JetBrainsMono Nerd Font 12";
-    modi:                       "drun,run,filebrowser,window";
+    modi:                       "drun,run,emoji,window";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+    display-drun:               "";
+    display-run:                "";
+    display-emoji:              "粒";
+    display-window:             "";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
 }

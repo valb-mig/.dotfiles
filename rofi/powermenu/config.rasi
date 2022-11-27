@@ -23,12 +23,12 @@ USE_BUTTONS=YES
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    center;
+    location:                    northeast;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
-    x-offset:                    0px;
-    y-offset:                    0px;
+    width:                       410px;
+    x-offset:                    -212px;
+    y-offset:                    139px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -65,7 +65,7 @@ inputbar {
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  #a5a5a5;
-    children:                    [ "textbox-prompt-colon", "prompt"];
+    children:                    ["prompt", "textbox-prompt-colon"];
 }
 
 dummy {
@@ -75,8 +75,8 @@ dummy {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
-    padding:                     12px 16px;
+    str:                         "";
+    padding:                     12px 10px;
     border-radius:               12px;
     background-color:            #CB636A;
     text-color:                  #070707;
@@ -147,7 +147,7 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     40px 10px;
+    padding:                     16px 10px;
     border:                      0px solid;
     border-radius:               12px;
     border-color:                @selected;
@@ -156,7 +156,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather bold 32";
+    font:                        "feather bold 15";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
