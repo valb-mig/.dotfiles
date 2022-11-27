@@ -1,6 +1,6 @@
 <h1 align="center">Code Dotfiles</h1>
 
-<img src="assets/dots.png" align="left" width="508">
+<img src=".assets/dots.png" align="left" width="508">
 
 - Os: [Pop-os](https://pop.system76.com/)
 - Wm: [Bspwm](https://github.com/baskerville/bspwm)
@@ -34,12 +34,12 @@ sudo apt install tree npm ranger cava git build-essential kitty cmake libtool li
 
 <details>
   <summary><h3>🖥️ Desktop</h3></summary>
-  <img src="assets/desktop.png" align="center" width="1000">
+  <img src=".assets/desktop.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>💾 Neovim</h3></summary>
-  <img src="assets/neovim.png" align="center" width="1000">
+  <img src=".assets/neovim.png" align="center" width="1000">
 
 <br><h2>
 🥸 How to make neovim work correctly
@@ -75,17 +75,17 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 <details>
   <summary><h3>📁 Gtk Theme</h3></summary>
-  <img src="assets/thunar.png" align="center" width="1000">
+  <img src=".assets/thunar.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>🦊 Firefox</h3></summary>
-  <img src="assets/firefox.png" align="center" width="1000">
+  <img src=".assets/firefox.png" align="center" width="1000">
 </details>
 
 <details>
   <summary><h3>✨ Pop Setup</h3></summary>
-  <img src="assets/pop.png" align="center" width="1000">
+  <img src=".assets/pop.png" align="center" width="1000">
 
   <br><h2>
     ⚙️ Some modifications i make in pop setup, like
