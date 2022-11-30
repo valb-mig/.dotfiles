@@ -7,7 +7,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 #| /_/  /_/\___/_//_/_/\__/\___/_/   
 
 bspc monitor HDMI2 -d 2 3 4 5
-bspc monitor eDP1  -d  1
+bspc monitor eDP1  -d 1
 
 #|                 ____     
 #|  _______  ___  / _(_)__ _
@@ -44,12 +44,11 @@ bspc config border_width 2
 #|  / , _/ // / / -_|_-< 
 #| /_/|_|\_,_/_/\__/___/ 
 
-bspc rule -a firefox  follow=on focus=off
-bspc rule -a discord  follow=on focus=off
-bspc rule -a VSCodium follow=on focus=off
-bspc rule -a Code     follow=on focus=off
-bspc rule -a Gpick    follow=on state=floating
-
-bspc rule -a gimp    follow=off     focus=off
-bspc rule -a Toolkit state=floating follow=on
+bspc rule -a firefox          follow=on  focus=off
+bspc rule -a discord          follow=on  focus=off
+bspc rule -a Code             follow=on  focus=off
+bspc rule -a Gpick            follow=on  state=floating
+bspc rule -a Salwyrr Launcher follow=on  state=floating
+bspc rule -a gimp             follow=off            
+bspc rule -a Toolkit          follow=on  state=floating
 
