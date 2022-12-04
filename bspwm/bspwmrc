@@ -44,11 +44,11 @@ bspc config border_width 2
 #|  / , _/ // / / -_|_-< 
 #| /_/|_|\_,_/_/\__/___/ 
 
-bspc rule -a firefox          follow=on  focus=off
-bspc rule -a discord          follow=on  focus=off
-bspc rule -a Code             follow=on  focus=off
-bspc rule -a Gpick            follow=on  state=floating
-bspc rule -a Salwyrr Launcher follow=on  state=floating
+bspc rule -a firefox          follow=off  focus=off
+bspc rule -a discord          follow=off  focus=off
+bspc rule -a Code             follow=off  focus=off
+bspc rule -a Gpick            follow=off  state=floating
+bspc rule -a Salwyrr Launcher follow=off  state=floating
 bspc rule -a gimp             follow=off            
-bspc rule -a Toolkit          follow=on  state=floating
+bspc rule -a Toolkit          follow=off  state=floating
 
