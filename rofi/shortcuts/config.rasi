@@ -1,0 +1,113 @@
+configuration
+{
+    font:               "JetBrainsMono Nerd Font 12";
+    show-icons:         false;
+    hide-scrollbar:     true;
+}
+
+@import "colors.rasi"
+
+mainbox 
+{
+    enabled:            true;
+    spacing:            15px;
+    margin:             0px;
+    padding:            0px;
+    border:             0px solid;
+    border-radius:      12px;
+    border-color:       #101010;
+    background-color:   transparent;
+    children:           [ "inputbar", "listview" ];
+}
+
+window 
+{
+    location:           north;
+    anchor:             center;
+    fullscreen:         false;
+    width:              410px;
+    y-offset:           121px;
+    enabled:            true;
+    margin:             0px;
+    padding:            0px;
+    border:             2px solid;
+    border-radius:      0px;
+    border-color:       #101010;
+    cursor:             "default";
+    background-color:   #070707;
+}
+
+prompt 
+{
+    enabled:            true;
+    padding:            12px;
+    border-radius:      12px;
+    background-color:   #58cc7a;
+    text-color:         #070707;
+}
+
+textbox-prompt-colon 
+{
+    font:               "JetBrainsMono Nerd Font 18";
+	expand: 	        false;
+	str: 		        "省";
+	background-color:   @bg;
+	text-color: 	    @fg1;
+    padding:            8px 10px 0px 10px;
+}
+
+inputbar 
+{
+    enabled:            true;
+    spacing:            15px;
+    margin:             0px;
+    padding:            0px;
+    border:             0px;
+    border-radius:      0px;
+    border-color:       @selected;
+    background-color:   transparent;
+    text-color:         #a5a5a5;
+    children:           ["textbox-prompt-colon","prompt"];
+}
+
+listview 
+{
+    columns:	        6;
+    lines:	            1;
+    spacing:            12px;
+    layout:             vertical;
+    background-color:   @bg;
+}
+
+mainbox 
+{
+    background-color:   @bg;
+    children:           [ inputbar, listview ];
+    spacing:            12px;
+    margin:             12px;
+}
+
+element 
+{
+    background-color:   @bg2;
+    text-color:         @fg1;
+    orientation:        vertical;
+    border-radius:      12px;
+}
+
+element-text 
+{
+    font:			    "JetBrainsMono Nerd Font 20";
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             inherit;
+    horizontal-align:   0.5;
+    vertical-align:     10;
+    margin:             10px 10px 12px 10px;
+}
+
+element selected.normal 
+{
+    background-color:   @purple;
+    text-color:         @bg;
+}
