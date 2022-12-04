@@ -47,6 +47,10 @@ super + d
 super + k
     bash ~/.config/rofi/powermenu/launcher.sh 
 
+#  Quicklinks launcher
+super + q
+    bash ~/.config/rofi/shortcuts/launcher.sh 
+
 #  Program launcher
 super + r
      kitty ranger
