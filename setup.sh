@@ -6,14 +6,9 @@ ln -s ~/.dotfiles/sxhkd ~/.config
 ln -s ~/.dotfiles/polybar ~/.config
 ln -s ~/.dotfiles/kitty ~/.config
 ln -s ~/.dotfiles/nvim ~/.config
-ln -s ~/.dotfiles/jgmenu ~/.config
 ln -s ~/.dotfiles/dunst ~/.config
 ln -s ~/.dotfiles/rofi ~/.config
-ln -s ~/.dotfiles/plank ~/.config
 ln -s ~/.dotfiles/picom ~/.config
-
-# If you want my theme / Make sure you have a .theme folder in your ~/ (HOME DIR) 
-cp -r ~/.dotfiles/gtk_themes/Code-Theme ~/.themes
 
 # Move to ${HOME}
 ln -s ~/.dotfiles/src ~/
@@ -25,4 +20,15 @@ ln -s ~/.dotfiles/src ~/
 # Images
 cp ~/.dotfiles/wallpapers/macd2.jpg ~/Pictures
 cp ~/.dotfiles/wallpapers/wallpaper_switch_1.png ~/Pictures
+
+# Screenshots directory
+
+echo "\n Creating Screenshots Directory :) \n"
+
+if [ -d  "Pictures/Screenshots/" ]
+then
+  echo "Directory 'Pictures/Screenshots' Exixts :/"
+else
+  mkdir "Pictures/Screenshots"
+fi
 
