@@ -9,8 +9,8 @@ window
     location:           northeast;
     anchor:             center;
     fullscreen:         false;
-    width:              410px;
-    x-offset:           -212px;
+    width:              480px;
+    x-offset:           -248px;
     y-offset:           142px;
     enabled:            true;
     margin:             0px;
@@ -46,7 +46,7 @@ inputbar
     border-color:       @selected;
     background-color:   transparent;
     text-color:         #a5a5a5;
-    children:           ["prompt", "textbox-prompt-colon"];
+    children:           ["prompt"];
 }
 
 dummy 
@@ -57,7 +57,7 @@ dummy
 textbox-prompt-colon 
 {
     enabled:            true;
-    expand:             true;
+    expand:             false;
     str:                "";
     padding:            10px 9px;
     border-radius:      12px;
@@ -68,6 +68,7 @@ textbox-prompt-colon
 prompt 
 {
     enabled:            true;
+    expand:             false;
     padding:            12px;
     border-radius:      12px;
     background-color:   #58cc7a;

@@ -32,8 +32,8 @@ case $chosen in
     $mail)
         $app https://www.gmail.com &
         ;;
-    $youtube)
-        $app https://www.youtube.com &
+    $code)
+        code
         ;;
     $folder)
         nautilus
