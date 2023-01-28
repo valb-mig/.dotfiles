@@ -38,6 +38,11 @@ sudo apt install tree npm ranger cava git build-essential kitty cmake libtool li
 </details>
 
 <details>
+  <summary><h3>🔌 Terminal</h3></summary>
+  <img src=".assets/terminal.png" align="center" width="1000">
+</details>
+
+<details>
   <summary><h3>💾 Neovim</h3></summary>
   <img src=".assets/neovim.png" align="center" width="1000">
 
