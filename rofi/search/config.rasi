@@ -23,23 +23,23 @@ configuration {
 /*****----- Global Properties -----*****/
 
 * {
-    border-colour:               #101010;
+    border-colour:               #191919;
     handle-colour:               #101010;
-    background-colour:           #080808;
+    background-colour:           #101010;
     foreground-colour:           #A5A5A5;
-    alternate-background:        #121212;
-    normal-background:           #080808;
+    alternate-background:        #191919;
+    normal-background:           #101010;
     normal-foreground:           #A5A5A5;
     urgent-background:           red;
-    urgent-foreground:           #080808;
+    urgent-foreground:           #101010;
     active-background:           #58CC7A;
-    active-foreground:           #080808;
-    selected-normal-background:  #121212;
+    active-foreground:           #101010;
+    selected-normal-background:  #191919;
     selected-normal-foreground:  #A5A5A5;
     selected-urgent-background:  red;
     selected-urgent-foreground:  red;
     selected-active-background:  #594BA0;
-    selected-active-foreground:  #080808;
+    selected-active-foreground:  #101010;
     alternate-normal-background: var(background);
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
@@ -52,11 +52,11 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    northwest;
+    location:                    south;
     fullscreen:                  false;
-    width:                       420px;
-    x-offset:                    8px;
-    y-offset:                    50px;
+    width:                       620px;
+    height:                      500px;
+    y-offset:                    -45px;
 
     /* properties for all widgets */
 
@@ -91,8 +91,8 @@ inputbar {
     padding:                     0px;
     border:                      3px solid;
     border-radius:               12px;
-    border-color:                #121212;
-    background-color:            #121212;
+    border-color:                #191919;
+    background-color:            #191919;
     text-color:                  @foreground-colour;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
@@ -262,7 +262,7 @@ button {
 }
 button selected {
     background-color:            #CF9D71;
-    text-color:                  #080808;
+    text-color:                  #101010;
 }
 
 /*****----- Message -----*****/

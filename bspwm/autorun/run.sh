@@ -23,7 +23,7 @@ xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 -
 bash ~/.config/bspwm/scripts/java_fix.sh
 
 #| Polybar
-$bash ~/.config/polybar/code/launch.sh &
+$bash ~/.config/polybar/regular/launch.sh &
 
 #| Wallpaper
 $bash ./.fehbg

@@ -1,8 +1,8 @@
 configuration
 {
-    font:               "JetBrainsMono Nerd Font 12";
-    show-icons:         false;
-    hide-scrollbar:     true;
+    font:           "JetBrainsMono Nerd Font 12";
+    show-icons:     false;
+    hide-scrollbar: true;
 }
 
 @import "colors.rasi"
@@ -15,18 +15,18 @@ mainbox
     padding:            0px;
     border:             0px solid;
     border-radius:      12px;
-    border-color:       #101010;
+    border-color:       #191919;
     background-color:   transparent;
     children:           [ "inputbar", "listview" ];
 }
 
 window 
 {
-    location:           north;
-    anchor:             center;
+    location:           southwest;
     fullscreen:         false;
     width:              410px;
-    y-offset:           121px;
+    y-offset:           -45px;
+    x-offset:           8px;
     enabled:            true;
     margin:             0px;
     padding:            0px;
@@ -34,7 +34,7 @@ window
     border-radius:      0px;
     border-color:       #101010;
     cursor:             "default";
-    background-color:   #070707;
+    background-color:   #101010;
 }
 
 prompt 
@@ -43,14 +43,14 @@ prompt
     padding:            12px;
     border-radius:      12px;
     background-color:   #58cc7a;
-    text-color:         #070707;
+    text-color:         #101010;
 }
 
 textbox-prompt-colon 
 {
     font:               "JetBrainsMono Nerd Font 18";
 	expand: 	        false;
-	str: 		        "省";
+	str: 		        "";
 	background-color:   @bg;
 	text-color: 	    @fg1;
     padding:            8px 10px 0px 10px;
