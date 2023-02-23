@@ -18,8 +18,10 @@
 <h3>🤏 First install the <b>dependencies</b></h3>
 
 ```
-sudo apt install tree npm ranger cava git build-essential kitty scrot cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson unzip feh rofi polybar bspwm sxhkd dunst jq
+sudo apt install tree npm ranger cava git build-essential kitty scrot cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson unzip feh rofi polybar bspwm sxhkd dunst jq libgtk-3-dev libgdk3.0-cil-dev libpango1.0-dev libgdk-pixbuf-2.0-dev libcairo2-dev  libgio3.0-cil-dev libglib3.0-cil-dev libgcc-10-dev glibc-tools rust-all
 ```
+eww placeholder ( curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh ) (rustup install nightly) (source $HOME/.cargo/env)
+
 
 <h3>🫴 Without bspwm</b></h3>
 
