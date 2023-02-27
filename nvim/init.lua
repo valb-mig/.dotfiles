@@ -21,6 +21,10 @@ vim.o.expandtab = true
 vim.o.shiftwidth =  2
 vim.o.softtabstop = 2
 
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Numbers
 vim.o.number = true
 

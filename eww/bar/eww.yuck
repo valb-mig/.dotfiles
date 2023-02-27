@@ -1,0 +1,249 @@
+;; Created   by https://github.com/rxyhn
+;; Designed  by https://github.com/rxyhn
+;; Maintaned by https://github.com/rxyhn
+
+;; Modifiyed by https://github.com/valb-mig
+
+(defpoll memory :interval "15s" "scripts/memory")
+(defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
+
+;; put path to aesthetic bar config files here ;;
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+
+;; Music vars
+(defpoll SONG :interval "1s" `scripts/music_info --song`)
+(defpoll ARTIST :interval "1s" `scripts/music_info --artist`)
+(defpoll COVER :interval "1s" `scripts/music_info --cover`)
+(defpoll STATUS :interval "1s" `scripts/music_info --status`)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Widget Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Launcher Widgets ;;
+(defwidget launcher []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :spacing -15
+  	(button :class   "launcher_icon" 
+		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
+			"")))
+
+
+;; Workspaces Widgets ;;
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+
+
+;; Wifi Widgets ;;
+(defwidget wifi []
+	(box		:orientation "v"  
+				:tooltip wifi-name
+	(button		:onclick "scripts/popup wifi" 
+				:class "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
+;; Memory Widget ;;
+(defwidget mem []
+
+	(box :orientation  "v" 
+		 :space-evenly "false" 
+		 :spacing 2
+		
+		(scale :class "bars"
+			:value memory
+			:orientation "v"
+			:flipped true
+			:max 100
+			:min 0)
+
+		(button 
+			:class "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"")
+	)
+)
+
+;; music
+; (defwidget music_pop [] 
+; 	(box :class "dockbox"
+; 		(box :orientation "v" :spacing 0 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+; 			(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
+; 			(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+; 				(label :class "song" :halign "center" :wrap "false" :limit-width 5 :text SONG)
+; 				(label :class "artist" :halign "center" :wrap "false" :limit-width 5 :text ARTIST)))
+; 		(box :class "musicbuttons" :orientation "v" :spacing 5 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+; 			(button :style "background-image: url('images/icons/music/previous-button.png');" :class "trackbutton" :onclick "scripts/music_info --prev")
+; 			(button :style "background-image: url('${STATUS}');" :class "playbutton" :onclick "scripts/music_info --toggle")
+; 			(button :style "background-image: url('images/icons/music/next-button.png');" :class "trackbutton" :onclick "scripts/music_info --next"))))
+
+;; Volume Widgets ;;
+(defwidget volum []
+	(eventbox :onhover "${eww} update volum=true" 		
+			  :onhoverlost "${eww} update volum=false"
+
+	(box      :orientation "v" 	  
+			  :space-evenly "false" 
+			  :spacing "2"
+
+	(revealer :transition "slideup" 
+			  :reveal volum         
+			  :duration "550ms"
+
+	(scale    :class "volbar" 	  
+			  :value current-volume 
+			  :orientation "v"      
+			  :flipped true 
+			  :max 101 
+			  :min 0 
+			  :onchange "amixer -D pulse sset Master {}%" ))
+			  
+	(button   :onclick "scripts/popup audio"   :class "volume-icon" "󰋎"))))
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volum false)
+
+;; Control Panel Widgets ;;	
+(defwidget control []
+	(box :orientation "v" 
+		 :space-evenly false  
+		 :class "control"
+(volum)))
+
+;; Control Panel Widgets ;;	
+(defwidget system []
+	(box :orientation "v" 
+		 :space-evenly false  
+		 :class "control"
+(mem)))
+
+;; Clock Widgets ;;
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+	(button	
+			:onclick "~/.local/bin/eww -c ~/.config/eww/bar open calendar"
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/bar close calendar"
+			:class "time-hour" hour)
+	
+	(button	
+			:onclick "~/.local/bin/eww -c ~/.config/eww/bar open calendar"	
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/bar close calendar"
+			:class "time-min"  min)))
+
+(defpoll hour :interval "1s" "date '+%H'")
+(defpoll min  :interval "1s" "date '+%M'")
+
+;; Calendar Widgets ;;
+(defwidget cal []
+	(box :class "cal-box" 
+		 :orientation "v"
+	(box :class "cal-inner-box"
+	(calendar :class "cal" 
+			  :day   calendar_day 
+			  :month calendar_month 
+			  :year  calendar_year))))
+(defpoll calendar_day :interval "10h"
+    "date '+%d'")
+(defpoll calendar_month :interval "10h"
+    "scripts/calendar")
+(defpoll calendar_year :interval "10h"
+    "date '+%Y'")
+
+;; Top Widgets ;;
+(defwidget top []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "start" 
+(launcher)
+(workspaces)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+	(box	:orientation "v" 
+			:space-evenly false 
+(time)
+(power)))
+
+;; Powermenu Widgets ;;
+(defwidget power []
+	(eventbox	:onhover "${eww} update power=true"	
+				:onhoverlost "${eww} update power=false" 
+	(box		:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				:class "powermenu"
+	(revealer	:transition "slideup"				
+				:reveal power			 
+				:duration "550ms"
+	(box		:orientation "v"					
+				:space-evenly "false"
+
+	(button		:class "button-shutdown" 				
+				:onclick "shutdown now" "")
+
+  	(button		:class "button-reb"					
+				:onclick "reboot"	"")
+
+	(button		:class "button-quit" 				
+				:onclick "killall bspwm" "")))
+
+	(button		:class "button-off"					
+				:onclick ""	""))))
+(defvar power false)
+
+;; End Widgets ;;
+(defwidget end []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5
+		 :class "bg"
+(system)
+(control)
+(bottom)))
+
+;; Bar Widgets ;;
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "v" 
+		 :vexpand "false" 
+		 :hexpand "false"
+(top)
+; (music_pop)
+(end)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Window Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Bar Windows ;;
+(defwindow bar
+	:geometry (geometry :x "1873" 
+						:y "0" 
+						:height "100%" 
+						:width "47px")
+	:monitor 0
+	:reserve (struts :distance "48px" 
+					 :side "right")
+	:wm-ignore false
+	:hexpand  "false"
+	:vexpand  "false"
+(bar))
+
+;;  music
+(defwindow music_win :stacking "fg" :focusable "false" :screen 1
+:geometry (geometry :x "0" :y "7%" :width 428 :height 104 :anchor "top center")
+				 (music_pop))
+
+;; Calendar Windows ;;
+(defwindow calendar
+	:geometry (geometry :x "83%" 
+						:y "70%" 
+						:width "270px" 
+						:height "60px")
+(cal))
