@@ -22,6 +22,11 @@
 ;;							Widget Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Workspaces Widgets ;;
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
 ;; Launcher Widgets ;;
 (defwidget launcher []
 	(box :orientation "v" 
@@ -31,22 +36,51 @@
 		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
 			"")))
 
-
-;; Workspaces Widgets ;;
-(defwidget workspaces []
-	(literal :content workspace))
-(deflisten workspace "scripts/workspace")
-
-
-
-;; Wifi Widgets ;;
-(defwidget wifi []
-	(box		:orientation "v"  
-				:tooltip wifi-name
-	(button		:onclick "scripts/popup wifi" 
-				:class "wifi-icon" wifi-icon)))
-(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
-(defpoll wifi-name :interval "1s" "scripts/wifi name")
+;; Dock Widget ;;
+(defwidget dock []
+	(eventbox	:onhover "${eww} update dock=true"	
+				:onhoverlost "${eww} update dock=false" 
+	
+		(box		:orientation "v"					
+					:space-evenly "false" 	 
+					:vexpand "false" 	
+					:class "dock"
+			
+			(button :class "dock-dropdown"					
+					:onclick ""	"")
+		
+			(revealer	:transition "slidedown"				
+						:reveal dock			 
+						:duration "550ms"
+			
+				(box		:orientation "v"					
+							:space-evenly "false"
+					
+					(button :class   "dock-item-1" 
+							:onclick "firefox"
+							"󰖟")
+					
+					(button :class   "dock-item-2" 
+							:onclick "code"
+							"")
+					
+					(button :class   "dock-item-3" 
+							:onclick "thunar"
+							"󰝰")
+					
+					(button :class   "dock-item-4" 
+							:onclick "kitty"
+							"")
+					
+					(button :class   "dock-item-5" 
+							:onclick "spotify"
+							"󰎈")
+				)
+			)
+		)
+	)
+)
+(defvar dock false)
 
 ;; Memory Widget ;;
 (defwidget mem []
@@ -68,19 +102,6 @@
 			"")
 	)
 )
-
-;; music
-; (defwidget music_pop [] 
-; 	(box :class "dockbox"
-; 		(box :orientation "v" :spacing 0 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
-; 			(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
-; 			(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
-; 				(label :class "song" :halign "center" :wrap "false" :limit-width 5 :text SONG)
-; 				(label :class "artist" :halign "center" :wrap "false" :limit-width 5 :text ARTIST)))
-; 		(box :class "musicbuttons" :orientation "v" :spacing 5 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
-; 			(button :style "background-image: url('images/icons/music/previous-button.png');" :class "trackbutton" :onclick "scripts/music_info --prev")
-; 			(button :style "background-image: url('${STATUS}');" :class "playbutton" :onclick "scripts/music_info --toggle")
-; 			(button :style "background-image: url('images/icons/music/next-button.png');" :class "trackbutton" :onclick "scripts/music_info --next"))))
 
 ;; Volume Widgets ;;
 (defwidget volum []
@@ -107,12 +128,22 @@
 (defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defvar volum false)
 
+;; Wifi Widgets ;;
+(defwidget wifi []
+	(box		:orientation "v"  
+				:tooltip wifi-name
+	(button		:onclick "scripts/popup wifi" 
+				:class "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
 ;; Control Panel Widgets ;;	
 (defwidget control []
 	(box :orientation "v" 
 		 :space-evenly false  
 		 :class "control"
-(volum)))
+(volum)
+(wifi)))
 
 ;; Control Panel Widgets ;;	
 (defwidget system []
@@ -155,21 +186,6 @@
 (defpoll calendar_year :interval "10h"
     "date '+%Y'")
 
-;; Top Widgets ;;
-(defwidget top []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "start" 
-(launcher)
-(workspaces)))
-
-;; Bottom Widgets ;;
-(defwidget bottom []
-	(box	:orientation "v" 
-			:space-evenly false 
-(time)
-(power)))
-
 ;; Powermenu Widgets ;;
 (defwidget power []
 	(eventbox	:onhover "${eww} update power=true"	
@@ -197,6 +213,26 @@
 				:onclick ""	""))))
 (defvar power false)
 
+
+
+
+
+;; Top Widgets ;;
+(defwidget top []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "start" 
+(launcher)
+(workspaces)
+(dock)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+	(box	:orientation "v" 
+			:space-evenly false 
+(time)
+(power)))
+
 ;; End Widgets ;;
 (defwidget end []
 	(box :orientation "v" 
@@ -215,12 +251,12 @@
 		 :vexpand "false" 
 		 :hexpand "false"
 (top)
-; (music_pop)
 (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Window Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Bar Windows ;;
 (defwindow bar
 	:geometry (geometry :x "1873" 

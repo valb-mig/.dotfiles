@@ -1,5 +1,12 @@
 local keymap = vim.api.nvim_set_keymap
 
+-- Text wrap
+keymap('n', '<A-z>', ':set nowrap<CR>', {})
+keymap('i', '<A-z>', '<ESC>:set nowrap<CR>', {})
+
+keymap('n', '<A-a>', ':set wrap<CR>', {})
+keymap('i', '<A-a>', '<ESC>:set wrap<CR>', {})
+
 -- Telescope
 keymap('n', '<c-y>', ':Telescope find_files<CR>', {})
 keymap('i', '<c-y>', '<ESC>:Telescope find_files<CR>', {})
