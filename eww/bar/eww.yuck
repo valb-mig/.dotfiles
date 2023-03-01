@@ -1,22 +1,11 @@
 ;; Created   by https://github.com/rxyhn
-;; Designed  by https://github.com/rxyhn
-;; Maintaned by https://github.com/rxyhn
-
 ;; Modifiyed by https://github.com/valb-mig
 
 (defpoll memory :interval "15s" "scripts/memory")
 (defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-
-;; put path to aesthetic bar config files here ;;
 (defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
-
-;; Music vars
-(defpoll SONG :interval "1s" `scripts/music_info --song`)
-(defpoll ARTIST :interval "1s" `scripts/music_info --artist`)
-(defpoll COVER :interval "1s" `scripts/music_info --cover`)
-(defpoll STATUS :interval "1s" `scripts/music_info --status`)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
@@ -166,7 +155,6 @@
 			:onclick "~/.local/bin/eww -c ~/.config/eww/bar open calendar"	
 			:onrightclick "~/.local/bin/eww -c ~/.config/eww/bar close calendar"
 			:class "time-min"  min)))
-
 (defpoll hour :interval "1s" "date '+%H'")
 (defpoll min  :interval "1s" "date '+%M'")
 
@@ -213,10 +201,6 @@
 				:onclick ""	""))))
 (defvar power false)
 
-
-
-
-
 ;; Top Widgets ;;
 (defwidget top []
 	(box	:orientation "v" 
@@ -259,10 +243,10 @@
 
 ;; Bar Windows ;;
 (defwindow bar
-	:geometry (geometry :x "1873" 
+	:geometry (geometry :x "1873px" 
 						:y "0" 
 						:height "100%" 
-						:width "47px")
+						:width  "47px")
 	:monitor 0
 	:reserve (struts :distance "48px" 
 					 :side "right")
@@ -270,11 +254,6 @@
 	:hexpand  "false"
 	:vexpand  "false"
 (bar))
-
-;;  music
-(defwindow music_win :stacking "fg" :focusable "false" :screen 1
-:geometry (geometry :x "0" :y "7%" :width 428 :height 104 :anchor "top center")
-				 (music_pop))
 
 ;; Calendar Windows ;;
 (defwindow calendar

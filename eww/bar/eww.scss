@@ -1,29 +1,41 @@
-/* Created   by https://github.com/rxyhn 
-   Designed  by https://github.com/rxyhn
-   Maintaned by https://github.com/rxyhn
+/*
+  Created   by https://github.com/rxyhn
+  Modifiyed by https://github.com/valb-mig
 */
 
-// Global
 *{
   all: unset;
 }
 
 // Variable Color's
-$background: #0a0a0a;
-$foreground-dark: #494949;
-$foreground: #909090;
 
-$black: #111111;
-$gray: #222222;
-$red: #CB636A;
-$green: #58CC7A;
+$background:      #0a0a0a;
+$foreground-dark: #494949;
+$foreground:      #909090;
+$black:           #111111;
+$gray:            #222222;
+
+// Color mode
+$red:    #CB636A;
+$green:  #58CC7A;
 $yellow: #E2CC86;
 $orange: #CF9D71;
 $purple: #594BA0;
-$pink: #B36797;
-$cyan: #71D5C3;
+$pink:   #B36797;
+$cyan:   #71D5C3;
 
-// EWW BAR
+// Monochrome mode
+/*
+  $red:    #cccccc;
+  $green:  #cccccc;
+  $yellow: #cccccc;
+  $orange: #cccccc;
+  $purple: #cccccc;
+  $pink:   #cccccc;
+  $cyan:   #cccccc;
+*/
+
+// Eww bar
 .eww_bar{
   background-color: $background;
   padding: .3rem;
