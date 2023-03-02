@@ -4,7 +4,7 @@
 
 echo " "
 echo "-- Crating symbolic links --"
-echo " "
+echo "-- (ignore the messages)  --"
 
 if [ -d "~/.config/bspwm"]
 then
@@ -141,6 +141,7 @@ cp ~/.dotfiles/wallpapers/macd2.jpg ~/Pictures
 cp ~/.dotfiles/wallpapers/wallpaper_switch_1.png ~/Pictures
 
 # Zsh theme
+rm -rf ~/.oh-my-zsh/themes/code.zsh-theme
 cp ~/.dotfiles/zsh_theme/code.zsh-theme ~/.oh-my-zsh/themes
 
 # Screenshots directory

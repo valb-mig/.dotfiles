@@ -195,7 +195,10 @@
 				:onclick "reboot"	"")
 
 	(button		:class "button-quit" 				
-				:onclick "killall bspwm" "")))
+				:onclick "killall bspwm" "")
+
+	(button		:class "button-lock" 				
+				:onclick "betterlockscreen -l" "")))
 
 	(button		:class "button-off"					
 				:onclick ""	""))))

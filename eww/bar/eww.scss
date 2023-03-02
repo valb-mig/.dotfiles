@@ -302,7 +302,18 @@ color: $background;
   background-color: $black;
   box-shadow: 0px 0px 4px 0px #000;
 }
+
 .button-quit{
+  padding: 2px 0px 2px 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: 0.2s;
+  color: $foreground-dark;
+  background-color: $black;
+  box-shadow: 0px 0px 4px 0px #000;
+}
+
+.button-lock{
   padding: 2px 0px 2px 0px;
   border-radius: 5px;
   margin-bottom: 5px;

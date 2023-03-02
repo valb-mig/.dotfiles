@@ -5,7 +5,11 @@
 # | . \  __/ |_| | |_) | | | | | (_| \__ \
 # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|___/
 #            __/ |                        
-#           |___/                         
+#           |___/                
+#         
+#-----------------------------------------
+
+
 
 #    _                
 #   /_\  _ __ _ __ ___
@@ -13,17 +17,9 @@
 # /_/ \_\ .__/ .__/__/
 #       |_|  |_|       
 
-#  Firefox
-super + shift + z
-    bash ~/.config/sxhkd/alerts/firefox.sh
-
 #  Files / Gnome Files
-super + shift + x
+super + e
     bash ~/.config/sxhkd/alerts/files.sh
- 
-#  Code
-super + shift + c
-    bash ~/.config/sxhkd/alerts/code.sh
 
 #  Terminal emulator
 super + Return
@@ -43,15 +39,11 @@ super + ctrl + p
 super + d
     bash ~/.config/rofi/search/launcher.sh
 
-#  Powermenu launcher
-super + k
-    bash ~/.config/rofi/powermenu/launcher.sh 
-
 #  Quicklinks launcher
 super + q
     bash ~/.config/rofi/shortcuts/launcher.sh 
 
-#  Program launcher
+#  Ranger launcher
 super + r
      kitty ranger
 
@@ -73,98 +65,93 @@ super + ctrl + F12
 # |___/\_, /__/\__\___|_|_|_|
 #      |__/                         
 
-# Print Like Mac
+#  Print Like Mac
 super + p
   bash ~/.config/sxhkd/alerts/mac_print.sh
 
-# Print
+#  Print
 Print
   bash ~/.config/sxhkd/alerts/print.sh
 
-# lockscreen
+#  lockscreen
 super + l
     betterlockscreen --lock blur
 
-# Reload Keybinds
+#  Reload Keybinds
 super + Escape
         pkill -USR1 -x sxhkd
 
-# Quit/restart bspwm
+#  Quit/restart bspwm
 super + alt + {q,r}
         bspc {quit,wm -r}
  
-# Close and kill
+#   Close and kill
 super + {_,shift + }w
         bspc node -{c,k}
  
-# Alternate between the tiled and monocle layout
+#  Alternate between the tiled and monocle layout
 super + m
         bspc desktop -l next
  
-# swap the current node and the biggest window
+#  swap the current node and the biggest window
 super + g
         bspc node -s biggest.window
  
-# set the window state
+#  set the window state
 super + {t,shift + t,s,f}
         bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
  
-# focus the node in the given direction
+#  focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
     bspc node -{f,s} {west,south,north,east}
  
-# focus the node for the given path jump
+#  focus the node for the given path jump
 super + {p,b,comma,period}
         bspc node -f @{parent,brother,first,second}
  
-# focus the next/previous window in the current desktop
+#  focus the next/previous window in the current desktop
 super + {_,shift + }c
         bspc node -f {next,prev}.local.!hidden.window
  
-# focus the next/previous desktop in the current monitor
+#  focus the next/previous desktop in the current monitor
 super + bracket{left,right}
         bspc desktop -f {prev,next}.local
  
-# focus the last node desktop
-
-#super + grave               
-
-#        bspc {node,desktop} -f last                                                                                                                  
-# focus the older or newer node in the focus history                                                                                                                                                                  
+#  focus the older or newer node in the focus history                                                                                                                                                                  
 super + {o,i}                                                                                                                                                                                                         
         bspc wm -h off; \                                                                                                                                                                                             
         bspc node {older,newer} -f; \                                                                                                                                                                                 
         bspc wm -h on                                                                                                                                                                                                 
                                                                                                                                                                                                                       
-# focus or send to the given desktop                                                                                                                                                                                  
+#  focus or send to the given desktop                                                                                                                                                                                  
 super + {_,shift + }{1-9,0}                                                                                                                                                                                           
         bspc {desktop -f,node -d} '^{1-9,10}'     
 
-# preselect the direction                                                                                                                                                                                             
+#  preselect the direction                                                                                                                                                                                             
 super + ctrl + {Left,Down,Up,Right}                                                                                                                                                                                   
     bspc node -p {west,south,north,east}                                                                                                                                                                              
                                                                                                                                                                                                                       
-# preselect the ratio                                                                                                                                                                                                 
+#  preselect the ratio                                                                                                                                                                                                 
 super + ctrl + {1-9}                                                                                                                                                                                                  
         bspc node -o 0.{1-9}                                                                                                                                                                                          
                                                                                                                                                                                                                       
-# cancel the preselection for the focused node                                                                                                                                                                        
+#  cancel the preselection for the focused node                                                                                                                                                                        
 super + ctrl + space                                                                                                                                                                                                  
         bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+#  cancel the preselection for the focused desktop
 super + ctrl + shift + space
         bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# expand a window by moving one of its side outward
+#  expand a window by moving one of its side outward
 super + alt + {Left,Down,Up,Right}
         bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
+#  contract a window by moving one of its side inward
 super + alt + shift + {Left,Down,Up,Right}
         bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
+#  move a floating window
 super + {Left,Down,Up,Right}
         bspc node -v {-20 0,0 20,0 -20,20 0}
 

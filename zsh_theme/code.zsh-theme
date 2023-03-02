@@ -1,34 +1,32 @@
 # vim:ft=sh
 
-# Bubble Theme
-# Inspired by bubblewritten and agnoster
-# written by hohmannr
+# Symbols
 
-# SYMBOL CONSTANTS
 blub_left=''
 blub_right=''
+ssh_symbol='ssh'
+
+# Main
 
 user_symbol=''
-user_machine_symbol=''
 machine_symbol=' '
-
 filepath_symbol=' %~'
+
+# Git
+
 git_branch_symbol=''
-git_clean_symbol=''
 git_modified_symbol='•'
 git_added_symbol=''
 git_deleted_symbol=''
-git_renamed_symbol=''
+git_renamed_symbol='凜'
 git_untracked_symbol='裸'
 git_copied_symbol=''
 git_unmerged_symbol='!'
 git_stashed_symbol=''
 
-ssh_symbol='ssh'
+# Colors
 
-# COLOR CONSTANTS
 bubble_color='black'
-
 prompt_symbol_color='blue'
 prompt_symbol_error_color='red'
 user_color='cyan'
@@ -44,7 +42,8 @@ git_symbols_color='black'
 ssh_symbol_color='black'
 ssh_bubble_color='green'
 
-# HELPER FUNCTIONS
+# Functions
+
 bubblify () {
     if [[ $1 -eq 0 ]]; then
         echo -n "$(foreground $4)$blub_left$(foreground $3)$(background $4)$2%{$reset_color%}"
@@ -75,7 +74,8 @@ background () {
     fi
 }
 
-# PROMPT FUNCTIONS
+# Prompt functions
+
 git_bubble () {
     local git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
@@ -140,7 +140,8 @@ ssh_bubble () {
     fi
 }
 
-# DEFAULT PROMPT BUILDING BLOCKS
+# Prompt building blocks
+
 bubble_left="$(foreground $bubble_color)$blub_left%{$reset_color%}$(background $bubble_color)"
 bubble_right="%{$reset_color%}$(foreground $bubble_color)$blub_right%{$reset_color%} "
 end_of_prompt_bubble="$bubble_left%(?,$(foreground $prompt_symbol_color)$prompt_symbol,$(foreground $prompt_symbol_error_color)$prompt_symbol)$bubble_right"
@@ -149,7 +150,7 @@ user_machine_bubble="$bubble_left$(foreground $user_color)$user_symbol$(foregrou
 filepath_bubble="$bubble_left$(foreground $filepath_color)$filepath_symbol$bubble_right"
 error_code_bubble="%(?,,$bubble_left$(foreground $prompt_symbol_error_color)%?$bubble_right)"
 
-# FINAL PROMPT
+# Prompt return
 
 PROMPT='$(ssh_bubble)$user_machine_bubble$filepath_bubble'
 RPROMPT='$(git_bubble)'

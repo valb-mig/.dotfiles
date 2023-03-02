@@ -13,7 +13,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "colors.rasi"
+@import "../colors.rasi"
 
 /*
 USE_ICON=YES
