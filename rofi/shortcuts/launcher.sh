@@ -9,18 +9,15 @@ prompt='Quick Links'
 mesg="Using '$BROWSER' as web browser"
 
 list_col='1'
-list_row='6'
+list_row='3'
 
-efonts="jetBrainsMono Nerd Font 40"
+efonts="jetBrainsMono Nerd Font 50"
 
 # Options
 
-option_1=""
-option_2="󰇮"
-option_3="󰝰"
-option_4=""
-option_5="󰑍"
-option_6=""
+option_1="󰈹"
+option_2="󰊤"
+option_3="󰨞"
 
 # Rofi CMD
 rofi_cmd() {
@@ -36,22 +33,16 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3" | rofi_cmd
 }
 
 # Execute Command
 run_cmd() {
-	if [[ "$1" == '--opt1' ]]; then
-                firefox
+	if   [[ "$1" == '--opt1' ]]; then
+        firefox
 	elif [[ "$1" == '--opt2' ]]; then
-		xdg-open 'https://mail.google.com/'
+		xdg-open 'https://github.com/'
 	elif [[ "$1" == '--opt3' ]]; then
-		nautilus
-	elif [[ "$1" == '--opt4' ]]; then
-		xdg-open 'https://www.github.com/'
-	elif [[ "$1" == '--opt5' ]]; then
-		xdg-open 'https://www.reddit.com/'
-	elif [[ "$1" == '--opt6' ]]; then
 		code
 	fi
 }
@@ -67,14 +58,5 @@ case ${chosen} in
         ;;
     $option_3)
 		run_cmd --opt3
-        ;;
-    $option_4)
-		run_cmd --opt4
-        ;;
-    $option_5)
-		run_cmd --opt5
-        ;;
-    $option_6)
-		run_cmd --opt6
         ;;
 esac

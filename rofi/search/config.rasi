@@ -137,9 +137,10 @@ button {
     text-color:       inherit;
     cursor:           pointer;
 }
+
 button selected {
-    background-color:  @fg2;
-    text-color:        @bg;
+    background-color:  @bg3;
+    text-color:        @fg;
 }
 
 /*****----- Elements -----*****/
@@ -189,7 +190,7 @@ element selected{
     padding:           0px;
     border-radius:     10px;
     border-color:      @fg2;
-    background-color:  @fg2;
+    background-color:  @bg3;
     text-color:        @fg1;
     orientation:       vertical;
     cursor:            pointer;
@@ -198,7 +199,7 @@ element selected{
 element-icon selected
 {
     border-radius:    10px;
-    background-color: @fg2;
+    background-color: @bg3;
 }
 
 /*****----- Message -----*****/

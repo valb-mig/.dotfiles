@@ -4,7 +4,7 @@
 
 - Os: [Pop-os](https://pop.system76.com/)
 - Wm: [Bspwm](https://github.com/baskerville/bspwm)
-- Eww: [Polybar](https://github.com/elkowar/eww)
+- Eww: [Eww](https://github.com/elkowar/eww)
 - Launcher: [Rofi](https://github.com/davatorium/rofi)
 - Lock: [BetterLockScreen](https://github.com/betterlockscreen/betterlockscreen)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)

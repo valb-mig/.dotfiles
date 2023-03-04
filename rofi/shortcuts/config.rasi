@@ -21,20 +21,20 @@ USE_ICON=YES
 
 /*****----- Main Window -----*****/
 window {
-    transparency:                "real";
-    location:                    east;
-    anchor:                      east;
-    fullscreen:                  false;
-    width:                       130px;
-    x-offset:                   -55px;
-    y-offset:                    0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      2px solid;
-    border-radius:               5px;
-    border-color:                @bg2;
-    cursor:                      "default";
-    background-color:            @bg;
+    transparency:     "real";
+    location:         east;
+    anchor:           east;
+    fullscreen:       false;
+    width:            100px;
+    x-offset:         -55px;
+    y-offset:         0px;
+    margin:           0px;
+    padding:          0px;
+    border:           2px solid;
+    border-radius:    5px;
+    border-color:     @bg2;
+    cursor:           "default";
+    background-color: @bg;
 }
 
 /*****----- Main Box -----*****/
@@ -42,7 +42,7 @@ mainbox {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     10px 10px 10px 10px;
     background-color:            @bg;
     children:                    [ "listview" ];
 }
@@ -50,12 +50,12 @@ mainbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     6;
+    columns:                     3;
     lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
-    spacing:                     15px;
+    spacing:                     10px;
     background-color:            @bg;
     cursor:                      "default";
 }
@@ -63,7 +63,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     10px 10px;
+    padding:                     0px 0px;
     border:                      0px solid;
     border-radius:               5px;
     border-color:                transparent;
@@ -72,7 +72,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 28";
+    font:                        "jetBrainsMono Nerd Font 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -83,7 +83,7 @@ element-text {
 element normal.normal,
 element alternate.normal {
     background-color:            @bg1;
-    text-color:                  @fg1;
+    text-color:                  @fg2;
 }
 element normal.urgent,
 element alternate.urgent,
