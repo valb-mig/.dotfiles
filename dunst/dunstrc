@@ -1,21 +1,20 @@
 [global]
-
 monitor = HDMI2
-follow = none
+follow  = true
 
-width = 280
+width  = 280
 height = 100
 
-origin = top
-geometry = "300x300-808+049"
-offset = 820x49
-scale = 0
+origin   = top
+geometry = "300x300-815+40"
+offset   = 1920x1080
+scale    = 0
 
 indicate_hidden = yes
-shrink = no
+shrink          = no
 
 separator_height = 4
-separator_color = auto
+separator_color  = auto
 
 progress_bar = true
 progress_bar_height = 10
@@ -30,7 +29,7 @@ corner_radius = 12
 
 sort = no
 idle_threshold = 120
-font = CaskaydiaCove Nerd Font 10
+font = jetBrainsMono Nerd Font 10
 line_height = 4
 markup = full
 

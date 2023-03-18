@@ -44,26 +44,27 @@
 			
 				(box		:orientation "v"					
 							:space-evenly "false"
+							:class "dock-content"
 					
 					(button :class   "dock-item-1" 
 							:onclick "firefox"
-							"󰖟")
+							"󰈹")
 					
 					(button :class   "dock-item-2" 
 							:onclick "code"
-							"")
+							"󰨞")
 					
 					(button :class   "dock-item-3" 
-							:onclick "thunar"
-							"󰝰")
+							:onclick "nautilus"
+							"󰉋")
 					
 					(button :class   "dock-item-4" 
 							:onclick "kitty"
-							"")
+							"󰅬")
 					
 					(button :class   "dock-item-5" 
 							:onclick "spotify"
-							"󰎈")
+							"󰓇")
 				)
 			)
 		)
@@ -187,18 +188,19 @@
 				:duration "550ms"
 	(box		:orientation "v"					
 				:space-evenly "false"
+				:class "power-content"
 
 	(button		:class "button-shutdown" 				
-				:onclick "shutdown now" "")
+				:onclick "shutdown now" "⏻")
 
   	(button		:class "button-reb"					
 				:onclick "reboot"	"")
 
 	(button		:class "button-quit" 				
-				:onclick "killall bspwm" "")
+				:onclick "killall bspwm" "")
 
 	(button		:class "button-lock" 				
-				:onclick "betterlockscreen -l" "")))
+				:onclick "betterlockscreen -l" "")))
 
 	(button		:class "button-off"					
 				:onclick ""	""))))
@@ -213,13 +215,6 @@
 (workspaces)
 (dock)))
 
-;; Bottom Widgets ;;
-(defwidget bottom []
-	(box	:orientation "v" 
-			:space-evenly false 
-(time)
-(power)))
-
 ;; End Widgets ;;
 (defwidget end []
 	(box :orientation "v" 
@@ -230,6 +225,13 @@
 (system)
 (control)
 (bottom)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+	(box	:orientation "v" 
+			:space-evenly false 
+(time)
+(power)))
 
 ;; Bar Widgets ;;
 (defwidget bar []

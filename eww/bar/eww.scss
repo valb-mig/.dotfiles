@@ -48,14 +48,14 @@ $cyan:   #71D5C3;
   font-family: "jetBrainsMono Nerd Font";
   font-size: 1.7em;
   border-radius: 5px;
-  margin: .55rem 0 .55rem 0;
-  padding: 0.5rem 0 0.5rem 0;
+  margin: 4px 0px 4px 0px;
+  padding: 0.2rem 0 0.2rem 0;
   transition: 0.2s;
   box-shadow: 0px 0px 4px 0px #000;
 }
 
 .launcher_icon:hover{
-  padding: 1rem 0 1rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   background-color: $gray;
 }
 
@@ -63,7 +63,7 @@ $cyan:   #71D5C3;
 .works {
   font-size: 1.1em;
   font-family: "jetBrainsMono Nerd Font";
-  padding: 9px .9em 9px .9em;
+  padding: 9px 14px 9px 14px;
   border-radius: 5px;
   background-color: $black;
   box-shadow: 0px 0px 4px 0px #000;
@@ -110,9 +110,17 @@ $cyan:   #71D5C3;
   transition: all 1s ease;
 }
 
+/* Dock */
 .dock
 {
   margin-top: 1px;
+}
+
+.dock-content
+{
+  padding: 4px;
+  background-color: $black;
+  border-radius: 5px;
 }
 
 .dock-item-1, .dock-item-2, .dock-item-3, .dock-item-4, .dock-item-5
@@ -121,15 +129,18 @@ $cyan:   #71D5C3;
   font-family: "jetBrainsMono Nerd Font";
   font-size: 30px;
   border-radius: 5px;
-  margin: 0px 0px .55rem 0px;
-  padding: 0.2rem 0 0.2rem 0;
   transition: 0.2s;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
+  margin-bottom: 5px;
+}
+
+.dock-item-5
+{
+  margin-bottom: 0px;
 }
 
 .dock-item-1:hover,.dock-item-2:hover,.dock-item-3:hover,.dock-item-4:hover,.dock-item-5:hover
 {
+  border-radius: 5px;
   color: $foreground;
   background-color: $gray;
 }
@@ -137,8 +148,8 @@ $cyan:   #71D5C3;
 .dock-dropdown
 {
   color: $foreground;
-  margin: 6px 0px 6px 0px;
-  padding: 5px 0px 5px 0px;
+  margin: 4px 0px 4px 0px;
+  padding: 2px 0px 2px 0px;
   border-radius: 5px;
   background-color: $black;
   box-shadow: 0px 0px 4px 0px #000;
@@ -151,7 +162,7 @@ $cyan:   #71D5C3;
 }
 
 // Control Panel
-
+  
 .control {
   padding: .5rem;
   font-family: "jetBrainsMono Nerd Font";
@@ -173,22 +184,19 @@ $cyan:   #71D5C3;
 
 .memory-icon{
   font-family: "jetBrainsMono Nerd Font";
-  font-size: 17px;
-  margin: .2rem 0 .2rem 0;
+  font-size: 15px;
   color: $yellow; 
 }
 
 .volume-icon{
   font-family: "jetBrainsMono Nerd Font";
-  font-size: 40px;
-  margin: .2rem 0 .2rem 0;
+  font-size: 35px;
   color: $orange;
 }
 
 .wifi-icon{
   font-family: "jetBrainsMono Nerd Font";
-  font-size: 40px;
-  margin-bottom: .2rem;
+  font-size: 35px;
   color: $pink;
 }
 
@@ -196,7 +204,7 @@ scale trough {
   all: unset;
   background-color: $background;
   border-radius: 5px;
-  min-height: 80px;
+  min-height: 50px;
   min-width: 10px;
   margin: .3rem 0 .3rem 0;
 }
@@ -213,19 +221,18 @@ scale trough {
   font-size: 1.2em;
   border-radius: 5px;
   padding: .7rem 0 .5rem 0;
-  margin: .0rem 0 .5rem 0;
   color: $foreground;
   background-color: $black;
   box-shadow: 0px 0px 4px 0px #000;
 }
 
 // Calendar
-
 .cal-box {
   font-family: "jetBrainsMono Nerd Font";
   font-size: 1em;
   font-weight: bold;
   background-color: $black;
+  border-radius:5px;
 
   .cal-inner-box {
       padding: 1rem 1rem .2rem;
@@ -269,6 +276,7 @@ color: $background;
   font-size: 1.4em;
   font-weight: bold;
 }
+
 .button-bspres, .button-reb, .button-lock,
 .button-quit, .button-off{
   padding: .5rem .2rem .3rem .2rem;
@@ -276,56 +284,56 @@ color: $background;
 
 .button-off{
   border-radius: 5px;
-  padding: .7rem 0 .5rem 0;
-  margin: .0rem 0 .5rem 0;
+  margin: .4rem 0 .5rem 0;
   color: $purple;
   background-color: $black;
   box-shadow: 0px 0px 4px 0px #000;
 }
 
+.power-content
+{
+  margin: 5px 0px 0px 0px;
+  font-size: 15px;
+  background-color: $black;
+  border-radius: 5px;
+  padding: 4px;
+}
+
 .button-shutdown{
-  padding: 2px 0px 2px 0px;
   border-radius: 5px;
   margin-bottom: 5px;
   transition: 0.2s;
+  padding: 7px 0px 7px 0px;
   color: $foreground-dark;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
 }
 
 .button-reb{
-  padding: 5px 0px 5px 0px;
   border-radius: 5px;
   margin-bottom: 5px;
   transition: 0.2s;
+  padding: 7px 0px 7px 0px;
   color: $foreground-dark;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
 }
 
 .button-quit{
-  padding: 2px 0px 2px 0px;
+  font-size: 20px;
   border-radius: 5px;
   margin-bottom: 5px;
   transition: 0.2s;
+  padding: 7px 0px 7px 0px;
   color: $foreground-dark;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
 }
 
 .button-lock{
-  padding: 2px 0px 2px 0px;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   transition: 0.2s;
+  padding: 7px 0px 7px 0px;
   color: $foreground-dark;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
 }
 
 .button-bspres:hover, .button-reb:hover, .button-quit:hover, .button-lock:hover, .button-shutdown:hover
 {
   color: $pink;
   background-color: $gray;
-  padding: 10px 0px 10px 0px;
 }

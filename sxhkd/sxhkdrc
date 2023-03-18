@@ -9,8 +9,6 @@
 #         
 #-----------------------------------------
 
-
-
 #    _                
 #   /_\  _ __ _ __ ___
 #  / _ \| '_ \ '_ (_-<
@@ -37,7 +35,7 @@ super + ctrl + p
 
 #  Program launcher
 super + d
-    bash ~/.config/rofi/search/launcher.sh
+    bash ~/.config/rofi/line/launcher.sh
 
 #  Quicklinks launcher
 super + q
@@ -48,7 +46,7 @@ super + r
      kitty ranger
 
 #  Switch Windows
-super + {grave, tab}
+super + a
     bash ~/.config/rofi/switch/launcher.sh
 
 #  Monitor on
@@ -58,6 +56,10 @@ super + ctrl + F11
 #  Monitor off
 super + ctrl + F12
      bash ~/.config/sxhkd/alerts/monitor_off.sh
+
+#  Memory popup
+super + ctrl + m
+    bash ~/.config/sxhkd/alerts/memory.sh
 
 #  ___         _             
 # / __|_  _ __| |_ ___ _ __  
@@ -75,7 +77,7 @@ Print
 
 #  lockscreen
 super + l
-    betterlockscreen --lock blur
+    betterlockscreen -l
 
 #  Reload Keybinds
 super + Escape

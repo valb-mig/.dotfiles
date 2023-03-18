@@ -1,7 +1,11 @@
 #!/usr/bin/bash
 
+pwd
+
+whoami
+
 # Print
-scrot 'Pictures/Screenshots/shot_%H%M%S.png' -s 
+scrot 'shot_%H%M%S.png' -s 
 
 # Notification
 notify-send "Cut Printscreen"

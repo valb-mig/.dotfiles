@@ -3,8 +3,8 @@
 # needs chwb2 from wmutils/opt
 
 outer='0x070707'   # outer
-inner1='0x2E2E2E'  # focused
-inner2='0x171717'  # normal
+inner1='0x1C1C1C'  # focused
+inner2='0x101010'  # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 

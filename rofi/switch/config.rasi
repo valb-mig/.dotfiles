@@ -9,12 +9,11 @@
 
 /*****----- Configuration -----*****/
 configuration {
-    font:                       "JetBrainsMono Nerd Font 12";
-
+    font:                       "JetBrainsMono Nerd Font 10";
     modi:                       "window";
     show-icons:                 true;
     display-window:             "";
-    drun-display-format:        "{name}";
+    drun-display-format:        "";
 }
 
 /*****----- Main Window -----*****/
@@ -22,7 +21,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       360px;
+    width:                       500px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -52,7 +51,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
@@ -69,6 +68,7 @@ prompt {
     background-color:            inherit;
     text-color:                  inherit;
 }
+
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
@@ -80,7 +80,7 @@ textbox-prompt-colon {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     4;
     lines:                       1;
     cycle:                       true;
     dynamic:                     true;
@@ -111,7 +111,7 @@ scrollbar {
 
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     20px 20px 20px 0px;
     margin:                      0px;
     padding:                     10px 10px;
     border:                      0px solid;

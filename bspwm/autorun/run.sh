@@ -23,7 +23,7 @@ xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 -
 bash ~/.config/bspwm/scripts/java_fix.sh
 
 #| Polybar
-# $bash ~/.config/polybar/regular/launch.sh &
+$bash ~/.config/polybar/simple/launch.sh &
 
 #| Wallpaper
 $bash ./.fehbg
@@ -32,8 +32,10 @@ $bash ./.fehbg
 xsetroot -cursor_name left_ptr &
 
 #| Start EWW
-~/.local/bin/eww -c ~/.config/eww/bar --restart open bar &
+#~/.local/bin/eww -c ~/.config/eww/bar --restart open bar &
 
 #| Picom
 #picom --experimental-backend
 
+#| Borders
+bash .config/bspwm/borders
