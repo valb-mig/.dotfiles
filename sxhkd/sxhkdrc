@@ -35,7 +35,7 @@ super + ctrl + p
 
 #  Program launcher
 super + d
-    bash ~/.config/rofi/line/launcher.sh
+    bash ~/.config/rofi/menu/launcher.sh
 
 #  Quicklinks launcher
 super + q

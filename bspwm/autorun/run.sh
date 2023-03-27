@@ -1,41 +1,53 @@
-#                        ,////,
-#                        /// 6|
-#                        //  _|
-#                       _/_,-'
-#                  _.-/'/   \   ,/;,
-#               ,-' /'  \_   \ / _/
-#               `\ /     _/\  ` /
-#                 |     /,  `\_/
-#                 |     \'
-#    /\_         /`      /\
-#   /' /_``--.__/\  `,. /  \
-#  |_/`  `-._     `\/  `\   `.
-#            `-.__/'     `\   |
-#                          `\  \
-#                            `\ \
-#                              \_\__
-#                               \___)
+# -------
+# Monitor
+# -------
 
-#| Monitor 
 xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1366x768 --rotate normal --left-of HDMI2
 
-#| Fix java
+# --------
+# Fix java
+# --------
+
 bash ~/.config/bspwm/scripts/java_fix.sh
 
-#| Polybar
+# -------
+# Polybar
+# -------
+
 $bash ~/.config/polybar/simple/launch.sh &
 
-#| Wallpaper
+# ---------
+# Wallpaper
+# ---------
+
 $bash ./.fehbg
 
-#| X Cursor Fix
+# ------------
+# X Cursor Fix
+# ------------
+
 xsetroot -cursor_name left_ptr &
 
-#| Start EWW
-#~/.local/bin/eww -c ~/.config/eww/bar --restart open bar &
+# ---------
+# Start EWW
+# ---------
 
-#| Picom
-#picom --experimental-backend
+# ~/.local/bin/eww -c ~/.config/eww/bar --restart open bar &
 
-#| Borders
-bash .config/bspwm/borders
+# -----
+# Picom
+# -----
+
+# picom
+
+# -------
+# Borders
+# -------
+
+# bash .config/bspwm/borders
+
+# -----
+# Plank
+# -----
+
+plank &
