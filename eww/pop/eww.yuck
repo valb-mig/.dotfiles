@@ -5,7 +5,7 @@
 (defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/pop")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
@@ -18,9 +18,8 @@
 
 ;; Launcher Widgets ;;
 (defwidget launcher []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :spacing -15
+	(box :orientation "h" 
+		 :space-evenly false 
   	(button :class   "launcher_icon" 
 		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
 			"")))
@@ -30,20 +29,20 @@
 	(eventbox	:onhover "${eww} update dock=true"	
 				:onhoverlost "${eww} update dock=false" 
 	
-		(box		:orientation "v"					
-					:space-evenly "false" 	 
+		(box		:orientation "h"					
+					:space-evenly false 	 
 					:vexpand "false" 	
 					:class "dock"
 			
 			(button :class "dock-dropdown"					
-					:onclick ""	"")
+					:onclick ""	"")
 		
-			(revealer	:transition "slidedown"				
+			(revealer	:transition "slideright"				
 						:reveal dock			 
 						:duration "550ms"
 			
-				(box		:orientation "v"					
-							:space-evenly "false"
+				(box		:orientation "h"					
+							:space-evenly false
 							:class "dock-content"
 					
 					(button :class   "dock-item-1" 
@@ -56,15 +55,15 @@
 					
 					(button :class   "dock-item-3" 
 							:onclick "nautilus"
-							"󰉋")
+							"󰴉")
 					
 					(button :class   "dock-item-4" 
 							:onclick "kitty"
-							"󰅬")
+							"󰄛")
 					
 					(button :class   "dock-item-5" 
 							:onclick "spotify"
-							"󰓇")
+							"")
 				)
 			)
 		)
@@ -75,13 +74,12 @@
 ;; Memory Widget ;;
 (defwidget mem []
 
-	(box :orientation  "v" 
-		 :space-evenly "false" 
-		 :spacing 2
+	(box :orientation  "h" 
+		 :space-evenly false 
 		
 		(scale :class "bars"
 			:value memory
-			:orientation "v"
+			:orientation "h"
 			:flipped true
 			:max 100
 			:min 0)
@@ -98,63 +96,72 @@
 	(eventbox :onhover "${eww} update volum=true" 		
 			  :onhoverlost "${eww} update volum=false"
 
-	(box      :orientation "v" 	  
-			  :space-evenly "false" 
-			  :spacing "2"
+	(box      :orientation "h" 	  
+			  :space-evenly false 
 
-	(revealer :transition "slideup" 
+	(revealer :transition "slideleft" 
 			  :reveal volum         
 			  :duration "550ms"
 
 	(scale    :class "volbar" 	  
 			  :value current-volume 
-			  :orientation "v"      
+			  :orientation "h"      
 			  :flipped true 
 			  :max 101 
 			  :min 0 
 			  :onchange "amixer -D pulse sset Master {}%" ))
 			  
-	(button   :onclick "scripts/popup audio"   :class "volume-icon" "󰋎"))))
+	(button   :onclick "scripts/popup audio"   :class "volume-icon" " "))))
 (defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defvar volum false)
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
-	(box		:orientation "v"  
+	(box		:class "wifi-content"
+				:orientation "h"  
 				:tooltip wifi-name
 	(button		:onclick "scripts/popup wifi" 
 				:class "wifi-icon" wifi-icon)))
 (defpoll wifi-icon :interval "1s" "scripts/wifi icon")
 (defpoll wifi-name :interval "1s" "scripts/wifi name")
 
+;; Launcher Widgets ;;
+(defwidget power []
+	(box :orientation "h" 
+		 :space-evenly false 
+  	(button :class   "power-icon" 
+		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
+			"")))
+
 ;; Control Panel Widgets ;;	
 (defwidget control []
-	(box :orientation "v" 
+	(box :orientation "h" 
 		 :space-evenly false  
 		 :class "control"
 (volum)
-(wifi)))
+(wifi)
+(power)))
 
 ;; Control Panel Widgets ;;	
 (defwidget system []
-	(box :orientation "v" 
+	(box :orientation "h" 
 		 :space-evenly false  
 		 :class "control"
 (mem)))
 
 ;; Clock Widgets ;;
 (defwidget time []
-	(box	:orientation "v" 
+	(box	:orientation "h" 
 			:class "time" 
-			:valign "end"
+			:halign "end"
 	(button	
-			:onclick "~/.local/bin/eww -c ~/.config/eww/bar open calendar"
-			:onrightclick "~/.local/bin/eww -c ~/.config/eww/bar close calendar"
+			:onclick "~/.local/bin/eww -c ~/.config/eww/pop open calendar"
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/pop close calendar"
 			:class "time-hour" hour)
 	
 	(button	
-			:onclick "~/.local/bin/eww -c ~/.config/eww/bar open calendar"	
-			:onrightclick "~/.local/bin/eww -c ~/.config/eww/bar close calendar"
+			:onclick "~/.local/bin/eww -c ~/.config/eww/pop open calendar"	
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/pop close calendar"
 			:class "time-min"  min)))
 (defpoll hour :interval "1s" "date '+%H'")
 (defpoll min  :interval "1s" "date '+%M'")
@@ -162,7 +169,7 @@
 ;; Calendar Widgets ;;
 (defwidget cal []
 	(box :class "cal-box" 
-		 :orientation "v"
+		 :orientation "h"
 	(box :class "cal-inner-box"
 	(calendar :class "cal" 
 			  :day   calendar_day 
@@ -175,71 +182,44 @@
 (defpoll calendar_year :interval "10h"
     "date '+%Y'")
 
-;; Powermenu Widgets ;;
-(defwidget power []
-	(eventbox	:onhover "${eww} update power=true"	
-				:onhoverlost "${eww} update power=false" 
-	(box		:orientation "v"					
-				:space-evenly "false" 	 
-				:vexpand "false" 	
-				:class "powermenu"
-	(revealer	:transition "slideup"				
-				:reveal power			 
-				:duration "550ms"
-	(box		:orientation "v"					
-				:space-evenly "false"
-				:class "power-content"
-
-	(button		:class "button-shutdown" 				
-				:onclick "shutdown now" "⏻")
-
-  	(button		:class "button-reb"					
-				:onclick "reboot"	"")
-
-	(button		:class "button-quit" 				
-				:onclick "killall bspwm" "")
-
-	(button		:class "button-lock" 				
-				:onclick "betterlockscreen -l" "")))
-
-	(button		:class "button-off"					
-				:onclick ""	""))))
-(defvar power false)
-
 ;; Top Widgets ;;
 (defwidget top []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "start" 
-(launcher)
+	(box	:orientation "h" 
+			:space-evenly false 
+			:halign "start" 
 (workspaces)
 (dock)))
 
+	;; Top Widgets ;;
+(defwidget mid []
+	(box	:orientation  "h" 
+			:space-evenly false 
+			:halign       "center" 
+(bottom)))
+
 ;; End Widgets ;;
 (defwidget end []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :valign "end" 
-		 :spacing 5
-		 :class "bg"
+	(box :orientation  "h" 
+		 :space-evenly false
+		 :halign       "end" 
+		 :class        "bg"
 (system)
-(control)
-(bottom)))
+(control)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
-	(box	:orientation "v" 
+	(box	:orientation "h" 
 			:space-evenly false 
-(time)
-(power)))
+(time)))
 
 ;; Bar Widgets ;;
-(defwidget bar []
+(defwidget pop []
 	(box :class "eww_bar" 
-		 :orientation "v" 
+		 :orientation "h" 
 		 :vexpand "false" 
 		 :hexpand "false"
 (top)
+(mid)
 (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -247,18 +227,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Bar Windows ;;
-(defwindow bar
-	:geometry (geometry :x "1873px" 
+(defwindow pop
+	:geometry (geometry :x "0" 
 						:y "0" 
-						:height "100%" 
-						:width  "47px")
+						:height "20px" 
+						:width  "100%")
 	:monitor 0
-	:reserve (struts :distance "48px" 
-					 :side "right")
+	:reserve (struts :distance "37px" 
+					 :side "top")
 	:wm-ignore false
 	:hexpand  "false"
 	:vexpand  "false"
-(bar))
+(pop))
 
 ;; Calendar Windows ;;
 (defwindow calendar

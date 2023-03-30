@@ -1,0 +1,290 @@
+/*
+  Created   by https://github.com/rxyhn
+  Modifiyed by https://github.com/valb-mig
+*/
+
+*{
+  all: unset;
+}
+
+/*
+  VARS
+*/
+
+$button_padding: 0px 12px 0px 12px;
+$button_hover:   0px 15px 0px 15px;
+$margin:         5px;
+
+$white:           #c4c4c4;
+$foreground:      #909090;
+$foreground-dark: #494949;
+$gray:            #222222;
+$black:           #111111;
+$background:      #0a0a0a;
+
+$red:    #CB636A;
+$green:  #58CC7A;
+$yellow: #E2CC86;
+$orange: #CF9D71;
+$purple: #594BA0;
+$pink:   #B36797;
+$cyan:   #71D5C3;
+
+/*
+  _______  _______  ______   
+  |  _    ||   _   ||    _ |  
+  | |_|   ||  |_|  ||   | ||  
+  |       ||       ||   |_||_ 
+  |  _   | |       ||    __  |
+  | |_|   ||   _   ||   |  | |
+  |_______||__| |__||___|  |_|
+*/
+
+/*
+  START
+*/
+
+.eww_bar {
+  padding: 5px;
+  background-color: $background;
+}
+
+.launcher_icon {
+  color:            $yellow;
+  background-color: $black;
+  font-family:      "jetBrainsMono Nerd Font";
+  font-size:        20px;
+  border-radius:    5px;
+  transition:       all 0.2s;
+  padding:          $button_padding;
+  padding-right:    18px;
+  margin-right:     $margin;
+}
+
+.launcher_icon:hover{
+  background-color: $gray;
+}
+
+.works {
+  font-family:      "jetBrainsMono Nerd Font";
+  padding:          9px;
+  border-radius:    5px;
+  min-width:        10px;
+  margin-right:     $margin;
+  background-color: $black;
+}
+
+.0, .01, .02, .03, .04, .05, .06,
+.011, .022, .033, .044, .055, .066 {
+
+  color:      transparent;
+  font-size:  6px;
+  padding:    0px 7px;
+  transition: all 0.2s;
+  margin:     0px 2px;
+}
+
+.0 {
+  background-color: $gray;
+  border-radius:    16px;
+  transition:       all 0.2s;
+}
+
+.0:hover {
+  padding: 0px 15px;
+}
+
+.01, .02, .03, .04, .05, .06 {
+  background-color: $foreground-dark;
+  border-radius:    16px;
+  transition:       all 0.2s;
+}
+
+.01:hover,.02:hover,.03:hover,.04:hover,.05:hover,.06:hover{
+  padding: 0px 15px;
+}
+
+.011, .022, .033, .044, .055, .066 {
+  background-color: $foreground-dark;
+  border-radius:    16px;
+  transition:       all 0.2s;
+}
+
+.focused {
+  background-color: $white;
+  border-radius:    16px;
+  padding:          0px 15px;
+}
+
+.dock-dropdown
+{
+  color: $foreground;
+  border-radius: 5px;
+  padding: 0px 10px;
+  background-color: $black;
+  transition: 0.5s;
+  margin-right: 5px;
+}
+
+.dock-dropdown:hover
+{
+  background-color: $gray;
+}
+
+.dock
+{
+  font-size: 18px;
+}
+
+.dock-content
+{
+  background-color: $black;
+  border-radius:    5px;
+  padding:          5px;
+}
+
+.dock-item-1, .dock-item-2, .dock-item-3, .dock-item-4, .dock-item-5
+{
+  color:         $foreground-dark;
+  font-family:   "jetBrainsMono Nerd Font";
+  font-size:     0.7em;
+  border-radius: 5px;
+  transition:    0.2s;
+  padding:       0px 10px;
+}
+
+.dock-item-1:hover,.dock-item-2:hover,.dock-item-3:hover,.dock-item-4:hover,.dock-item-5:hover
+{
+  border-radius:    5px;
+  color:            $foreground;
+  background-color: $gray;
+}
+
+/*
+  CENTER
+*/
+
+.time-hour {
+  margin-right: 2px;
+}
+
+.time-min {
+  margin-left:  2px;
+}
+
+.time {
+  font-family:      "jetBrainsMono Nerd Font";
+  font-weight:      bold;
+  border-radius:    5px;
+  margin-left:      5px;
+  padding:          0px 7px;
+  color:            $foreground;
+  background-color: $black;
+}
+
+/*
+  CONTROL
+*/
+
+.control {
+  font-family:      "jetBrainsMono Nerd Font";
+  border-radius:    5px;
+  background-color: $black;
+  padding:          0px 10px;
+  margin-left:      5px;
+}
+
+.bars trough highlight {
+  background-color: $white;
+  border-radius:    5px;
+}
+
+.volbar trough highlight {
+  background-color: $white;
+  border-radius:    5px;
+  margin-right: 5px;
+}
+
+.memory-icon{
+  font-family: "jetBrainsMono Nerd Font";
+  margin-left: 5px;
+  color:       $white;
+}
+
+.volume-icon{
+  font-family: "jetBrainsMono Nerd Font";
+  color:       $white;
+}
+
+.wifi-icon{
+  font-family: "jetBrainsMono Nerd Font";
+  margin-right: 5px;
+  color:       $white;
+}
+
+.wifi-content {
+  padding:          0px 10px;
+  padding-right:    14px;
+  border-radius:    5px;
+  background-color: $black;
+}
+
+.power-icon{
+  font-family: "jetBrainsMono Nerd Font";
+  margin-right: 5px;
+  color:       $foreground;
+}
+
+.power-icon:hover{
+  background-color: red;
+}
+
+scale trough {
+  all:              unset;
+  background-color: $background;
+  border-radius:    5px;
+  min-height:       10px;
+  min-width:        50px;
+  margin:           .3rem 0 .3rem 0;
+}
+
+/*
+  MENUS
+*/
+
+.cal-box {
+  font-family: "jetBrainsMono Nerd Font";
+  font-weight: bold;
+  background-color: $black;
+  border-radius:5px;
+
+  .cal-inner-box {
+      .cal {
+          &.highlight {
+          }
+        margin-left: 10px;
+      }
+  }
+}
+
+calendar:selected {
+  color: $foreground;
+}
+
+calendar.header {
+color: $foreground;
+font-weight: bold;
+}
+
+calendar.button {
+color: $foreground;
+}
+
+calendar.highlight {
+color: $foreground;
+font-weight: bold;
+}
+
+calendar:indeterminate {
+color: $background;
+}
