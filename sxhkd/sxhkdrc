@@ -35,7 +35,11 @@ super + ctrl + p
 
 #  Program launcher
 super + d
-    bash ~/.config/rofi/menu/launcher.sh
+    bash ~/.config/rofi/find/launcher.sh
+
+#  Poermenu launcher
+super + k
+    bash ~/.config/rofi/powermenu/launcher.sh
 
 #  Quicklinks launcher
 super + q
@@ -44,10 +48,6 @@ super + q
 #  Ranger launcher
 super + r
      kitty ranger
-
-#  Switch Windows
-super + a
-    bash ~/.config/rofi/switch/launcher.sh
 
 #  Monitor on
 super + ctrl + F11

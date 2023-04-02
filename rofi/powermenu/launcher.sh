@@ -17,26 +17,25 @@ host=`hostname`
 shutdown=''
 reboot=''
 lock=''
-suspend=''
-logout=''
+logout=''
+
 yes=''
 no=''
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p " Time: $uptime" \
 		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: northeast; anchor: center; fullscreen: false; width: 410px;}' \
-		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
-		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {horizontal-align: 0.5;}' \
-		-theme-str 'textbox {horizontal-align: 0.5;}' \
+	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 290px;}' \
+		-theme-str  'mainbox {children: [ "listview" ];}' \
+		-theme-str  'listview {columns: 2; lines: 1;}' \
+		-theme-str  'element-text {horizontal-align: 0.5;}' \
+		-theme-str  'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
@@ -50,7 +49,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$shutdown\n$reboot\n$logout\n$lock" | rofi_cmd
 }
 
 # Execute Command
@@ -61,10 +60,6 @@ run_cmd() {
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
-		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
@@ -91,10 +86,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-                betterlockscreen -l
-        ;;
-    $suspend)
-		run_cmd --suspend
+		betterlockscreen -l
         ;;
     $logout)
 		run_cmd --logout

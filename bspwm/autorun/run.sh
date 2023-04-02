@@ -14,7 +14,19 @@ bash ~/.config/bspwm/scripts/java_fix.sh
 # Polybar
 # -------
 
-$bash ~/.config/polybar/simple/launch.sh &
+# $bash ~/.config/polybar/code/launch.sh &
+
+# -------
+# "Dock" (made with polybar)
+# -------
+
+# $bash ~/.config/polybar/dock/run.sh &
+
+# ---------
+# Start EWW
+# ---------
+
+~/.local/bin/eww -c ~/.config/eww/pop --restart open pop &
 
 # ---------
 # Wallpaper
@@ -27,12 +39,6 @@ $bash ./.fehbg
 # ------------
 
 xsetroot -cursor_name left_ptr &
-
-# ---------
-# Start EWW
-# ---------
-
-# ~/.local/bin/eww -c ~/.config/eww/bar --restart open bar &
 
 # -----
 # Picom
@@ -50,4 +56,4 @@ xsetroot -cursor_name left_ptr &
 # Plank
 # -----
 
-plank &
+# plank &

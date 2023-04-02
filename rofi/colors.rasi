@@ -1,19 +1,20 @@
-/* colors */
 * {
-bg:   #070707;
-bg1:  #0e0e0e;
-bg2:  #101010;
-bg3:  #1C1C1C;
+    /* Default */
 
-fg:   #A5A5A5;
-fg1:  #777777;
-fg2:  #444444;
+    white:           #c4c4c4;
+    foreground:      #909090;
+    foreground-dark: #494949;
+    gray:            #222222;
+    black:           #111111;
+    background:      #0a0a0a;
 
-red:    #CB636A;
-green:  #58CC7A;
-orange: #CF9D71;
-cyan:   #71D5C3;
-purple: #594BA0;
-pink:   #B36797;
-yellow: #E2CC86;
+    /* Colors */
+
+    red:             #CB636A;
+    green:           #58CC7A;
+    orange:          #CF9D71;
+    cyan:            #71D5C3;
+    purple:          #594BA0;
+    pink:            #B36797;
+    yellow:          #E2CC86;
 }

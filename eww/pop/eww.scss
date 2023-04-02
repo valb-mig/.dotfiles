@@ -14,6 +14,7 @@
 $button_padding: 0px 12px 0px 12px;
 $button_hover:   0px 15px 0px 15px;
 $margin:         5px;
+$icon_size:      15px;
 
 $white:           #c4c4c4;
 $foreground:      #909090;
@@ -52,7 +53,7 @@ $cyan:   #71D5C3;
 .launcher_icon {
   color:            $yellow;
   background-color: $black;
-  font-family:      "jetBrainsMono Nerd Font";
+  font-family:      "Symbols Nerd Font";
   font-size:        20px;
   border-radius:    5px;
   transition:       all 0.2s;
@@ -66,7 +67,7 @@ $cyan:   #71D5C3;
 }
 
 .works {
-  font-family:      "jetBrainsMono Nerd Font";
+  font-family:      "Symbols Nerd Font";
   padding:          9px;
   border-radius:    5px;
   min-width:        10px;
@@ -116,14 +117,20 @@ $cyan:   #71D5C3;
   padding:          0px 15px;
 }
 
+/*
+  APPS
+*/
+
 .dock-dropdown
 {
-  color: $foreground;
-  border-radius: 5px;
-  padding: 0px 10px;
+  font-family:      "Symbols Nerd Font";
+  font-size:        $icon_size;
+  border-radius:    5px;
+  padding:          0px 10px;
+  transition:       0.5s;
+  margin-right:     5px;
+  color:            $foreground;
   background-color: $black;
-  transition: 0.5s;
-  margin-right: 5px;
 }
 
 .dock-dropdown:hover
@@ -131,32 +138,20 @@ $cyan:   #71D5C3;
   background-color: $gray;
 }
 
-.dock
-{
-  font-size: 18px;
-}
-
-.dock-content
-{
-  background-color: $black;
-  border-radius:    5px;
-  padding:          5px;
-}
-
 .dock-item-1, .dock-item-2, .dock-item-3, .dock-item-4, .dock-item-5
 {
-  color:         $foreground-dark;
-  font-family:   "jetBrainsMono Nerd Font";
-  font-size:     0.7em;
-  border-radius: 5px;
-  transition:    0.2s;
-  padding:       0px 10px;
+  color:            $foreground;
+  font-family:      "Symbols Nerd Font";
+  font-size:        $icon_size;
+  padding:          0px 8px 0px 8px;
+  border-radius:    5px;
+  margin-right:     5px;
+  transition:       0.2s;
+  background-color: $black;
 }
 
 .dock-item-1:hover,.dock-item-2:hover,.dock-item-3:hover,.dock-item-4:hover,.dock-item-5:hover
 {
-  border-radius:    5px;
-  color:            $foreground;
   background-color: $gray;
 }
 
@@ -173,7 +168,7 @@ $cyan:   #71D5C3;
 }
 
 .time {
-  font-family:      "jetBrainsMono Nerd Font";
+  font-family:      "JetBrainsMono Nerd Font";
   font-weight:      bold;
   border-radius:    5px;
   margin-left:      5px;
@@ -187,65 +182,84 @@ $cyan:   #71D5C3;
 */
 
 .control {
-  font-family:      "jetBrainsMono Nerd Font";
+  font-size:        1.4em;
   border-radius:    5px;
-  background-color: $black;
-  padding:          0px 10px;
   margin-left:      5px;
-}
-
-.bars trough highlight {
-  background-color: $white;
-  border-radius:    5px;
-}
-
-.volbar trough highlight {
-  background-color: $white;
-  border-radius:    5px;
-  margin-right: 5px;
-}
-
-.memory-icon{
-  font-family: "jetBrainsMono Nerd Font";
-  margin-left: 5px;
-  color:       $white;
-}
-
-.volume-icon{
-  font-family: "jetBrainsMono Nerd Font";
-  color:       $white;
-}
-
-.wifi-icon{
-  font-family: "jetBrainsMono Nerd Font";
-  margin-right: 5px;
-  color:       $white;
-}
-
-.wifi-content {
-  padding:          0px 10px;
-  padding-right:    14px;
-  border-radius:    5px;
   background-color: $black;
-}
+  
+  .bars trough highlight {
+    border-radius:    5px;
+    background-color: $white;
+  }
+  
+  .volbar trough highlight {
+    border-radius:    5px;
+    background-color: $white;
+  }
+    
+  .memory-content{
+    padding: 0px 8px;
+  }
 
-.power-icon{
-  font-family: "jetBrainsMono Nerd Font";
-  margin-right: 5px;
-  color:       $foreground;
-}
+  .tray-icon {
+    border-radius: 5px;
+    padding:       0px 8px;
+    transition:    all 0.2s;
+  }
 
-.power-icon:hover{
-  background-color: red;
-}
+  .volume-content {
+    padding: 0px 0px 0px 8px;
+  }
 
-scale trough {
-  all:              unset;
-  background-color: $background;
-  border-radius:    5px;
-  min-height:       10px;
-  min-width:        50px;
-  margin:           .3rem 0 .3rem 0;
+  .wifi-icon,.power-icon,.volume-icon{
+    font-family:      "Symbols Nerd Font";
+    font-size:        $icon_size;
+    padding:          0px 8px 0px 8px;
+    border-radius:    5px;
+    transition:       all 0.2s;
+    color:            $white;
+    background-color: $black;
+  }
+  
+  .memory-icon{
+    font-family: "Symbols Nerd Font";
+    font-size:   $icon_size;
+    color:       $white;
+  }
+
+  .wifi-icon {
+    padding: 0px 2px 0px 4px;
+  }
+
+  .volume-icon {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .power-icon:hover{
+    background-color: $gray;
+  }
+
+  .power-icon:active{
+    background-color: $white;
+  }
+
+  .tray-icon:hover{
+    background-color: $gray;
+  }
+
+  .tray-icon:active {
+    background-color: $white;
+  }
+
+  scale trough {
+
+    all:              unset;
+    border-radius:    5px;
+    min-height:       10px;
+    min-width:        50px;
+    margin-right:     5px;
+    background-color: $background;
+  }
 }
 
 /*
@@ -253,14 +267,16 @@ scale trough {
 */
 
 .cal-box {
-  font-family: "jetBrainsMono Nerd Font";
-  font-weight: bold;
-  background-color: $black;
-  border-radius:5px;
+  font-family:      "JetBrainsMono Nerd Font";
+  font-weight:      bold;
+  border-radius:    5px;
+  padding:          8px;
+  background-color: $background;
 
   .cal-inner-box {
       .cal {
           &.highlight {
+            color: $foreground-dark
           }
         margin-left: 10px;
       }
@@ -268,23 +284,26 @@ scale trough {
 }
 
 calendar:selected {
-  color: $foreground;
+  font-weight: bold;
+  border-radius: 7px;
+  color: $background;
+  background-color: gray;
 }
 
 calendar.header {
-color: $foreground;
-font-weight: bold;
+  color: $foreground;
+  font-weight: bold;
 }
 
 calendar.button {
-color: $foreground;
+  color: $gray;
 }
 
 calendar.highlight {
-color: $foreground;
-font-weight: bold;
+  color: $gray;
+  font-weight: bold;
 }
 
 calendar:indeterminate {
-color: $background;
+  color: $gray;
 }

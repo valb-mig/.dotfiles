@@ -5,7 +5,7 @@
 (defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/pop")
+(defvar  eww "$HOME/.local/bin/eww -c $HOME/.config/eww/pop")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
@@ -15,14 +15,6 @@
 (defwidget workspaces []
 	(literal :content workspace))
 (deflisten workspace "scripts/workspace")
-
-;; Launcher Widgets ;;
-(defwidget launcher []
-	(box :orientation "h" 
-		 :space-evenly false 
-  	(button :class   "launcher_icon" 
-		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
-			"")))
 
 ;; Dock Widget ;;
 (defwidget dock []
@@ -35,7 +27,7 @@
 					:class "dock"
 			
 			(button :class "dock-dropdown"					
-					:onclick ""	"")
+					:onclick ""	"󰾍")
 		
 			(revealer	:transition "slideright"				
 						:reveal dock			 
@@ -55,15 +47,15 @@
 					
 					(button :class   "dock-item-3" 
 							:onclick "nautilus"
-							"󰴉")
+							"")
 					
 					(button :class   "dock-item-4" 
 							:onclick "kitty"
-							"󰄛")
+							"󰲌")
 					
 					(button :class   "dock-item-5" 
 							:onclick "spotify"
-							"")
+							"")
 				)
 			)
 		)
@@ -76,8 +68,10 @@
 
 	(box :orientation  "h" 
 		 :space-evenly false 
+		 :class        "memory-content"
 		
-		(scale :class "bars"
+		(scale 
+			:class "bars"
 			:value memory
 			:orientation "h"
 			:flipped true
@@ -87,7 +81,7 @@
 		(button 
 			:class "memory-icon"
 			:tooltip "using ${memory}% ram"
-			"")
+			"")
 	)
 )
 
@@ -96,8 +90,9 @@
 	(eventbox :onhover "${eww} update volum=true" 		
 			  :onhoverlost "${eww} update volum=false"
 
-	(box      :orientation "h" 	  
+	(box      :orientation  "h" 	  
 			  :space-evenly false 
+			  :class        "volume-content"
 
 	(revealer :transition "slideleft" 
 			  :reveal volum         
@@ -129,9 +124,29 @@
 (defwidget power []
 	(box :orientation "h" 
 		 :space-evenly false 
+		 :class "power-content"
   	(button :class   "power-icon" 
-		   	:onclick "bash ~/.config/rofi/search/launcher.sh"
+		   	:onclick "bash ~/.config/rofi/powermenu/launcher.sh"
 			"")))
+
+;; Tray Widgets ;;
+(defwidget sys []
+	(box :orientation "h" 
+		 :space-evenly false  
+		 :class "control"
+(tray)))
+
+(defvar  tray       "stalonetray")
+(defvar  close-tray "pkill stalonetray")
+(defwidget tray []
+	(box :orientation "h" 
+		 :space-evenly false 
+		 :class "tray-content"
+  	(button :class   "tray-icon" 
+			:onclick "${tray}"
+			:onrightclick "${close-tray}"
+			"")))
+
 
 ;; Control Panel Widgets ;;	
 (defwidget control []
@@ -204,7 +219,8 @@
 		 :halign       "end" 
 		 :class        "bg"
 (system)
-(control)))
+(control)
+(sys)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
@@ -242,8 +258,8 @@
 
 ;; Calendar Windows ;;
 (defwindow calendar
-	:geometry (geometry :x "83%" 
-						:y "70%" 
-						:width "270px" 
-						:height "60px")
+	:geometry (geometry :x "825px" 
+						:y "44px" 
+						:width  "270px" 
+						:height "150px")
 (cal))
