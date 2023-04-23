@@ -101,6 +101,16 @@ $symbol-size: 1.7em;
   border-radius:    16px;
 } 
 
+.caps-on {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $green;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
 .control {
   font-family:      $symbol;
   font-size:        $symbol-size;
@@ -133,110 +143,4 @@ $symbol-size: 1.7em;
   color:            $foreground;
   background-color: $light-black;
   padding:          2px 0px;
-}
-
-.cal-box {
-  font-size: 1em;
-  font-weight: bold;
-  background-color: $black;
-  border-radius:5px;
-
-  .cal-inner-box {
-      padding: 1rem 1rem .2rem;
-
-      .cal {
-          &.highlight {
-              padding: 10rem;
-          }
-
-          padding: .8rem .25rem 0rem;
-          margin-left: 10px;
-      }
-  }
-}
-
-calendar:selected {
-  color: $foreground;
-}
-
-calendar.header {
-color: $foreground;
-font-weight: bold;
-}
-
-calendar.button {
-color: $foreground;
-}
-
-calendar.highlight {
-color: $foreground;
-font-weight: bold;
-}
-
-calendar:indeterminate {
-color: $background;
-}
-
-.powermenu {
-  font-size: 1.4em;
-  font-weight: bold;
-}
-
-.button-bspres, .button-reb, .button-lock,
-.button-quit, .button-off {
-  padding: .5rem .2rem .3rem .2rem;
-}
-
-.button-off {
-  border-radius: 5px;
-  margin: .4rem 0 .5rem 0;
-  color: $purple;
-  background-color: $black;
-  box-shadow: 0px 0px 4px 0px #000;
-}
-
-.power-content {
-  margin: 5px 0px 0px 0px;
-  font-size: 15px;
-  background-color: $black;
-  border-radius: 5px;
-  padding: 4px;
-}
-
-.button-shutdown {
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: 0.2s;
-  padding: 7px 0px 7px 0px;
-  color: $foreground-dark;
-}
-
-.button-reb {
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: 0.2s;
-  padding: 7px 0px 7px 0px;
-  color: $foreground-dark;
-}
-
-.button-quit {
-  font-size: 20px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: 0.2s;
-  padding: 7px 0px 7px 0px;
-  color: $foreground-dark;
-}
-
-.button-lock {
-  border-radius: 5px;
-  margin-bottom: 0px;
-  transition: 0.2s;
-  padding: 7px 0px 7px 0px;
-  color: $foreground-dark;
-}
-
-.button-bspres:hover, .button-reb:hover, .button-quit:hover, .button-lock:hover, .button-shutdown:hover {
-  color: $pink;
-  background-color: $gray;
 }

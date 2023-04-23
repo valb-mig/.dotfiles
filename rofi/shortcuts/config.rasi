@@ -14,10 +14,11 @@ configuration {
 @import "../colors.rasi"
 
 window {
-    location:         east;
-    anchor:           east;
-    width:            100px;
-    x-offset:         -7px;
+    location:         center;
+    anchor:           center;
+    width:            254px;
+    height:           106px;
+    x-offset:         0px;
     padding:          5px;
     border:           2px solid;
     border-radius:    0px;
@@ -41,7 +42,7 @@ listview {
     lines:            1;
     cycle:            true;
     scrollbar:        false;
-    layout:           vertical;
+    layout:           horizontal;
     spacing:          15px;
     background-color: transparent;
     cursor:           "default";
@@ -53,7 +54,7 @@ element {
     background-color: @black;
     text-color:       @foreground;
     cursor:           pointer;
-    padding:          12px 16px;
+    padding:          9px 15px;
 }
 
 element-text {

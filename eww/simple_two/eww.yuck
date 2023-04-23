@@ -41,7 +41,8 @@
 			:space-evenly "false" 
 			:valign "start" 
 	(launcher)
-	(workspaces)))
+	(workspaces)
+	(caps)))
 
 (defwidget middle []
 	(box	:orientation "v" 
@@ -99,6 +100,12 @@
 	(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
 	(defpoll wifi-name  :interval "1s" "scripts/wifi name")
 	(defpoll wifi-class :interval "1s" "scripts/wifi class")
+
+(defwidget caps []
+	(box		:orientation "v"  
+	(button		:class caps-class caps-icon)))
+	(defpoll caps-icon  :interval "1s" "scripts/caps icon")
+	(defpoll caps-class :interval "1s" "scripts/caps class")
 
 (defwidget control []
 	(box :orientation "v" 

@@ -32,20 +32,20 @@ bspc rule -a "Lxappearance" state=floating
 bspc rule -a "Bspwm"        state=floating
 bspc rule -a "root"         state=floating
 
+bspc subscribe node_state | while read -r _ _ _ _ state flag; do
+    if [ "$state" != "fullscreen" ]; then
+        continue
+    fi
+    if [ "$flag" == on ]; then
+        $HOME/.local/bin/eww/eww -c $HOME/.config/eww/simple_one close-all
+  else
+        $HOME/.local/bin/eww/eww -c $HOME/.config/eww/simple_one open simple_one
+    fi
+done &
+
 #    ___           
 #   / _ \__ _____  
 #  / , _/ // / _ \ 
 # /_/|_|\_,_/_//_/
 
 bash ~/.config/bspwm/autorun/run.sh
-
-bspc subscribe node_state | while read -r _ _ _ _ state flag; do
-    if [ "$state" != "fullscreen" ]; then
-        continue
-    fi
-    if [ "$flag" == on ]; then
-        $HOME/.local/bin/eww/eww -c $HOME/.config/eww/bar close-all
-  else
-        $HOME/.local/bin/eww/eww -c $HOME/.config/eww/bar open bar
-    fi
-done &
