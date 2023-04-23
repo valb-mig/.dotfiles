@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$1" = "launcher" ]; then
+    $HOME/.config/rofi/search/launcher.sh
+elif [ "$1" = "audio" ]; then
+    amixer
+fi

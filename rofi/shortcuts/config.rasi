@@ -53,7 +53,7 @@ element {
     background-color: @black;
     text-color:       @foreground;
     cursor:           pointer;
-    padding:          0px 12px;
+    padding:          12px 16px;
 }
 
 element-text {

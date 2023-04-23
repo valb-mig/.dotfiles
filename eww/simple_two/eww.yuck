@@ -1,0 +1,119 @@
+;; ---- ;;
+;; Vars ;;
+;; ---- ;;
+
+(defpoll memory          :interval "15s" "scripts/memory")
+(defpoll memory_used_mb  :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
+(defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/simple_two")
+
+;; ------- ;;
+;; General ;;
+;; ------- ;;
+
+(defwindow simple_two
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "100%" 
+						:width  "37px")
+	:monitor 1
+	:reserve (struts :distance "37px" 
+					 :side "left")
+	:wm-ignore false
+	:hexpand  "false"
+	:vexpand  "false"
+	(bar))
+(defwidget workspaces [] (literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "v" 
+		 :vexpand "false" 
+		 :hexpand "false"
+	(top)
+	(middle)
+	(end)))
+
+(defwidget top []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "start" 
+	(launcher)
+	(workspaces)))
+
+(defwidget middle []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "center" 
+	))
+
+(defwidget end []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5
+		 :class "bg"
+	(control)
+	(time)))
+
+(defwidget launcher []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :spacing 0
+  	(button :class   "launcher_icon" 
+			"")))
+	(defvar tray true)
+
+(defwidget mem []
+
+	(box :orientation  "v" 
+		 :space-evenly "false" 
+		 :spacing 0
+
+		(button 
+			:class "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"")
+	)
+)
+
+(defwidget volum []
+	(eventbox :onhover "${eww} update volum=true" 		
+			  :onhoverlost "${eww} update volum=false"
+
+	(box      :orientation "v" 	  
+			  :space-evenly "false" 
+			  :spacing "0"
+	
+	(button :class "volume-icon" ""))))
+	(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+	(defvar volum false)
+
+(defwidget wifi []
+	(box		:orientation "v"  
+				:tooltip wifi-name
+	(button		:onclick "scripts/popup wifi" 
+				:class   wifi-class wifi-icon)))
+	(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
+	(defpoll wifi-name  :interval "1s" "scripts/wifi name")
+	(defpoll wifi-class :interval "1s" "scripts/wifi class")
+
+(defwidget control []
+	(box :orientation "v" 
+		 :space-evenly true  
+		 :spacing "5"
+		 :class "control"
+	(volum)
+	(wifi)
+	(mem)))
+
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+	(button	:class "time-hour" hour)
+	(button	:class "time-min"  min)))
+	(defpoll hour :interval "1s" "date '+%H'")
+	(defpoll min  :interval "1s" "date '+%M'")

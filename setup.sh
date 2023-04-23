@@ -114,6 +114,18 @@ else
 
 fi
 
+if [ -d "~/.local/bin"]
+then
+
+  rm -rf ~/.local/bin
+  ln -s ~/.dotfiles/bin ~/.local/bin
+
+else
+
+  ln -s ~/.dotfiles/bin ~/.local/bin
+
+fi
+
 # Move to ${HOME}
 
 if [ -d "~/src"]

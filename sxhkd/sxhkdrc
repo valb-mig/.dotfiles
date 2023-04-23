@@ -17,7 +17,7 @@
 
 #  Files / Gnome Files
 super + e
-    bash ~/.config/sxhkd/alerts/files.sh
+    bash ~/.config/sxhkd/alerts/apps/files.sh
 
 #  Terminal emulator
 super + Return
@@ -51,15 +51,31 @@ super + r
 
 #  Monitor on
 super + ctrl + F11
-     bash ~/.config/sxhkd/alerts/monitor_on.sh
+     bash ~/.config/sxhkd/alerts/system/monitor_on.sh
 
 #  Monitor off
 super + ctrl + F12
-     bash ~/.config/sxhkd/alerts/monitor_off.sh
+     bash ~/.config/sxhkd/alerts/system/monitor_off.sh
 
 #  Memory popup
 super + ctrl + m
-    bash ~/.config/sxhkd/alerts/memory.sh
+    bash ~/.config/sxhkd/alerts/info/memory.sh
+
+#  Volume Up
+super + F11
+    bash ~/.config/sxhkd/alerts/volume/volume-increase.sh
+
+#  Volume Down
+super + F10
+    bash ~/.config/sxhkd/alerts/volume/volume-decrease.sh
+
+#  Volume Max
+super + F9
+    bash ~/.config/sxhkd/alerts/volume/volume-max.sh
+
+#  Volume Mute
+super + F12
+    bash ~/.config/sxhkd/alerts/volume/volume-mute.sh
 
 #  ___         _             
 # / __|_  _ __| |_ ___ _ __  
@@ -69,11 +85,11 @@ super + ctrl + m
 
 #  Print Like Mac
 super + p
-  bash ~/.config/sxhkd/alerts/mac_print.sh
+  bash ~/.config/sxhkd/alerts/system/mac_print.sh
 
 #  Print
 Print
-  bash ~/.config/sxhkd/alerts/print.sh
+  bash ~/.config/sxhkd/alerts/system/print.sh
 
 #  lockscreen
 super + l
@@ -156,4 +172,3 @@ super + alt + shift + {Left,Down,Up,Right}
 #  move a floating window
 super + {Left,Down,Up,Right}
         bspc node -v {-20 0,0 20,0 -20,20 0}
-

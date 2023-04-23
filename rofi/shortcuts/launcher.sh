@@ -11,7 +11,7 @@ mesg="Using '$BROWSER' as web browser"
 list_col='1'
 list_row='3'
 
-efonts="jetBrainsMono Nerd Font 40"
+efonts="Symbols Nerd Font 30"
 
 # Options
 
