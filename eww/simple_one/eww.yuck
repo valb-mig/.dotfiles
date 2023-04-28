@@ -42,6 +42,7 @@
 			:valign "start" 
 	(launcher)
 	(workspaces)
+	(repo)
 	(caps)))
 
 (defwidget middle []
@@ -108,6 +109,13 @@
 	(button		:class caps-class caps-icon)))
 	(defpoll caps-icon  :interval "1s" "scripts/caps icon")
 	(defpoll caps-class :interval "1s" "scripts/caps class")
+
+(defwidget repo []
+	(box		:orientation "v" 
+				:tooltip "./dotfiles" 
+	(button		:class repo-class repo-icon)))
+	(defpoll repo-icon  :interval "1s" "scripts/repo icon")
+	(defpoll repo-class :interval "1s" "scripts/repo class")
 
 (defwidget control []
 	(box :orientation "v" 

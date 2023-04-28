@@ -1,0 +1,13 @@
+#!/bin/sh
+
+symbol() {
+    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:") -gt 0 ] && echo "" || echo ""
+    exit $?
+}
+class() {
+    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:") -gt 0 ] && echo "git-mod" || echo ""
+    exit $?
+}
+
+[ "$1" = "icon" ]  && symbol && exit
+[ "$1" = "class" ] && class  && exit

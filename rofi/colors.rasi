@@ -10,11 +10,11 @@
 
     /* Colors */
 
-    red:             #CB636A;
-    green:           #58CC7A;
-    orange:          #CF9D71;
     cyan:            #71D5C3;
-    purple:          #594BA0;
-    pink:            #B36797;
+    green:           #58CC7A;
     yellow:          #E2CC86;
+    orange:          #CF9D71;
+    pink:            #B36797;
+    red:             #CB636A;
+    purple:          #594BA0;
 }

@@ -1,12 +1,3 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 configuration {
     show-icons: false;
 }
@@ -14,24 +5,20 @@ configuration {
 @import "../colors.rasi"
 
 window {
+    cursor:           "default";
     location:         center;
     anchor:           center;
-    width:            254px;
-    height:           106px;
     x-offset:         0px;
-    padding:          5px;
-    border:           2px solid;
+    y-offset:         0px;
     border-radius:    0px;
+    width:            234px;
+    border:           2px solid;
     border-color:     @black;
-    cursor:           "default";
     background-color: @background;
 }
 
 mainbox {
     enabled:          true;
-    spacing:          0px;
-    margin:           0px;
-    padding:          10px 10px 10px 10px;
     background-color: transparent;
     children:         [ "listview" ];
 }
@@ -40,11 +27,12 @@ listview {
     enabled:          true;
     columns:          3;
     lines:            1;
-    cycle:            true;
+    cycle:            false;
     scrollbar:        false;
     layout:           horizontal;
-    spacing:          15px;
     background-color: transparent;
+    spacing:          10px;
+    padding:          10px 10px;
     cursor:           "default";
 }
 
@@ -54,7 +42,7 @@ element {
     background-color: @black;
     text-color:       @foreground;
     cursor:           pointer;
-    padding:          9px 15px;
+    padding:          7px 15px;
 }
 
 element-text {
@@ -71,13 +59,13 @@ element alternate.normal {
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            @red;
+    background-color:            @black;
     text-color:                  @red;
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            @red;
+    background-color:            @black;
     text-color:                  @red;
 }
 element selected.normal {
