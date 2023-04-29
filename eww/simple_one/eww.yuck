@@ -118,7 +118,7 @@
 	(defpoll repo-class :interval "60s" "scripts/repo class")
 
 (defwidget control []
-	(box :orientation "v" 
+	(box :orientation "v"
 		 :space-evenly true  
 		 :spacing "5"
 		 :class "control"
