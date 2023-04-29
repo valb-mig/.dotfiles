@@ -1,11 +1,17 @@
 #!/bin/sh
 
 symbol() {
-    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:") -gt 0 ] && echo "" || echo ""
+    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
     exit $?
 }
 class() {
-    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:") -gt 0 ] && echo "git-mod" || echo ""
+
+    if git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "modified:"; then
+        echo "git-mod"
+    elif git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "deleted:"; then
+        echo "git-del"
+    fi
+
     exit $?
 }
 

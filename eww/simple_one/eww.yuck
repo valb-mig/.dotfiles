@@ -114,8 +114,8 @@
 	(box		:orientation "v" 
 				:tooltip "./dotfiles" 
 	(button		:class repo-class repo-icon)))
-	(defpoll repo-icon  :interval "1s" "scripts/repo icon")
-	(defpoll repo-class :interval "1s" "scripts/repo class")
+	(defpoll repo-icon  :interval "60s" "scripts/repo icon")
+	(defpoll repo-class :interval "60s" "scripts/repo class")
 
 (defwidget control []
 	(box :orientation "v" 

@@ -121,6 +121,16 @@ $symbol-size: 1.7em;
   margin-top:       5px;
 }
 
+.git-del {  
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $red;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
 .control {
   font-family:      $symbol;
   font-size:        $symbol-size;
