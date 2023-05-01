@@ -1,0 +1,165 @@
+;; ---- ;;
+;; Vars ;;
+;; ---- ;;
+
+(defpoll memory          :interval "15s" "scripts/memory")
+(defpoll memory_used_mb  :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
+(defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/simple_one")
+
+(defvar  direction "h")
+
+;; ------- ;;
+;; General ;;
+;; ------- ;;
+
+(defwindow simple_unity_top
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "25px" 
+						:width  "100%")
+	:monitor 0
+	:reserve (struts :distance "37px" 
+					 :side "top")
+	:wm-ignore false
+	:hexpand  "false"
+	:vexpand  "false"
+	(bar))
+(defwidget workspaces [] (literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation direction 
+		 :vexpand "false" 
+		 :hexpand "false"
+	(top)
+	(middle)
+	(end)))
+
+;; ------------ ;;
+;; Organization ;;
+;; ------------ ;;
+
+(defwidget top []
+	(box	:orientation direction
+			:space-evenly "false" 
+			:halign "start" 
+	(ipbox)))
+
+(defwidget middle []
+	(box	:orientation direction
+			:space-evenly "false" 
+			:halign "center" 
+	(workspaces)))
+
+(defwidget end []
+	(box :orientation direction
+		 :space-evenly "false" 
+		 :halign "end" 
+		 :spacing 0
+		 :class "bg"
+	(repo)
+	(caps)
+	(control)
+	(time)
+	(tray)))
+
+;; ------- ;;
+;; Widgets ;;
+;; ------- ;;
+
+;; Top ;;
+
+(defwidget ipbox []
+	(box :orientation direction
+			:space-evenly false  
+			:spacing "5"
+			:class "ip-content"
+	(machine)
+	(ip)))
+
+(defwidget machine []
+	(box	:orientation direction 
+			:class "machine-box" 
+	(button	:class "machine" "󰍹")))
+
+(defwidget ip []
+	(box		:orientation direction  
+	(button		:class   ip-class ip-icon)))
+	(defpoll ip-icon  :interval "60s" "scripts/ip ipadd")
+	(defpoll ip-class :interval "60s" "scripts/ip class")
+
+;; End ;;
+
+(defwidget caps []
+	(box		:orientation direction  
+	(button		:class caps-class caps-icon)))
+	(defpoll caps-icon  :interval "1s" "scripts/caps icon")
+	(defpoll caps-class :interval "1s" "scripts/caps class")
+
+(defwidget repo []
+	(box		:orientation direction 
+				:tooltip "./dotfiles" 
+	(button		:class repo-class repo-icon)))
+	(defpoll repo-icon  :interval "60s" "scripts/repo icon")
+	(defpoll repo-class :interval "60s" "scripts/repo class")
+
+(defwidget control []
+	(box :orientation direction
+			:space-evenly true  
+			:spacing "5"
+			:class "control"
+	(wifi)
+	(mem)))
+
+(defwidget volum []
+	(eventbox :onhover "${eww} update volum=true" 		
+				:onhoverlost "${eww} update volum=false"
+
+	(box      :orientation direction 	  
+				:space-evenly "false" 
+				:spacing "0"
+	
+	(button :class "volume-icon" ""))))
+	(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+	(defvar volum false)
+
+(defwidget wifi []
+	(box		:orientation direction  
+				:tooltip wifi-name
+	(button		:onclick "scripts/popup wifi" 
+				:class   wifi-class wifi-icon)))
+	(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
+	(defpoll wifi-name  :interval "1s" "scripts/wifi name")
+	(defpoll wifi-class :interval "1s" "scripts/wifi class")
+
+(defwidget mem []
+
+	(box :orientation direction
+		 :space-evenly "false" 
+		 :spacing 0
+
+		(button 
+			:class "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"󰍛")
+	)
+)
+
+(defwidget time []
+	(box	:orientation direction 
+			:class "time" 
+			:halign "end"
+	(button	:class "time-hour" hour)))
+	(defpoll hour :interval "1s" "date '+%H:%M'")
+
+(defwidget tray []
+	(box	:orientation direction 
+			:class  "tray-box" 
+			:halign "end"
+	(button	:class "tray-content" 
+			:onclick      "scripts/tray true"
+			:onrightclick "scripts/tray false" "")))
+	(defvar tray true)

@@ -7,7 +7,7 @@ echo ""
 
 class() {
 [ $(xset q | grep 'LED mask' | sed 's/.*\([0-9]\)$/\1/') = 1 ] && echo "caps-on" && exit
-echo "caps-off"
+echo ""
 }
 
 [ "$1" = "icon" ]  && symbol && exit

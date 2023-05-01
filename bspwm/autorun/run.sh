@@ -12,9 +12,9 @@ killall stalonetray
 # Bars = 'code, redux, regular, simple'
 POLYBAR="code"
 
-# Bars = 'bar, pop, simple_one, simple_two'
-EWW_BAR_PRIMARY="simple_one"
-EWW_BAR_SECONDARY="simple_two"
+# Bars = 'bar, pop, simple_one, simple_two', 'simple_unity_left', 'simple_unity_top'
+EWW_BAR_PRIMARY="simple_unity_top"
+EWW_BAR_SECONDARY="simple_unity_left"
 
 CONFIG="$HOME/.config/"
 EWW="$HOME/.local/bin/eww"

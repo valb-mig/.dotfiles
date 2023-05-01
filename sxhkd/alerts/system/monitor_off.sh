@@ -1,12 +1,8 @@
 #!bin/bash
 
-# Kill polybar
-
-killall polybar
-
 # Configure one monitor
 
-xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 --off
+xrandr --output eDP1 --primary --mode 1366x768 --rotate normal --output HDMI2 --off
 
 # Wallpaper
 

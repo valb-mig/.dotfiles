@@ -1,14 +1,13 @@
 #!bin/bash
 
-# Kill polybar
+# Configure one monitor
 
-killall polybar
+xrandr --output HDMI2 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1366x768 --rotate normal --left-of HDMI2
 
-# Back with defaults config
+# Wallpaper
 
-bash ~/.config/bspwm/autorun/run.sh
+$bash ./.fehbg
 
 # Notify
 
-notify-send "Monitor On"
-
+notify-send "Monitor Off

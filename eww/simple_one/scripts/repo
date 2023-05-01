@@ -1,19 +1,41 @@
 #!/bin/sh
 
+path=".dotfiles"
+
 symbol() {
-    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
+    [ $(git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
     exit $?
 }
 class() {
 
-    if git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "modified:"; then
+    if git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -q "modified:"; then
         echo "git-mod"
-    elif git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "deleted:"; then
+    elif git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -q "deleted:"; then
         echo "git-del"
     fi
 
     exit $?
 }
 
-[ "$1" = "icon" ]  && symbol && exit
-[ "$1" = "class" ] && class  && exit
+[ "$1" = "icon" ]          && symbol     && exit
+[ "$1" = "class" ]         && class      && exit
+
+project_path="Github/Projetos/todo-web-app"
+
+project_symbol() {
+    [ $(git --git-dir=$HOME/$project_path/.git --work-tree=$HOME/$project_path status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
+    exit $?
+}
+project_class() {
+
+    if git --git-dir=$HOME/$project_path/.git --work-tree=$HOME/$project_path status | grep -q "modified:"; then
+        echo "git-project-mod"
+    elif git --git-dir=$HOME/$project_path/.git --work-tree=$HOME/$project_path status | grep -q "deleted:"; then
+        echo "git-project-del"
+    fi
+
+    exit $?
+}
+
+[ "$1" = "project_icon" ]  && project_symbol && exit
+[ "$1" = "project_class" ] && project_class  && exit

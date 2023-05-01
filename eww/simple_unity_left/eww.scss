@@ -54,8 +54,8 @@ $symbol-size: 1.7em;
 
 .eww_bar {
   background-color: $background;
-  padding:     5px 4px;
-  border-left: 2px solid $black;
+  padding:      5px 4px;
+  border-right: 2px solid $black;
 }
 
 .launcher_icon {
@@ -101,16 +101,6 @@ $symbol-size: 1.7em;
   border-radius:    16px;
 } 
 
-.caps-off {
-  font-family:      $symbol;
-  font-size:        0px;
-  border-radius:    5px;
-  color:            $background;
-  background-color: transparent;
-  padding:          0px 0px;
-  margin-top:       0px;
-}
-
 .caps-on {
   font-family:      $symbol;
   font-size:        $symbol-size;
@@ -119,54 +109,6 @@ $symbol-size: 1.7em;
   background-color: $green;
   padding:          2px 0px;
   margin-top:       5px;
-}
-
-.git-mod {  
-  font-family:      $symbol;
-  font-size:        $symbol-size;
-  border-radius:    5px;
-  color:            $background;
-  background-color: $purple;
-  padding:          2px 0px;
-  margin-top:       5px;
-}
-
-.git-del {  
-  font-family:      $symbol;
-  font-size:        $symbol-size;
-  border-radius:    5px;
-  color:            $background;
-  background-color: $red;
-  padding:          2px 0px;
-  margin-top:       5px;
-}
-
-.git-project-mod {  
-  font-family:      $symbol;
-  font-size:        $symbol-size;
-  border-radius:    5px;
-  color:            $background;
-  background-color: $orange;
-  padding:          2px 0px;
-  margin-top:       5px;
-}
-
-.git-project-del {  
-  font-family:      $symbol;
-  font-size:        $symbol-size;
-  border-radius:    5px;
-  color:            $background;
-  background-color: $red;
-  padding:          2px 0px;
-  margin-top:       5px;
-}
-
-.control {
-  font-family:      $symbol;
-  font-size:        $symbol-size;
-  border-radius:    5px;
-  padding:          8px 0px;
-  background-color: $light-black;
 }
 
 .memory-icon {
@@ -193,4 +135,59 @@ $symbol-size: 1.7em;
   color:            $foreground;
   background-color: $light-black;
   padding:          2px 0px;
+}
+
+.volume-content, .memory-content {
+  background-color: $black;
+  border-radius: 5px;
+  padding:      5px 0px;
+}
+
+.control {
+  font-family:      $symbol;
+  font-size:        $font-size;
+  border-radius:    5px;
+  background-color: $background;
+}
+
+.bars trough highlight {
+  background-color: $orange;
+  border-radius: 5px;
+}
+
+.bars-volum trough highlight {
+  background-color: $green;
+  border-radius: 5px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $background;
+  border-radius: 5px;
+  min-height: 50px;
+  min-width: 10px;
+  margin: .3rem 0 .3rem 0;
+}
+
+.dock-content {
+  font-family: $symbol;
+  font-size:   $symbol-size;
+  background-color: $background;
+}
+
+.dock-item-1,.dock-item-2,.dock-item-3,.dock-item-4,.dock-item-5 {
+  color: $foreground-dark;
+  background-color: $black;
+  margin: 2px 0px;
+  border-radius: 5px;
+  padding: 2px 0px;
+  transition: all 0.2s;
+}
+
+.dock-item-1:hover,.dock-item-2:hover,.dock-item-3:hover,.dock-item-4:hover,.dock-item-5:hover {
+  color: $foreground;
+  background-color: $light-black;
+  margin: 2px 0px;
+  border-radius: 5px;
+  padding: 2px 0px;
 }
