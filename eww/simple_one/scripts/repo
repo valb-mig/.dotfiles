@@ -12,6 +12,8 @@ class() {
         echo "git-mod"
     elif git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -q "deleted:"; then
         echo "git-del"
+    else
+        echo "alert-off"
     fi
 
     exit $?
@@ -32,6 +34,8 @@ project_class() {
         echo "git-project-mod"
     elif git --git-dir=$HOME/$project_path/.git --work-tree=$HOME/$project_path status | grep -q "deleted:"; then
         echo "git-project-del"
+    else
+        echo "alert-off"
     fi
 
     exit $?
