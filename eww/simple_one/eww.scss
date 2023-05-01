@@ -104,10 +104,12 @@ $symbol-size: 1.7em;
 .alert-off {
   font-family:      $symbol;
   font-size:        0px;
-  border-radius:    5px;
-  color:            $background;
+  color:            transparent;
   background-color: transparent;
+  font-size:        0px;
+  border-radius:    0px;
   padding:          0px 0px;
+  margin:           0px;
   margin-top:       0px;
 }
 

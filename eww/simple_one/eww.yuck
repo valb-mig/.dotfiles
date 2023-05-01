@@ -43,7 +43,8 @@
 	(launcher)
 	(workspaces)
 	(caps)
-	(repo)))
+	(repo)
+	(project-repo)))
 
 (defwidget middle []
 	(box	:orientation "v" 
@@ -107,18 +108,23 @@
 (defwidget caps []
 	(box		:orientation "v"  
 	(button		:class caps-class caps-icon)))
+
 	(defpoll caps-icon  :interval "1s" "scripts/caps icon")
 	(defpoll caps-class :interval "1s" "scripts/caps class")
 
 (defwidget repo []
 	(box		:orientation "v" 
-	(button		:tooltip "./dotfiles" :class repo-class repo-icon)
-	(button		:tooltip "Todo"       :class project-class project-icon)))
+	(button		:class repo-class repo-icon)))
 		
 	(defpoll repo-icon     :interval "60s" "scripts/repo icon")
 	(defpoll repo-class    :interval "60s" "scripts/repo class")
-	(defpoll project-icon  :interval "60s" "scripts/repo project_icon")
-	(defpoll project-class :interval "60s" "scripts/repo project_class")
+
+(defwidget project-repo []
+	(box		:orientation "v" 
+	(button		:class project-class project-icon)))
+
+	(defpoll project-icon  :interval "60s" "scripts/repo_two project_icon")
+	(defpoll project-class :interval "60s" "scripts/repo_two project_class")
 
 (defwidget control []
 	(box :orientation "v"
