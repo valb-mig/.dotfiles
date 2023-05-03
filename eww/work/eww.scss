@@ -1,0 +1,194 @@
+/*
+   _____      _                
+  / ____|    | |               
+ | |     ___ | | ___  _ __ ___ 
+ | |    / _ \| |/ _ \| '__/ __|
+ | |___| (_) | | (_) | |  \__ \
+  \_____\___/|_|\___/|_|  |___/
+                               
+*/
+
+$foreground:      #9e9ead;
+$foreground-dark: #434352;
+$gray:            #363642;
+$light-black:     #242430;
+$black:           #181920;
+$background:      #0B0C0F;
+$red:             #CB636A;
+$green:           #58CC7A;
+$yellow:          #E2CC86;
+$orange:          #CF9D71;
+$purple:          #594BA0;
+$pink:            #B36797;
+$cyan:            #71D5C3;
+
+/*
+  ______          _       
+ |  ____|        | |      
+ | |__ ___  _ __ | |_ ___ 
+ |  __/ _ \| '_ \| __/ __|
+ | | | (_) | | | | |_\__ \
+ |_|  \___/|_| |_|\__|___/
+
+*/
+
+$font:        "jetBrainsMono Nerd Font";
+$font-size:   1.3em;
+$symbol:      "Symbols Nerd Font";
+$symbol-size: 1.4em;
+
+/*
+   _____ _         _      
+  / ____| |       | |     
+ | (___ | |_ _   _| | ___ 
+  \___ \| __| | | | |/ _ \
+  ____) | |_| |_| | |  __/
+ |_____/ \__|\__, |_|\___|
+              __/ |       
+             |___/        
+*/
+
+* {
+  all: unset;
+}
+
+.eww_bar {
+  background-color: $background;
+  padding:      4px 0px;
+  border-bottom: 2px solid $black;
+}
+
+.works {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  padding:          4px 4px;
+  border-radius:    10px;
+  background-color: $black;
+  border:           2px solid $light-black;
+}
+
+.0 {
+  color:            $light-black;
+  padding:          0px 5px;
+  border-radius:    10px
+}
+
+.01, .02, .03, .04, .05, .06 {
+  color:            $gray;
+  background-color: $black;
+  padding:          0px 5px;
+  border-radius:    10px
+}
+
+.011, .022, .033, .044, .055, .066 {
+  color:            $gray;
+  background-color: $black;
+  padding:          0px 5px;
+  border-radius:    10px
+}
+
+.focused {
+  color:            $foreground;
+  background-color: $gray;
+  padding:          0px 5px;
+  border-radius:    10px;
+} 
+
+.ip-content{
+  margin-left: 5px;
+}
+
+.machine-box {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    10px;
+  color:            $foreground;
+  padding:          0px 3px;
+}
+
+.ip-box {
+  font-family:      $font;
+  font-size:        1.2em;
+  border-radius:    10px;
+  color:            $foreground;
+  background-color: $black;
+  padding:          0px 5px;
+  border:           2px solid $light-black;
+}
+
+.caps-on,.git-mod,.git-del {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    10px;
+  color:            $background;
+  padding:          0px 8px;
+  margin-right:     5px;
+}
+
+.caps-on{
+  background-color: $green;
+}
+.git-mod {  
+  background-color: $purple;
+
+}
+.git-del {  
+  background-color: $red;
+
+}
+
+.tray-content {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  font-weight:      bold;
+  border-radius:    10px;
+  color:            $foreground;
+  background-color: $black;
+  padding:          0px 8px;
+  margin-right:     5px;
+  transition:       all 0.2s;
+  margin-left:      5px;
+  border:           2px solid $light-black;
+}
+
+.tray-content:hover {
+  background-color: $gray;
+}
+
+.control {
+  font-family:      $symbol;
+  font-size:        $font-size;
+  border-radius:    10px;
+  padding:          0px 8px;
+  background-color: $black;
+  border:           2px solid $light-black;
+}
+
+.memory-icon {
+  color: $foreground; 
+}
+
+.volume-icon {
+  color: $foreground;
+  padding: 0px 2px;
+}
+
+.wifi-down {
+  color: $red;
+}
+
+.wifi-up {
+  color: $foreground;
+}
+
+.time {
+  font-family:      $font;
+  font-size:        1.1em;
+  font-weight:      bold;
+  border-radius:    10px;
+  color:            $foreground;
+  background-color: $light-black;
+  padding:          0px 10px;
+  margin-left:      5px;
+  border:           2px solid $gray;
+}

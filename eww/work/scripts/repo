@@ -1,0 +1,19 @@
+#!/bin/sh
+
+symbol() {
+    [ $(git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
+    exit $?
+}
+class() {
+
+    if git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "modified:"; then
+        echo "git-mod"
+    elif git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME/.dotfiles status | grep -q "deleted:"; then
+        echo "git-del"
+    fi
+
+    exit $?
+}
+
+[ "$1" = "icon" ]  && symbol && exit
+[ "$1" = "class" ] && class  && exit
