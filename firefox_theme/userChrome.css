@@ -1,72 +1,69 @@
-/*
-Code-Theme for firefox 
-Theme code based on CASCADE theme.
-*/
+/* General */
 
-/* COLORS */
+@media (prefers-color-scheme: dark) {
+    
+    :root {
 
-@media (prefers-color-scheme: dark)
-{
-    :root 
-    {
-        --main-color:                       #070707;
-        --active-tab-color:                 #191919;
-        --inverted-colour:                  #f5f5f5;
+        --blue:    #66abe4;
+        --cyan:    #71D5C3;
+        --green:   #58CC7A;
+        --yellow:  #E2CC86;
+        --orange:  #CF9D71;
+        --red:     #CB636A; 
+        --pink:    #B36797;
+        --purple:  #594BA0;
 
-        --uc-identity-color-blue:           #7ED6DF;
-        --uc-identity-color-turquoise:      #55E6C1;
-        --uc-identity-color-green:          #B8E994;
-        --uc-identity-color-yellow:         #F7D794;
-        --uc-identity-color-orange:         #F19066;
-        --uc-identity-color-red:            #FC5C65;
-        --uc-identity-color-pink:           #F78FB3;
-        --uc-identity-color-purple:         #786FA6;
-
-        --uc-identity-color-blue-muted:     #7ED6DF99;
-        --uc-identity-color-turquoise-muted:#55E6C199;
-        --uc-identity-color-green-muted:    #B8E99499;
-        --uc-identity-color-yellow-muted:   #F7D794CC;
-        --uc-identity-color-orange-muted:   #F19066FF;
-        --uc-identity-color-red-muted:      #FC5C65FF;
-        --uc-identity-color-pink-muted:     #F78FB399;
-        --uc-identity-color-purple-muted:   #786FA6FF;
+        --background:  #0a0a0a;
+        --black:       #111111;
+        --gray:        #161616;
+        --foreground:  #222222;
+        --white:       #909090;
+        --super-white: #c5c5c5;
     }
 }
+:root {
 
-/* SETTINGS */
+    --radius: 10px;
+    --margin: 10px;
 
-:root 
-{
-    --uc-border-radius:                10px;
-    --container-tabs-indicator-margin: 10px;
-    --urlbar-popup-url-color:      var(--uc-identity-color-purple) !important;
+    --urlbar-popup-url-color:      var(--purple) !important;
     --uc-urlbar-width:             clamp(600px, 40vw, 600px);
     --uc-active-tab-width:         clamp(100px, 20vw, 180px);
-    --uc-inactive-tab-width:       clamp( 50px, 15vw, 100px);
+    --uc-inactive-tab-width:       clamp(50px,  15vw, 100px);
     --show-tab-close-button:       DEFAULT: -moz-inline-box;
     --show-tab-close-button-hover: DEFAULT: -moz-inline-box;
 }
+:root {
 
-/* BUTTONS */
+    --uc-theme-colour:    var(--black,       var(--black));
+    --uc-inverted-colour: var(--white,       var(--super-white));
+    --uc-hover-colour:    var(--gray,        var(--background));
+    --tab-active:         var(--black,       var(--black));
+    --tab-inactive:       var(--gray,        var(--foreground));
+    --link-list:          var(--list-select, var(--gray));
 
-#back-button,
-#forward-button     { display: DEFAULT -moz-inline-box !important; }
-#star-button        { display: none !important; }
-#urlbar-zoom-button { display: none !important; }
-#PanelUI-button     { margin-top: -5px; margin-bottom: 44px; }
-
-#PanelUI-menu-button 
-{
-
-    padding:    0px !important;
-    max-height: 1px;
-
-    list-style-image: none !important;
-
+    --button-bgcolor:              var(--red)        !important;
+    --button-hover-bgcolor:        var(--gray)       !important;
+    --button-active-bgcolor:       var(--foreground) !important;
+    --lwt-tab-text:                var(--white)      !important;
+    --lwt-text-color:              var(--white)      !important;
+    --toolbarbutton-border-radius: var(--radius)     !important;
+    --tab-border-radius:           var(--radius)     !important;
+    --arrowpanel-border-radius:    var(--radius)     !important;
+    
+    --tab-block-margin: 2px !important;
 }
 
-#PanelUI-menu-button .toolbarbutton-icon        { width:   1px !important;  }
-#PanelUI-menu-button .toolbarbutton-badge-stack { padding: 0px !important;  }
+/* Buttons */
+
+#back-button,
+#forward-button                                 { display: DEFAULT -moz-inline-box !important; }
+#star-button                                    { display: none !important; }
+#urlbar-zoom-button                             { display: none !important; }
+#PanelUI-button                                 { margin-top: -5px; margin-bottom: 20px; }
+#PanelUI-menu-button                            { padding: 0px  !important; max-height: 1px; list-style-image: none !important; }
+#PanelUI-menu-button .toolbarbutton-icon        { width:   2px  !important; }
+#PanelUI-menu-button .toolbarbutton-badge-stack { padding: 0px  !important; }
 #reader-mode-button                             { display: none !important; }
 #tracking-protection-icon-container             { display: none !important; }
 #identity-permission-box                        { display: none !important; }
@@ -75,27 +72,6 @@ Theme code based on CASCADE theme.
 #urlbar-go-button                               { display: none !important; }
 .tab-secondary-label                            { display: none !important; }
 
-:root 
-{
-    --uc-theme-colour:                          var(--main-color,         var(--toolbar-bgcolor));
-    --uc-inverted-colour:                       var(--inverted-colour,    var(--toolbar-color));
-    --uc-hover-colour:                          var(--active-tab-color, rgba(0, 0, 0, 0.2));
-
-    --tab-active:                               var(--active-color,     rgba(31, 31, 31, 1.0));
-    --tab-inactive:                             var(--inactive-color,   rgba(19, 19, 19, 0.4));
-    --link-list:                                var(--list-select,      rgba(207, 157, 113, 1.0));
-
-    --button-bgcolor:                           var(--uc-theme-colour)    !important;
-    --button-hover-bgcolor:                     var(--uc-hover-colour)    !important;
-    --button-active-bgcolor:                    var(--uc-hover-colour)    !important;
-    --toolbarbutton-border-radius:              var(--uc-border-radius)   !important;
-    --tab-border-radius:                        var(--uc-border-radius)   !important;
-    --lwt-text-color:                           var(--uc-inverted-colour) !important;
-    --lwt-tab-text:                             var(--uc-inverted-colour) !important;
-    --arrowpanel-border-radius:                 var(--uc-border-radius)   !important;
-    --tab-block-margin: 4px !important;
-}
-
 #window,
 #main-window,
 #toolbar-menubar,
@@ -103,20 +79,18 @@ Theme code based on CASCADE theme.
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box,
-#nav-bar 
-{
-    -moz-appearance: none !important;
-
-    border:     none !important;
-    box-shadow: none !important;
-    /* background: var(--uc-theme-colour) !important; */
+#nav-bar {
+    -moz-appearance:  none !important;
+    border:           none !important;
+    box-shadow:       none !important;
+    background-color: var(--background);
 }
 
 #PersonalToolbar toolbarbutton:not(:hover),
 #bookmarks-toolbar-button:not(:hover) { filter: grayscale(1) !important; }
 
 .titlebar-buttonbox-container { display: DEFAULT -moz-inline-box;}
-.titlebar-spacer { display: none !important; }
+.titlebar-spacer              { display: none !important; }
 
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
     > #tabbrowser-arrowscrollbox
@@ -125,149 +99,104 @@ Theme code based on CASCADE theme.
 .tabbrowser-tab
     >.tab-stack
     > .tab-background { box-shadow: none !important;  }
-
 .tabbrowser-tab
     > .tab-stack
-    > .tab-background { background: var(--tab-inactive) !important; }
-
+    > .tab-background { background: var(--black) !important; }
 .tabbrowser-tab[selected]
     > .tab-stack
-    > .tab-background { background: var(--tab-active) !important; }
+    > .tab-background { background: var(--gray) !important; }
 
-/* multi tab selection */
-#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background:-moz-lwtheme { background: var(--uc-hover-colour) !important; }
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background:-moz-lwtheme { background: var(--red) !important; }
 
-/* tab close button options */
-.tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
-.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
+.tabbrowser-tab:not([pinned]) .tab-close-button       { display:   var(--show-tab-close-button)       !important; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button { display:   var(--show-tab-close-button-hover) !important; }
+.tabbrowser-tab[selected][fadein]:not([pinned])       { max-width: var(--uc-active-tab-width)         !important; }
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width)       !important; }
 
-/* adaptive tab width */
-.tabbrowser-tab[selected][fadein]:not([pinned])       { max-width: var(--uc-active-tab-width) !important; }
-.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width) !important; }
-
-/* container tabs indicator */
 .tabbrowser-tab[usercontextid]
     > .tab-stack
     > .tab-background
     > .tab-context-line {
-
-        margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
-        height:  1px !important;
-
-        border-radius: var(--tab-border-radius) !important;
-        box-shadow: 0 1px 10px 1px var(--uc-identity-gradient-color) !important;
-
+    margin:       -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
+    border-radius: var(--radius) !important;
+    box-shadow:    none;
 }
 
-/* show favicon when media is playing but tab is hovered */
-.tab-icon-image:not([pinned]) { opacity: 1 !important; }
-
-/* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
+.tab-icon-image:not([pinned]){ opacity: 1 !important; }
 .tab-icon-overlay:not([crashed]),
 .tab-icon-overlay[pinned][crashed][selected] {
-
-  top: 5px !important;
-  z-index: 1 !important;
-
-  padding: 1.5px !important;
-  inset-inline-end: -8px !important;
-  width: 16px !important; height: 16px !important;
-
-  border-radius: 10px !important;
-
+    top:              5px           !important;
+    z-index:          1             !important;
+    padding:          1.5px         !important;
+    inset-inline-end: -8px          !important;
+    width:            16px          !important; 
+    height:           16px          !important;
+    border-radius:    var(--radius) !important;
 }
 
-/* style and position speaker icon */
 .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
-  stroke: transparent !important;
-  background: transparent !important;
-  opacity: 1 !important; fill-opacity: 0.8 !important;
-
-  color: currentColor !important;
-
-  stroke: var(--uc-theme-colour) !important;
-  background-color: var(--uc-theme-colour) !important;
-
+    stroke:           transparent       !important;
+    background:       transparent       !important;
+    color:            currentColor      !important;
+    opacity:          1                 !important; 
+    fill-opacity:     1                 !important;
+    stroke:           var(--gray)       !important;
+    background-color: var(--foreground) !important;
 }
 
-
-/* change the colours of the speaker icon on active tab to match tab colours */
 .tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
-  stroke: var(--uc-hover-colour) !important;
-  background-color: var(--uc-hover-colour) !important;
-
+    stroke:           var(--gray)       !important;
+    background-color: var(--foreground) !important;
 }
-
 
 .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) { margin-inline-end: 9.5px !important; }
-
-
 .tabbrowser-tab:not([image]) .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
-
-  top: 0 !important;
-
-  padding: 0 !important;
-  margin-inline-end: 5.5px !important;
-  inset-inline-end: 0 !important;
-
+    top:               0     !important;
+    padding:           0     !important;
+    inset-inline-end:  0     !important;
+    margin-inline-end: 5.5px !important;
 }
-
 
 .tab-icon-overlay:not([crashed])[soundplaying]:hover,
 .tab-icon-overlay:not([crashed])[muted]:hover,
 .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
-    color: currentColor !important;
-    stroke: var(--uc-inverted-colour) !important;
-    background-color: var(--uc-inverted-colour) !important;
-    fill-opacity: 0.95 !important;
-
+    color:            currentColor      !important;
+    fill-opacity:     0.95              !important;
+    stroke:           var(--gray)       !important;
+    background-color: var(--foreground) !important;
 }
-
 
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
-    color: currentColor !important;
-    stroke: var(--uc-inverted-colour) !important;
-    background-color: var(--uc-inverted-colour) !important;
-    fill-opacity: 0.95 !important;
-
+    color:            currentColor      !important;
+    fill-opacity:     1                 !important;
+    stroke:           var(--gray)       !important;
+    background-color: var(--foreground) !important;
 }
 
-
-/* speaker icon colour fix */
 #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying],
 #TabsToolbar .tab-icon-overlay:not([crashed])[muted],
-#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked] { color: var(--uc-inverted-colour) !important; }
+#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]{ color: var(--uc-inverted-colour) !important; }
 
-
-/* speaker icon colour fix on hover */
 #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying]:hover,
 #TabsToolbar .tab-icon-overlay:not([crashed])[muted]:hover,
-#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover { color: var(--uc-theme-colour) !important; }
+#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover{ color: var(--uc-theme-colour) !important; }
 
 #nav-bar {
-
-    border:     none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-
+    border:        none                   !important;
+    box-shadow:    none                   !important;
+    background:    var(--background)      !important;
+    border-bottom: 2px solid var(--black) !important;
 }
 
-/* remove border below whole nav */
 #navigator-toolbox { border-bottom: none !important; }
-
 
 #urlbar,
 #urlbar * {
-
-    outline: none !important;
-    box-shadow: none !important;
-
+    outline:       none !important;
+    box-shadow:    none !important;
+    border-radius: var(--radius);
 }
 
 #urlbar-background { border: var(--uc-hover-colour) !important; }
@@ -275,7 +204,7 @@ Theme code based on CASCADE theme.
 #urlbar[focused="true"]
     > #urlbar-background,
 #urlbar:not([open])
-    > #urlbar-background { background: transparent !important; }
+    > #urlbar-background { background: var(--black) !important; }
 
 #urlbar[open]
     > #urlbar-background { background: var(--uc-theme-colour) !important; }
@@ -283,43 +212,42 @@ Theme code based on CASCADE theme.
 .urlbarView-row:hover
     > .urlbarView-row-inner,
 .urlbarView-row[selected]
-    > .urlbarView-row-inner { background: var(--link-list) !important; }
+    > .urlbarView-row-inner { 
+    background-color: var(--gray) !important; 
+    color:       #fff !important; 
+    border-radius: 8px !important;
+}
 
 #statuspanel {
-
     position: absolute !important;
-    bottom: 12px !important; left: 12px !important;
-
+    bottom:   12px     !important; 
+    left:     12px     !important;
 }
 
 #statuspanel #statuspanel-label {
-
-    border: none !important;
-    border-radius: var(--uc-border-radius) !important;
-    background: var(--uc-theme-colour) !important;
-
+    border:        none              !important;
+    border-radius: var(--radius)     !important;
+    background:    var(--background) !important;
 }
 
-/* transition to oneline */
+/*
+ ██████  ███    ██ ███████ ██      ██ ███    ██ ███████ 
+██    ██ ████   ██ ██      ██      ██ ████   ██ ██      
+██    ██ ██ ██  ██ █████   ██      ██ ██ ██  ██ █████   
+██    ██ ██  ██ ██ ██      ██      ██ ██  ██ ██ ██      
+ ██████  ██   ████ ███████ ███████ ██ ██   ████ ███████ 
+*/
+
 @media (min-width: 1120px) {
-
-
-    /* move tabs bar over */
     #TabsToolbar { margin-left: var(--uc-urlbar-width) !important; }
+    #nav-bar     { margin: calc((var(--urlbar-min-height) * -1) - 8px) calc(100vw - var(--uc-urlbar-width)) 0 0 !important;}
+}
 
-
-    /* move entire nav bar  */
-    #nav-bar { margin: calc((var(--urlbar-min-height) * -1) - 8px) calc(100vw - var(--uc-urlbar-width)) 0 0 !important; }
-
-
-} /* end media query */
-
-/* Container Tabs */
-.identity-color-blue      { --identity-tab-color: var(--uc-identity-color-blue)      !important; --identity-icon-color: var(--uc-identity-color-blue)      !important; --uc-identity-gradient-color: var(--uc-identity-color-blue-muted)      !important; }
-.identity-color-turquoise { --identity-tab-color: var(--uc-identity-color-turquoise) !important; --identity-icon-color: var(--uc-identity-color-turquoise) !important; --uc-identity-gradient-color: var(--uc-identity-color-turquoise-muted) !important; }
-.identity-color-green     { --identity-tab-color: var(--uc-identity-color-green)     !important; --identity-icon-color: var(--uc-identity-color-green)     !important; --uc-identity-gradient-color: var(--uc-identity-color-green-muted)     !important; }
-.identity-color-yellow    { --identity-tab-color: var(--uc-identity-color-yellow)    !important; --identity-icon-color: var(--uc-identity-color-yellow)    !important; --uc-identity-gradient-color: var(--uc-identity-color-yellow-muted)    !important; }
-.identity-color-orange    { --identity-tab-color: var(--uc-identity-color-orange)    !important; --identity-icon-color: var(--uc-identity-color-orange)    !important; --uc-identity-gradient-color: var(--uc-identity-color-orange-muted)    !important; }
-.identity-color-red       { --identity-tab-color: var(--uc-identity-color-red)       !important; --identity-icon-color: var(--uc-identity-color-red)       !important; --uc-identity-gradient-color: var(--uc-identity-color-red-muted)       !important; }
-.identity-color-pink      { --identity-tab-color: var(--uc-identity-color-pink)      !important; --identity-icon-color: var(--uc-identity-color-pink)      !important; --uc-identity-gradient-color: var(--uc-identity-color-pink-muted)      !important; }
-.identity-color-purple    { --identity-tab-color: var(--uc-identity-color-purple)    !important; --identity-icon-color: var(--uc-identity-color-purple)    !important; --uc-identity-gradient-color: var(--uc-identity-color-purple-muted)    !important; }
+.identity-color-blue      { --identity-tab-color: var(--blue)   !important; --identity-icon-color: var(--blue)   !important; --uc-identity-gradient-color: var(--uc-identity-color-blue-muted)      !important; }
+.identity-color-turquoise { --identity-tab-color: var(--purple) !important; --identity-icon-color: var(--purple) !important; --uc-identity-gradient-color: var(--uc-identity-color-turquoise-muted) !important; }
+.identity-color-green     { --identity-tab-color: var(--green)  !important; --identity-icon-color: var(--green)  !important; --uc-identity-gradient-color: var(--uc-identity-color-green-muted)     !important; }
+.identity-color-yellow    { --identity-tab-color: var(--yellow) !important; --identity-icon-color: var(--yellow) !important; --uc-identity-gradient-color: var(--uc-identity-color-yellow-muted)    !important; }
+.identity-color-orange    { --identity-tab-color: var(--orange) !important; --identity-icon-color: var(--orange) !important; --uc-identity-gradient-color: var(--uc-identity-color-orange-muted)    !important; }
+.identity-color-red       { --identity-tab-color: var(--red)    !important; --identity-icon-color: var(--red)    !important; --uc-identity-gradient-color: var(--uc-identity-color-red-muted)       !important; }
+.identity-color-pink      { --identity-tab-color: var(--pink)   !important; --identity-icon-color: var(--pink)   !important; --uc-identity-gradient-color: var(--uc-identity-color-pink-muted)      !important; }
+.identity-color-purple    { --identity-tab-color: var(--purple) !important; --identity-icon-color: var(--purple) !important; --uc-identity-gradient-color: var(--uc-identity-color-purple-muted)    !important; }

@@ -1,15 +1,14 @@
 {
-  "name": "CodeTheme",
-  "version": "0.0.1",
-  "description": "Code theme for Codders",
-  "manifest_version": 2,
+  "name": "Code theme",
+  "version": "0.1.0",
+  "description": "Kinda poggers",
+  "manifest_version": 1,
 
   "applications": {
     "gecko": {
-      "id": "cascade@andreas.grafen.info"
+      "id": "valb.mig@gmail.com"
     }
   },
-
   "theme_experiment": {
     "stylesheet": "userChrome.css"
   }
