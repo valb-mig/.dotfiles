@@ -163,6 +163,23 @@ $symbol-size: 1.7em;
   margin-top:       5px;
 }
 
+.bluetooth-icon{
+  color:            $foreground-dark;
+  font-size:        1.5em;
+  border-radius:    5px;
+  padding:          2px 0px;
+  background-color: $light-black;
+}
+
+.bluetooth-icon-connected{
+  color:            $green;
+  font-size:        1.5em;
+  border-radius:    5px;
+  padding:          2px 0px;
+  background-color: $light-black;
+}
+
+
 .control {
   font-family:      $symbol;
   font-size:        $symbol-size;
@@ -172,7 +189,7 @@ $symbol-size: 1.7em;
 }
 
 .memory-icon {
-  color: $foreground; 
+  color: $foreground-dark; 
 }
 
 .volume-icon {
@@ -184,7 +201,16 @@ $symbol-size: 1.7em;
 }
 
 .wifi-up {
-  color: $foreground;
+  color: $foreground-dark;
+}
+
+.volume-icon {
+  color: $gray;
+}
+
+.circular-volum {
+  color: $green;
+  background-color: $background;
 }
 
 .time {

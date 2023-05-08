@@ -8,12 +8,12 @@
                                
 */
 
-$foreground:      #909090;
-$foreground-dark: #555555;
-$gray:            #313131;
-$light-black:     #1f1f1f;
-$black:           #1a1a1a;
-$background:      #0c0c0c;
+$foreground:      #9e9ead;
+$foreground-dark: #434352;
+$gray:            #363642;
+$light-black:     #242430;
+$black:           #181920;
+$background:      #0B0C0F;
 $red:             #CB636A;
 $green:           #58CC7A;
 $yellow:          #E2CC86;
@@ -54,7 +54,8 @@ $symbol-size: 1.7em;
 
 .eww_bar {
   background-color: $background;
-  padding:     5px 0px;
+  padding:     7px 0px;
+  border-bottom: 2px solid $black;
 }
 
 .works {

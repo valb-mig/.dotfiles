@@ -17,10 +17,10 @@
 (defwindow simple_unity_top
 	:geometry (geometry :x "0" 
 						:y "0" 
-						:height "25px" 
+						:height "30px" 
 						:width  "100%")
 	:monitor 0
-	:reserve (struts :distance "37px" 
+	:reserve (struts :distance "35px" 
 					 :side "top")
 	:wm-ignore false
 	:hexpand  "false"

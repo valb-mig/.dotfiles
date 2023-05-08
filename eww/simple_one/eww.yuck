@@ -8,6 +8,9 @@
 (defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
 (defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/simple_one")
 
+(defvar  bluetooth-mac   "E3:22:E4:E2:DD:C4")
+
+
 ;; ------- ;;
 ;; General ;;
 ;; ------- ;;
@@ -58,6 +61,7 @@
 		 :valign "end" 
 		 :spacing 5
 		 :class "bg"
+	(bluetooth)
 	(control)
 	(time)))
 
@@ -71,39 +75,66 @@
 			"")))
 	(defvar tray true)
 
-(defwidget mem []
-
-	(box :orientation  "v" 
-		 :space-evenly "false" 
-		 :spacing 0
-
-		(button 
-			:class "memory-icon"
-			:tooltip "using ${memory}% ram"
-			"")
-	)
-)
-
 (defwidget volum []
 	(eventbox :onhover "${eww} update volum=true" 		
 			  :onhoverlost "${eww} update volum=false"
 
-	(box      :orientation "v" 	  
-			  :space-evenly "false" 
-			  :spacing "0"
-	
-	(button :class "volume-icon" ""))))
-	(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-	(defvar volum false)
+		(box :orientation "v" 	  
+			 :space-evenly "false" 
+			 :spacing "0"
+		
+			(circular-progress 
+				:value current-volume
+				:class "circular-volum"
+				:thickness 4
+
+				(button :class "volume-icon" "")
+			)
+		)
+	)
+)
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar  volum false)
 
 (defwidget wifi []
 	(box		:orientation "v"  
 				:tooltip wifi-name
 	(button		:onclick "scripts/popup wifi" 
 				:class   wifi-class wifi-icon)))
-	(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
-	(defpoll wifi-name  :interval "1s" "scripts/wifi name")
-	(defpoll wifi-class :interval "1s" "scripts/wifi class")
+(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name  :interval "1s" "scripts/wifi name")
+(defpoll wifi-class :interval "1s" "scripts/wifi class")
+
+(defwidget mem []
+
+	(box :orientation  "v" 
+			:space-evenly "false" 
+			:spacing 0
+
+		(button 
+			:class "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"󱨄")
+	)
+)
+
+(defwidget bluetooth []
+
+	(box  :orientation  "v" 
+	      :space-evenly "false" 
+	      :spacing 0
+		  
+		(button 
+			:onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
+		  	:onrightclick "bluetoothctl disconnect ${bluetooth-mac} | notify-send 'Bluetooth' 'Disonnect'"
+			:class        bluetooth
+			:tooltip      bluetooth-tooltip
+			"")
+	)
+)
+(defpoll bluetooth-tooltip :interval "1s" "scripts/bluetooth tip")
+(defpoll bluetooth         :interval "1s" "scripts/bluetooth con")
+
 
 (defwidget caps []
 	(box		:orientation "v"  
