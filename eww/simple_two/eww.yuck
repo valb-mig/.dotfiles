@@ -7,6 +7,7 @@
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
 (defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/simple_two")
+(defvar  bluetooth-mac   "E3:22:E4:E2:DD:C4")
 
 ;; ------- ;;
 ;; General ;;
@@ -21,106 +22,178 @@
 	:reserve (struts :distance "37px" 
 					 :side "left")
 	:wm-ignore false
-	:hexpand  "false"
-	:vexpand  "false"
-	(bar))
+	:hexpand   false
+	:vexpand   false
+	(bar)
+)
 (defwidget workspaces [] (literal :content workspace))
 (deflisten workspace "scripts/workspace")
 
 (defwidget bar []
-	(box :class "eww_bar" 
+	(box :class       "eww_bar" 
 		 :orientation "v" 
-		 :vexpand "false" 
-		 :hexpand "false"
-	(top)
-	(middle)
-	(end)))
+		 :vexpand     false 
+		 :hexpand     false
+		(top)
+		(middle)
+		(end)
+	)
+)
+
+;; -------- ;;
+;;  Layout  ;;
+;; -------- ;;
 
 (defwidget top []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "start" 
-	(launcher)
-	(workspaces)
-	(caps)))
+	(box :orientation  "v" 
+		 :valign 	   "start" 
+		 :space-evenly false 
+		(launcher)
+		(workspaces)
+		(caps)
+	)
+)
 
 (defwidget middle []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "center" 
-	))
+	(box :orientation  "v" 
+		 :valign       "center" 
+		 :space-evenly false 
+	)
+)
 
 (defwidget end []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :valign "end" 
-		 :spacing 5
-		 :class "bg"
-	(control)
-	(time)))
+	(box :orientation  "v" 
+		 :valign       "end" 
+		 :class        "bg"
+		 :spacing      5
+		 :space-evenly false 
+
+		(volum)
+		(control)
+		(time)
+	)
+)
+
+;; --------- ;;
+;;  Widgets  ;;
+;; --------- ;;
 
 (defwidget launcher []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :spacing 0
-  	(button :class   "launcher_icon" 
-			"")))
-	(defvar tray true)
-
-(defwidget mem []
-
 	(box :orientation  "v" 
-		 :space-evenly "false" 
-		 :spacing 0
+		 :space-evenly false 
+		 :spacing 	   0
 
+  	(button :class        "launcher_icon" 
+			:onclick      "scripts/tray true"
+			:onrightclick "scripts/tray false"
+			"")
+	)
+)
+(defvar tray true)
+
+(defwidget caps []
+	(box		:orientation "v"  
+		(button :class caps-class caps-icon)
+	)
+)
+(defpoll caps-icon  :interval "1s" "scripts/caps icon")
+(defpoll caps-class :interval "1s" "scripts/caps class")
+
+(defwidget repo []
+	(box		:orientation "v" 
+		(button		:class repo-class repo-icon)
+	)
+)
+(defpoll repo-icon     :interval "60s" "scripts/repo icon")
+(defpoll repo-class    :interval "60s" "scripts/repo class")
+
+(defwidget project-repo []
+	(box		:orientation "v" 
+		(button		:class project-class project-icon)
+	)
+)
+(defpoll project-icon  :interval "60s" "scripts/repo_two project_icon")
+(defpoll project-class :interval "60s" "scripts/repo_two project_class")
+
+(defwidget bluetooth []
+
+	(box  :orientation  "v" 
+	      :space-evenly "false" 
+	      :spacing 0
+		  
 		(button 
-			:class "memory-icon"
-			:tooltip "using ${memory}% ram"
-			"")
+			:onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
+		  	:onrightclick "bluetoothctl disconnect ${bluetooth-mac} | notify-send 'Bluetooth' 'Disonnect'"
+			:class        bluetooth
+			:tooltip      bluetooth-tooltip
+			"")
+	)
+)
+(defpoll bluetooth-tooltip :interval "1s" "scripts/bluetooth tip")
+(defpoll bluetooth         :interval "1s" "scripts/bluetooth con")
+
+(defwidget control []
+	(box :orientation "v"
+		 :spacing 5
+		 :class "control"
+		 :space-evenly false
+		
+		(bluetooth)
+		(wifi)
+		(mem)
 	)
 )
 
 (defwidget volum []
-	(eventbox :onhover "${eww} update volum=true" 		
+	(eventbox :onhover     "${eww} update volum=true" 		
 			  :onhoverlost "${eww} update volum=false"
 
-	(box      :orientation "v" 	  
-			  :space-evenly "false" 
-			  :spacing "0"
-	
-	(button :class "volume-icon" ""))))
-	(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-	(defvar volum false)
+		(box :orientation  "v" 	  
+			 :space-evenly false
+			 :class 	   "volum-box"
+		
+			(circular-progress 
+				:value current-volume
+				:class "circular-volum"
+				:thickness 4
+
+				(button :class "volume-icon" "")
+			)
+		)
+	)
+)
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar  volum false)
 
 (defwidget wifi []
-	(box		:orientation "v"  
+	(box		:orientation "v"
 				:tooltip wifi-name
-	(button		:onclick "scripts/popup wifi" 
-				:class   wifi-class wifi-icon)))
-	(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
-	(defpoll wifi-name  :interval "1s" "scripts/wifi name")
-	(defpoll wifi-class :interval "1s" "scripts/wifi class")
+				:space-evenly true
+		(button :class   wifi-class wifi-icon)
+	)
+)
+(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name  :interval "1s" "scripts/wifi name")
+(defpoll wifi-class :interval "1s" "scripts/wifi class")
 
-(defwidget caps []
-	(box		:orientation "v"  
-	(button		:class caps-class caps-icon)))
-	(defpoll caps-icon  :interval "1s" "scripts/caps icon")
-	(defpoll caps-class :interval "1s" "scripts/caps class")
+(defwidget mem []
 
-(defwidget control []
-	(box :orientation "v" 
-		 :space-evenly true  
-		 :spacing "5"
-		 :class "control"
-	(volum)
-	(wifi)
-	(mem)))
+	(box :orientation     "v" 
+			:space-evenly true
+		(button 
+			:class "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"")
+	)
+)
 
 (defwidget time []
 	(box	:orientation "v" 
 			:class "time" 
 			:valign "end"
-	(button	:class "time-hour" hour)
-	(button	:class "time-min"  min)))
-	(defpoll hour :interval "1s" "date '+%H'")
-	(defpoll min  :interval "1s" "date '+%M'")
+		(button	:class "time-hour" hour)
+		(button	:class "time-min"  min)
+	)
+)
+(defpoll hour :interval "1s" "date '+%H'")
+(defpoll min  :interval "1s" "date '+%M'")

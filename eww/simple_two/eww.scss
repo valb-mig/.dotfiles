@@ -54,8 +54,8 @@ $symbol-size: 1.7em;
 
 .eww_bar {
   background-color: $background;
-  padding:      5px 4px;
-  border-right: 2px solid $black;
+  padding:     5px 4px;
+  border-left: 2px solid $black;
 }
 
 .launcher_icon {
@@ -97,9 +97,21 @@ $symbol-size: 1.7em;
 }
 
 .focused {
-  color:            $foreground;
-  border-radius:    16px;
+  border-radius: 16px;
+  color:         $foreground;
 } 
+
+.alert-off {
+  font-family:      $symbol;
+  font-size:        0px;
+  color:            transparent;
+  background-color: transparent;
+  font-size:        0px;
+  border-radius:    0px;
+  padding:          0px 0px;
+  margin:           0px;
+  margin-top:       0px;
+}
 
 .caps-on {
   font-family:      $symbol;
@@ -111,28 +123,112 @@ $symbol-size: 1.7em;
   margin-top:       5px;
 }
 
+.git-mod {  
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $purple;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
+.git-del {  
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $red;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
+.git-project-mod {  
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $orange;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
+.git-project-del {  
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $red;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
 .control {
   font-family:      $symbol;
   font-size:        $symbol-size;
   border-radius:    5px;
-  padding:          8px 0px;
+  padding:          4px 0px;
   background-color: $light-black;
 }
 
-.memory-icon {
-  color: $foreground; 
+.bluetooth-icon{
+  color:     $foreground-dark;
+  padding:   2px 0px;
+  font-size: 1.1em;
+  transition: all .2s;
 }
 
-.volume-icon {
-  color: $foreground;
+.bluetooth-icon-connected{
+  color:     $green;
+  padding:   2px 0px;
+  font-size: 1.1em;
+}
+
+.bluetooth-icon:hover, .bluetooth-icon-connected:hover {
+  color:            $foreground; 
+  border-radius:    5px;
+  margin:           0 2px;
+  background-color: $gray;
+} 
+
+.bluetooth-icon:active {
+  color: $green;
+}
+
+.memory-icon {
+  color:   $foreground-dark; 
+  padding: 2px 0px;
 }
 
 .wifi-down {
-  color: $red;
+  color:       $red;
+  padding:     0px;
+  font-family: $symbol;
+  font-size:   .9em;
 }
 
 .wifi-up {
-  color: $foreground;
+  color:       $foreground-dark;
+  padding:     0px;
+  font-family: $symbol;
+  font-size:   .9em;
+}
+
+.volume-icon {
+  font-family: $symbol;
+  font-size:   $symbol-size;
+  color:       $light-black;
+}
+
+.volum-box {
+  border-radius:    5px;
+  padding:          5px 0;
+  background-color: $light-black;
+}
+
+.circular-volum {
+  color:            $green;
+  background-color: $background;
 }
 
 .time {
@@ -140,7 +236,14 @@ $symbol-size: 1.7em;
   font-size:        $font-size;
   font-weight:      bold;
   border-radius:    5px;
-  color:            $foreground;
+  color:            $foreground-dark;
   background-color: $light-black;
   padding:          2px 0px;
+}
+
+.time-hour {
+  margin:           3px 3px 0px 3px;
+  border-radius:    5px;
+  color:            $foreground;
+  background-color: $gray;
 }

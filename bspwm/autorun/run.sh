@@ -12,7 +12,7 @@ killall stalonetray
 # Bars = 'code, redux, regular, simple'
 POLYBAR="code"
 
-# Bars = 'bar, pop, simple_one, simple_two', 'simple_unity_left', 'simple_unity_top'
+# Bars = 'bar, pop, simple_one, simple_two', 'simple_unity_left', 'simple_unity_top','work'
 EWW_BAR_PRIMARY="simple_one"
 EWW_BAR_SECONDARY="simple_two"
 
@@ -38,9 +38,8 @@ bash -c $CONFIG'bspwm/scripts/java_fix.sh'
 # Start EWW
 # ---------
 
-$EWW -c "$HOME/.config/eww/$EWW_BAR_PRIMARY" --restart open $EWW_BAR_PRIMARY &
-
 $EWW -c "$HOME/.config/eww/$EWW_BAR_SECONDARY" --restart open $EWW_BAR_SECONDARY &
+$EWW -c "$HOME/.config/eww/$EWW_BAR_PRIMARY" --restart open $EWW_BAR_PRIMARY &
 
 # ---------
 # Wallpaper
@@ -71,4 +70,8 @@ xsetroot -cursor_name left_ptr &
 
 # stalonetray
 
+# ---------
+# StartPage
+# ---------
 
+php -S 127.0.0.1:7000 -t $HOME/Github/Projetos/start-page/

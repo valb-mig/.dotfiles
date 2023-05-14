@@ -12,7 +12,7 @@ window {
     y-offset:         0px;
     border-radius:    0px;
     width:            234px;
-    border:           2px solid;
+    border:           2px;
     border-color:     @black;
     background-color: @background;
 }
