@@ -1,19 +1,13 @@
 #!/bin/sh
 
 symbol() {
-[ $(cat /sys/class/net/enp*/operstate) = down ] && echo "󰅤" && exit
-echo ""
-}
-
-class() {
-[ $(cat /sys/class/net/enp*/operstate) = down ] && echo "wifi-down" && exit
-echo "wifi-up"
+[ $(cat /sys/class/net/w*/operstate) = down ] && echo "󰤭" && exit
+echo ""
 }
 
 name() {
-nmcli | grep "^enp" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
+nmcli | grep "^wlp" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
 }
 
-[ "$1" = "icon" ]  && symbol && exit
-[ "$1" = "name" ]  && name   && exit
-[ "$1" = "class" ] && class  && exit
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name   && exit
