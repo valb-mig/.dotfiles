@@ -42,7 +42,7 @@
     --tab-inactive:       var(--gray,        var(--foreground));
     --link-list:          var(--list-select, var(--gray));
 
-    --button-bgcolor:              var(--red)        !important;
+    --button-bgcolor:              var(--black)      !important;
     --button-hover-bgcolor:        var(--gray)       !important;
     --button-active-bgcolor:       var(--foreground) !important;
     --lwt-tab-text:                var(--white)      !important;
@@ -106,7 +106,7 @@
     > .tab-stack
     > .tab-background { background: var(--gray) !important; }
 
-#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background:-moz-lwtheme { background: var(--red) !important; }
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background:-moz-lwtheme { background: var(--black) !important; }
 
 .tabbrowser-tab:not([pinned]) .tab-close-button       { display:   var(--show-tab-close-button)       !important; }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button { display:   var(--show-tab-close-button-hover) !important; }
