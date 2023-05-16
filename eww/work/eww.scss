@@ -1,83 +1,46 @@
-/*
-  Created   by https://github.com/rxyhn
-  Modifiyed by https://github.com/valb-mig
-*/
-
 *{
   all: unset;
 }
 
-/*
-  VARS
-*/
+/* -------- Colors ------- */
 
-$button_padding: 0px 12px 0px 12px;
-$button_hover:   0px 15px 0px 15px;
-$margin:         5px;
-$icon_size:      15px;
-
-$white:           #c4c4c4;
-$foreground:      #47484F;
-$foreground-dark: #434247;
-$gray:            #161420;
-$black:           #111019;
+$white:           #c4c1d9;
+$foreground:      #2f2c42;
+$foreground-dark: #221c33;
+$gray:            #181624;
+$black:           #13111c;
 $background:      #0B0A10;
 
-$red:    #CB636A;
-$green:  #58CC7A;
-$yellow: #E2CC86;
-$orange: #CF9D71;
-$purple: #594BA0;
-$pink:   #B36797;
-$cyan:   #71D5C3;
+/*                         */
 
-/*
-  _______  _______  ______   
-  |  _    ||   _   ||    _ |  
-  | |_|   ||  |_|  ||   | ||  
-  |       ||       ||   |_||_ 
-  |  _   | |       ||    __  |
-  | |_|   ||   _   ||   |  | |
-  |_______||__| |__||___|  |_|
-*/
+$green:  #85CA79;
+$cyan:   #79BACA;
+$purple: #A079CA;
+$pink:   #CA79B7;
+$red:    #CA7D79;
+$orange: #CA8679;
+$yellow: #CAA579;
 
-/*
-  START
-*/
+/* ------------------------ */
 
-.eww_bar {
-  padding: 5px;
+.work 
+{
+  padding: 2px;
   background-color: $background;
 }
 
-.launcher_icon {
-  color:            $yellow;
-  background-color: $black;
-  font-family:      "Symbols Nerd Font";
-  font-size:        20px;
-  border-radius:    5px;
-  transition:       all 0.2s;
-  padding:          $button_padding;
-  padding-right:    18px;
-  margin-right:     $margin;
-}
-
-.launcher_icon:hover{
-  background-color: $gray;
-}
-
-.works {
+.works 
+{
   font-family:      "Symbols Nerd Font";
   padding:          9px;
-  border-radius:    5px;
+  border-radius:    2px;
   min-width:        10px;
-  margin-right:     $margin;
+  margin-right:     2px;
   background-color: $black;
 }
 
-.0, .01, .02, .03, .04, .05, .06,
-.011, .022, .033, .044, .055, .066 {
-
+.0, .01, .02, .03, .04, .05, .06,.011, .022, .033, .044, .055, .066 
+{
   color:      transparent;
   font-size:  6px;
   padding:    0px 7px;
@@ -85,116 +48,82 @@ $cyan:   #71D5C3;
   margin:     0px 2px;
 }
 
-.0 {
+.0 
+{
   background-color: $gray;
-  border-radius:    16px;
+  border-radius:    2px;
   transition:       all 0.2s;
 }
 
-.0:hover {
-  padding: 0px 15px;
-}
-
-.01, .02, .03, .04, .05, .06 {
+.01, .02, .03, .04, .05, .06 
+{
   background-color: $foreground-dark;
-  border-radius:    16px;
+  border-radius:    2px;
   transition:       all 0.2s;
 }
 
-.01:hover,.02:hover,.03:hover,.04:hover,.05:hover,.06:hover{
-  padding: 0px 15px;
-}
-
-.011, .022, .033, .044, .055, .066 {
-  background-color: $foreground-dark;
-  border-radius:    16px;
+.011, .022, .033, .044, .055, .066 
+{
+  background-color: $foreground;
+  border-radius:    2px;
   transition:       all 0.2s;
 }
 
-.focused {
+.focused 
+{
   background-color: $white;
-  border-radius:    16px;
+  border-radius:    2px;
   padding:          0px 15px;
 }
 
-/*
-  APPS
-*/
-
-.dock-dropdown
+.launcher-box
 {
   font-family:      "Symbols Nerd Font";
-  font-size:        $icon_size;
-  border-radius:    5px;
+  font-size:        1.2em;
+  border-radius:    2px;
   padding:          0px 10px;
   transition:       0.5s;
-  margin-right:     5px;
-  color:            $foreground;
+  margin-right:     2px;
+  color:            $white;
   background-color: $black;
 }
 
-.dock-dropdown:hover
+.time-hour 
 {
-  background-color: $gray;
-}
-
-.dock-item-1, .dock-item-2, .dock-item-3, .dock-item-4, .dock-item-5
-{
-  color:            $foreground;
-  font-family:      "Symbols Nerd Font";
-  font-size:        $icon_size;
-  padding:          0px 8px 0px 8px;
-  border-radius:    5px;
-  margin-right:     5px;
-  transition:       0.2s;
-  background-color: $black;
-}
-
-.dock-item-1:hover,.dock-item-2:hover,.dock-item-3:hover,.dock-item-4:hover,.dock-item-5:hover
-{
-  background-color: $gray;
-}
-
-/*
-  CENTER
-*/
-
-.time-hour {
   margin-right: 2px;
 }
 
-.time-min {
+.time-min 
+{
   margin-left:  2px;
 }
 
-.time {
+.time 
+{
   font-family:      "JetBrainsMono Nerd Font";
   font-size:        1.2em;
   font-weight:      bold;
-  border-radius:    5px;
-  margin-left:      5px;
+  border-radius:    2px;
+  margin-left:      2px;
   padding:          0px 7px;
   color:            $white;
   background-color: $black;
 }
 
-/*
-  CONTROL
-*/
-
-.control {
-  font-size:        1.4em;
-  border-radius:    5px;
-  margin-left:      5px;
+.control 
+{
+  font-size:        1.2em;
+  border-radius:    2px;
+  margin-left:      2px;
   background-color: $black;
   
   .bars trough highlight {
-    border-radius:    5px;
+    border-radius:    2px;
     background-color: $white;
   }
   
   .volbar trough highlight {
-    border-radius:    5px;
+    border-radius:    2px;
     background-color: $white;
   }
     
@@ -203,7 +132,9 @@ $cyan:   #71D5C3;
   }
 
   .tray-icon {
-    border-radius: 5px;
+    color:         $white;
+    font-size:     1.2em;
+    border-radius: 2px;
     padding:       0px 8px;
     transition:    all 0.2s;
   }
@@ -214,9 +145,9 @@ $cyan:   #71D5C3;
 
   .wifi-icon,.power-icon,.volume-icon{
     font-family:      "Symbols Nerd Font";
-    font-size:        $icon_size;
+    font-size:        1.2em;
     padding:          0px 8px 0px 8px;
-    border-radius:    5px;
+    border-radius:    2px;
     transition:       all 0.2s;
     color:            $white;
     background-color: $black;
@@ -224,7 +155,7 @@ $cyan:   #71D5C3;
   
   .memory-icon{
     font-family: "Symbols Nerd Font";
-    font-size:   $icon_size;
+    font-size:   1.2em;
     color:       $white;
   }
 
@@ -255,56 +186,10 @@ $cyan:   #71D5C3;
   scale trough {
 
     all:              unset;
-    border-radius:    5px;
+    border-radius:    2px;
     min-height:       10px;
     min-width:        50px;
     margin-right:     5px;
     background-color: $background;
   }
-}
-
-/*
-  MENUS
-*/
-
-.cal-box {
-  font-family:      "JetBrainsMono Nerd Font";
-  font-weight:      bold;
-  border-radius:    5px;
-  padding:          8px;
-  background-color: $background;
-
-  .cal-inner-box {
-      .cal {
-          &.highlight {
-            color: $foreground-dark
-          }
-        margin-left: 10px;
-      }
-  }
-}
-
-calendar:selected {
-  font-weight: bold;
-  border-radius: 7px;
-  color: $background;
-  background-color: gray;
-}
-
-calendar.header {
-  color: $foreground;
-  font-weight: bold;
-}
-
-calendar.button {
-  color: $gray;
-}
-
-calendar.highlight {
-  color: $gray;
-  font-weight: bold;
-}
-
-calendar:indeterminate {
-  color: $gray;
 }
