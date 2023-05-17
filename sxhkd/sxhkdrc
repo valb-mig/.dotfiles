@@ -37,7 +37,7 @@ super + ctrl + p
 super + d
     bash ~/.config/rofi/find/launcher.sh
 
-#  Poermenu launcher
+#  Powermenu launcher
 super + k
     bash ~/.config/rofi/powermenu/launcher.sh
 
@@ -45,9 +45,9 @@ super + k
 super + q
     bash ~/.config/rofi/shortcuts/launcher.sh 
 
-#  Ranger launcher
+#  Search launcher
 super + r
-     kitty ranger
+    bash ~/.config/rofi/search/launcher.sh
 
 #  Monitor on
 super + ctrl + F11

@@ -1,25 +1,15 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 configuration {
-    modi:                       "drun,run,window";
-    show-icons:                 true;
-    display-drun:               "󰏖";
-    display-run:                "󰚗";
+    modi:                      ["blocks"];
+    show-icons:                 false;
+    display-blocks:             "";
     display-window:             "󱂬";
-    drun-display-format:        "{name}";
-    window-format:             "{w} · {c} · {t}";
+    window-format:              "{w} · {c} · {t}";
 }
 
 @import  "../colors.rasi"
 
-window {
+window 
+{
     font:             "jetBrainsMono Nerd Font 10";
     transparency:     "real";
     location:         center;
@@ -38,7 +28,13 @@ window {
     background-color: @background;
 }
 
-mainbox {
+blocks
+{
+  background-color:red;
+}
+
+mainbox 
+{
     enabled:          true;
     spacing:          10px;
     margin:           0px;
@@ -49,7 +45,8 @@ mainbox {
     children:         [ "inputbar", "message", "listview" ];
 }
 
-inputbar {
+inputbar 
+{
     enabled:          true;
     spacing:          10px;
     margin:           0px;
@@ -61,14 +58,15 @@ inputbar {
     children:         [ "textbox-prompt-colon", "entry", "mode-switcher" ];
 }
 
-prompt {
+prompt 
+{
     enabled:          true;
     background-color: inherit;
     text-color:       inherit;
 }
 
-textbox-prompt-colon {
-
+textbox-prompt-colon 
+{
     font:             "Symbols Nerd Font 15";
     enabled:          true;
     padding:          5px 0px 0px 5px;
@@ -78,8 +76,8 @@ textbox-prompt-colon {
     text-color:       inherit;
 }
 
-entry {
-
+entry 
+{
     enabled:                     true;
     padding:                     5px 0px;
     background-color:            inherit;
@@ -89,36 +87,43 @@ entry {
     placeholder-color:           inherit;
 }
 
-num-filtered-rows {
+num-filtered-rows 
+{
     enabled:                     true;
     expand:                      false;
     background-color:            inherit;
     text-color:                  inherit;
 }
-textbox-num-sep {
+
+textbox-num-sep 
+{
     enabled:                     true;
     expand:                      false;
     str:                         "/";
     background-color:            inherit;
     text-color:                  inherit;
 }
-num-rows {
+
+num-rows 
+{
     enabled:                     true;
     expand:                      false;
     background-color:            inherit;
     text-color:                  inherit;
 }
-case-indicator {
+
+case-indicator 
+{
     enabled:                     true;
     background-color:            inherit;
     text-color:                  inherit;
 }
 
-listview {
-
+listview 
+{
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -127,15 +132,15 @@ listview {
     fixed-height:                false;
     fixed-columns:               true;
     spacing:                     5px;
-    margin:                      0px;
-    padding:                     0px;
+    padding:                     20px;
     border-radius:               0px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  transparent;
     cursor:                      "default";
 }
 
-element {
+element 
+{
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
@@ -143,64 +148,66 @@ element {
     border-radius:               10px;
     cursor:                      pointer;
 }
-element normal.normal {
-    background-color:            inherit;
+
+element normal.normal 
+{
+    background-color:            @black;
     text-color:                  @gray;
 }
-element normal.urgent {
-    background-color:            inherit;
+
+element normal.urgent 
+{
+    background-color:            @black;
     text-color:                  @gray;
 }
 element normal.active {
-    background-color:            inherit;
+    background-color:            @black;
     text-color:                  @gray;
 }
 element selected.normal {
-    background-color:            inherit;
-    text-color:                  @white;
+    background-color:            @gray;
+    text-color:                  @gray;
 }
 element selected.urgent {
-    background-color:            inherit;
+    background-color:            @gray;
     text-color:                  @gray;
 }
 element selected.active {
-    background-color:            inherit;
+    background-color:            @black;
     text-color:                  @cyan;
 }
 element alternate.normal {
-    background-color:            inherit;
+    background-color:            @black;
     text-color:                  @gray;
 }
 element alternate.urgent {
-    background-color:            inherit;
+    background-color:            @black;
     text-color:                  @gray;
 }
-element alternate.active {
-
-    background-color:            inherit;
+element alternate.active 
+{
+    background-color:            orange;
     text-color:                  @gray;
 }
 
-element-icon {
-
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        24px;
-    cursor:                      inherit;
-}
-
-element-text {
-
-    background-color: transparent;
-    text-color:       inherit;
+element-text.selected
+{
+    background-color: @gray;
+    text-color:       @foreground;
     highlight:        inherit;
     cursor:           inherit;
-    vertical-align:   0.5;
-    horizontal-align: 0.0;
 }
 
-mode-switcher{
+element-text 
+{
+    background-color: @black;
+    text-color:       @foreground;
+    highlight:        inherit;
+    cursor:           inherit;
+}
 
+mode-switcher
+{
     enabled:          true;
     spacing:          10px;
     margin:           0px;
@@ -211,7 +218,8 @@ mode-switcher{
     text-color:       @foreground;
 }
 
-button {
+button 
+{
     font:             "Symbols Nerd Font 15";
     padding:          5px 10px;
     border:           0px solid;
@@ -222,14 +230,14 @@ button {
     cursor:           pointer;
 }
 
-button selected {
-
+button selected 
+{
     background-color: @foreground-dark;
     text-color:       @white;
 }
 
-message {
-
+message 
+{
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
@@ -240,13 +248,13 @@ message {
     text-color:                  @foreground-colour;
 }
 
-textbox {
-
+textbox 
+{
     padding:                     8px 10px;
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @border-colour;
-    background-color:            @alternate-background;
+    background-color:            red;
     text-color:                  @foreground-colour;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -256,8 +264,8 @@ textbox {
     markup:                      true;
 }
 
-error-message {
-    
+error-message 
+{    
     padding:                     10px;
     border:                      2px solid;
     border-radius:               10px;
