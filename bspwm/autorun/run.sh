@@ -75,3 +75,9 @@ xsetroot -cursor_name left_ptr &
 # ---------
 
 php -S 127.0.0.1:7000 -t $HOME/Github/Projetos/start-page/
+
+# ---------
+# Clipboard
+# ---------
+
+./.local/bin/greenclip daemon

@@ -49,6 +49,10 @@ super + q
 super + r
     bash ~/.config/rofi/search/launcher.sh
 
+#  Clipboard manager
+super + c
+    bash ~/.config/rofi/clipboard/launcher.sh
+
 #  Monitor on
 super + ctrl + F11
      bash ~/.config/sxhkd/alerts/system/monitor_on.sh
