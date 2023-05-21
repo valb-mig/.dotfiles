@@ -1,0 +1,22 @@
+#!/bin/sh
+
+symbol() {
+    
+    playerctl --follow metadata | {
+
+        while IFS= read -r line; do
+
+            if echo "$line" | grep -q "spotify mpris:artUrl"; then
+
+                artUrl=$(echo "$line" | awk '{print $3}')
+                echo "$artUrl"
+
+                break
+            fi
+        done
+
+        pkill -P $$ playerctl
+    }
+}
+
+[ "$1" = "icon" ] && symbol && exit

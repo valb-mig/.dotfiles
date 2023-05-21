@@ -5,5 +5,4 @@ theme='config'
 
 cliphist="$HOME/go/bin/cliphist"
 
-# -theme ${dir}/${theme}.rasi
 rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ${dir}/${theme}.rasi

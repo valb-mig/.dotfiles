@@ -1,8 +1,8 @@
 #!/bin/sh
 
 symbol() {
-[ $(cat /sys/class/net/enp*/operstate) = down ] && echo "" && exit
-echo ""
+[ $(cat /sys/class/net/enp*/operstate) = down ] && echo "󰈂" && exit
+echo "󰈀"
 }
 
 class() {

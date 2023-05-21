@@ -32,10 +32,11 @@ $cyan:            #71D5C3;
 
 */
 
-$font:        "jetBrainsMono Nerd Font";
-$font-size:   1.3em;
-$symbol:      "Symbols Nerd Font";
-$symbol-size: 1.7em;
+$font:            "jetBrainsMono Nerd Font";
+$font-size:       1.3em;
+$symbol:          "Symbols Nerd Font";
+$symbol-size:     1.7em;
+$big-symbol-size: 2.3em;
 
 /*
    _____ _         _      
@@ -55,7 +56,7 @@ $symbol-size: 1.7em;
 .eww_bar {
   background-color: $background;
   padding:     5px 4px;
-  border-left: 2px solid $black;
+  border-right: 2px solid $black;
 }
 
 .launcher_icon {
@@ -171,48 +172,53 @@ $symbol-size: 1.7em;
   background-color: $light-black;
 }
 
-.bluetooth-icon{
+.bluetooth-icon {
   color:     $foreground-dark;
   padding:   2px 0px;
-  font-size: 1.1em;
+  font-size: .9em;
+  margin:    0 2px;
   transition: all .2s;
 }
 
 .bluetooth-icon-connected{
   color:     $green;
   padding:   2px 0px;
-  font-size: 1.1em;
-}
-
-.bluetooth-icon:hover, .bluetooth-icon-connected:hover {
-  color:            $foreground; 
-  border-radius:    5px;
-  margin:           0 2px;
-  background-color: $gray;
-} 
-
-.bluetooth-icon:active {
-  color: $green;
+  margin:    0 2px;
+  font-size: .9em;
 }
 
 .memory-icon {
+  margin:        0 2px;
+  padding:       2px 0px;
+  transition:    all .2s;
+  border-radius: 5px;
   color:   $foreground-dark; 
-  padding: 2px 0px;
 }
 
 .wifi-down {
   color:       $red;
   padding:     0px;
   font-family: $symbol;
-  font-size:   .9em;
+  font-size:   .8em;
 }
 
 .wifi-up {
   color:       $foreground-dark;
   padding:     0px;
   font-family: $symbol;
-  font-size:   .9em;
+  font-size:   .8em;
 }
+
+.sys-icon {
+  font-family:   $symbol;
+  font-size:     $font-size;
+  border-radius: 5px;
+  padding:       5px 0;
+  color:            $foreground-dark;
+  background-color: $light-black;
+  transition:    all .2s;
+}
+.sys-icon:hover { background-color: $gray; color: $foreground; }
 
 .volume-icon {
   font-family: $symbol;
@@ -246,4 +252,209 @@ $symbol-size: 1.7em;
   border-radius:    5px;
   color:            $foreground;
   background-color: $gray;
+}
+
+tooltip.background {
+  font-size:        1.2em;
+  border:           2px solid $black;
+  background-color: $background;
+  color:            $foreground;
+}
+
+tooltip label {
+  margin: 6px;
+}
+
+.system-box {
+  padding: 10px;
+  border:  1px solid #111111;
+  background-color:  #0A0A0A;
+}
+
+.profile-box {
+  border-radius: 5px;
+  background-color: #111111;
+  border:  1px solid #161616;
+}
+
+.profile-pic {
+  background-size:     cover;	
+	background-position: center;
+	min-height:    40px;
+  min-width:     40px;
+	margin:        10px;
+  margin-right:  0;
+	border-radius: 100px;
+  background-color: transparent;
+  border: 2px solid #161616;
+}
+
+.profile-name {
+  color:         $foreground;
+  font-family:   $font;
+  font-size:     $font-size;
+  padding-right: 15px;
+  background-color: transparent;
+}
+
+.git-button-p1 {
+  font-family:   $symbol;
+  font-size:     $big-symbol-size;
+  border-radius: 5px;
+  color:         $foreground;
+  background-color: #111111;
+  border:  1px solid #161616;
+}
+
+.git-button-p2 {
+  font-family:   $symbol;
+  font-size:     $big-symbol-size;
+  border-radius: 5px;
+  color:         $foreground;
+  background-color: #111111;
+  border:  1px solid #161616;
+}
+
+.time-box {
+  font-family:   $font;
+  font-size:     1.9em;
+  color:         $foreground;
+  border-radius: 5px;
+  background-color: #111111;
+  border:  1px solid #161616;
+}
+
+.time-button {
+  font-family:   $font;
+  font-size:     $font-size;
+  background-color: transparent;
+  border:  1px solid #161616;
+}
+
+.music-box {
+  padding: 0px;
+  background-color: #111111;
+  border:  1px solid #161616;
+  border-radius:    5px;
+}
+
+.music-info {
+  font-family:   $font;
+  font-size:     $font-size;
+  background-color: #111111;
+  border:  1px solid #161616;
+  border-radius:    5px;
+}
+
+.music-pic {
+  background-size:     cover;	
+	background-position: center;
+	min-height:          100px;
+	border-radius:       5px;
+}
+
+.control-button {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  background-color: transparent;
+  border-radius:    5px;
+  padding:          5px 0;
+  margin: 5px;
+  color:            $foreground-dark;
+  transition:       all .2s;
+}
+.control-button:hover {
+  color: $foreground;
+  background-color: $light-black;
+}
+
+.sys-box {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #111111;
+  border:  1px solid #161616;
+}
+
+.sys-button {
+  font-family:   $symbol;
+  border-radius: 5px;
+  font-size:     4.0em;
+  padding:       15px;
+  color:         $foreground;
+  background-color: #161616;
+  border:  1px solid #2A2A2A;
+}
+
+.sys-button-bluetooth-icon {
+  font-family:   $symbol;
+  border-radius: 5px;
+  font-size:     4.0em;
+  padding:       15px;
+  color:         $foreground;
+  background-color: #161616;
+  border:  1px solid #2A2A2A;
+  transition: all .2s;
+}
+.sys-button-bluetooth-icon:hover {
+  font-family:   $symbol;
+  border-radius: 5px;
+  font-size:     4.0em;
+  padding:       15px;
+  color:         $foreground;
+  background-color: #2A2A2A;
+  border:  1px solid #3C3C3C;
+}
+
+.sys-button-bluetooth-icon-connected {
+  font-family:   $symbol;
+  border-radius: 5px;
+  font-size:     4.0em;
+  padding:       15px;
+  color:         $background;
+  background-color: $green;
+  border:  1px solid #2A2A2A;
+  transition: all .2s;
+}
+
+.sys-button-bluetooth-icon-connected:hover {
+  font-family:   $symbol;
+  border-radius: 5px;
+  font-size:     4.0em;
+  padding:       15px;
+  color:         $background;
+  background-color: $green;
+  border:  1px solid #2A2A2A;
+}
+
+.bars-box {
+  background-color: #111111;
+  border:  1px solid #161616;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.memory-bar trough highlight {
+  background-color: $green;
+  border-radius:    5px;
+}
+
+.volume-bar trough highlight {
+  background-color: $green;
+  border-radius:    5px;
+}
+.volume-icon-menu { font-family: $symbol; font-size: $symbol-size; color: $foreground; }
+
+.memory-bar trough highlight {
+  background-color: $orange;
+  border-radius:    5px;
+}
+.memory-icon-menu { font-family: $symbol; font-size: $symbol-size; color: $foreground; }
+
+scale trough {
+  all:              unset;
+  background-color: #111111;
+  border:           1px solid #161616;
+  border-radius:    5px;
+  min-height:       20px;
+  min-width:        260px;
 }

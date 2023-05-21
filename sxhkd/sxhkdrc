@@ -99,15 +99,15 @@ Print
 super + l
     betterlockscreen -l
 
-#  Reload Keybinds
+#   Reload Keybinds
 super + Escape
         pkill -USR1 -x sxhkd
 
-#  Quit/restart bspwm
+#   Quit/restart bspwm
 super + alt + {q,r}
         bspc {quit,wm -r}
  
-#   Close and kill
+#   Close and kill
 super + {_,shift + }w
         bspc node -{c,k}
  
@@ -140,7 +140,7 @@ super + bracket{left,right}
         bspc desktop -f {prev,next}.local
  
 #  focus the older or newer node in the focus history                                                                                                                                                                  
-super + {o,i}                                                                                                                                                                                                         
+super + {grave,i}                                                                                                                                                                                                         
         bspc wm -h off; \                                                                                                                                                                                             
         bspc node {older,newer} -f; \                                                                                                                                                                                 
         bspc wm -h on                                                                                                                                                                                                 

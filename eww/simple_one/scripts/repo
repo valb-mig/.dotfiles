@@ -3,7 +3,7 @@
 path=".dotfiles"
 
 symbol() {
-    [ $(git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo "a"
+    [ $(git --git-dir=$HOME/$path/.git --work-tree=$HOME/$path status | grep -c "modified:\|deleted:") -gt 0 ] && echo "" || echo ""
     exit $?
 }
 class() {

@@ -7,7 +7,7 @@
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
 (defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/simple_one")
-(defvar  bluetooth-mac   "E3:22:E4:E2:DD:C4")
+(defvar  bluetooth-mac   "E4:12:1D:05:EF:4B")
 
 ;; ------- ;;
 ;; General ;;
@@ -40,6 +40,135 @@
 	)
 )
 
+;; --------- ;;
+;;  Widgets  ;;
+;; --------- ;;
+
+(defwindow system
+	:geometry (geometry :x "748" 
+						:y "260" 
+                        :anchor "center"
+						:width  "290px" 
+						:height "120px")
+(system))
+
+(defwidget system []
+
+	(box :orientation  "v" 
+		 :space-evenly false 
+		 :spacing 	   10
+		 :class 	   "system-box"
+
+
+		(box :orientation  "h" 
+			:space-evenly false 
+			:spacing 	   10
+
+			(box :orientation  "v" 
+				:space-evenly false 
+				:spacing 	   10
+
+				(box :spacing 10
+
+					(box :class   "profile-box"
+						:spacing 10
+						:orientation  "h"
+						:space-evenly false 
+						(button :class "profile-pic" :style "background-image: url('images/me.jpeg');")
+						(button :class "profile-name" "valb-mig")
+					)
+					(box :spacing 10
+						(button :class "git-button-p1" "")
+						(button :class "git-button-p2" "")
+					)
+				)
+				
+				(box :spacing 10
+					:orientation  "h"
+
+					(box :spacing 10
+						:orientation  "v"
+
+						(box :class   "time-box"
+							:spacing 10
+							:orientation  "h"
+							(button :class "time-button"  "${hour}:${min}")
+						)
+
+						(box :class   "music-box"
+							 :spacing  0
+							 :orientation  "v"
+							 :space-evenly false 
+
+							(box :class  "music-info"
+								:spacing 10
+								(button :class "music-pic" :style "background-image: url('${music}');")
+							)
+
+							(box :orientation "h"
+								:spacing 10
+								(button :class "control-button" :onclick "playerctl --player=spotify previous" "")
+								(button :class "control-button" :onclick "playerctl --player=spotify play-pause" "")
+								(button :class "control-button" :onclick "playerctl --player=spotify next" "")
+							)
+						)
+					)
+					(box :class "sys-box" 
+						:orientation "v"
+						:spacing 10
+
+						(button :class        "sys-button-${bluetooth}" 
+							    :onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
+							    :onrightclick "bluetoothctl disconnect ${bluetooth-mac} | notify-send 'Bluetooth' 'Disonnect'"
+						"")
+						(button :class "sys-button" wifi-icon)
+					)
+				)
+			)
+		)
+		(box :orientation  "v"
+			 :spacing 10
+			 :class "bars-box"
+
+			(box :orientation  "h" 
+				:space-evenly "false" 
+				:spacing 10
+			
+				(button :class "volume-icon-menu" "󰋎")
+
+				(scale :class "volume-bar"
+					:value current-volume
+					:orientation "h"
+					:flipped false
+					:max 101
+					:min 0
+					:onchange "amixer -D pulse sset Master {}%" 
+				)
+			)
+
+			(box :orientation  "h" 
+			:space-evenly "false" 
+			:spacing 10
+		
+				(button :class "memory-icon-menu" "")
+
+				(scale :class "memory-bar"
+					:value memory
+					:orientation "h"
+					:flipped false
+					:max 101
+					:min 0
+				)
+			)
+		)
+	)
+)
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar  volum false)
+
+(defpoll music :interval "1s" "scripts/spotify icon")
+;(deflisten music "scripts/spotify icon")
+
 ;; -------- ;;
 ;;  Layout  ;;
 ;; -------- ;;
@@ -70,7 +199,7 @@
 		 :spacing      5
 		 :space-evenly false 
 
-		(volum)
+		(sys-dock)
 		(control)
 		(time)
 	)
@@ -124,11 +253,9 @@
 	      :spacing 0
 		  
 		(button 
-			:onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
-		  	:onrightclick "bluetoothctl disconnect ${bluetooth-mac} | notify-send 'Bluetooth' 'Disonnect'"
 			:class        bluetooth
 			:tooltip      bluetooth-tooltip
-			"")
+			"")
 	)
 )
 (defpoll bluetooth-tooltip :interval "1s" "scripts/bluetooth tip")
@@ -146,32 +273,24 @@
 	)
 )
 
-(defwidget volum []
-	(eventbox :onhover     "${eww} update volum=true" 		
-			  :onhoverlost "${eww} update volum=false"
-
-		(box :orientation  "v" 	  
-			 :space-evenly false
-			 :class 	   "volum-box"
-		
-			(circular-progress 
-				:value current-volume
-				:class "circular-volum"
-				:thickness 4
-
-				(button :class "volume-icon" "")
+(defwidget sys-dock []
+				
+	(box :orientation  "v" 	  
+			:space-evenly false
+			
+			(button :class "sys-icon" 
+					:onclick "scripts/pop system" "󰇘"
 			)
 		)
-	)
 )
-(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defvar  volum false)
+
 
 (defwidget wifi []
 	(box		:orientation "v"
 				:tooltip wifi-name
 				:space-evenly true
-		(button :class   wifi-class wifi-icon)
+
+		(button :class wifi-class wifi-icon)
 	)
 )
 (defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
@@ -180,12 +299,13 @@
 
 (defwidget mem []
 
-	(box :orientation     "v" 
-			:space-evenly true
+	(box :orientation  "v" 
+         :space-evenly true
+
 		(button 
-			:class "memory-icon"
+			:class   "memory-icon"
 			:tooltip "using ${memory}% ram"
-			"")
+			"󰍛")
 	)
 )
 

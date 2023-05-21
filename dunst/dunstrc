@@ -6,7 +6,7 @@ width  = 280
 height = 100
 
 origin   = top
-geometry = "300x300-815+40"
+geometry = "300x300-45+10"
 offset   = 1920x1080
 scale    = 0
 
