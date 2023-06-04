@@ -5,7 +5,7 @@ window
     transparency:     "real";
     location:         center;
     anchor:           center;
-    width:            524px;
+    width:            526px;
     height:           133px;
     x-offset:         0px;
     y-offset:         0px;
@@ -148,6 +148,8 @@ element-text
 
 element selected.normal 
 {
-    background-color:            @gray;
-    text-color:                  @white;
+    border:           1px solid;
+    border-color:     @gray;
+    background-color: @black;
+    text-color:       @white;
 }
