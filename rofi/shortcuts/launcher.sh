@@ -5,28 +5,26 @@ theme="$HOME"/.config/rofi/shortcuts/config.rasi
 BROWSER="Firefox"
 
 # Theme Elements
-prompt='Quick Links'
-mesg="Using '$BROWSER' as web browser"
+prompt=''
 
 list_col='1'
 list_row='3'
 
-efonts="Symbols Nerd Font 30"
+efonts="Symbols Nerd Font 15"
 
 # Options
 
-option_1="󰈹"
-option_2="󰊤"
-option_3="󰨞"
+option_1="󰈹 Firefox"
+option_2="󰝰 Files"
+option_3="󰨞 Code"
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-theme-str 'textbox-prompt-colon {str: "Quicklinks";}' \
 		-theme-str "element-text {font: \"$efonts\";}" \
 		-dmenu \
 		-p "$prompt" \
-		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme}
 }
@@ -41,7 +39,7 @@ run_cmd() {
 	if   [[ "$1" == '--opt1' ]]; then
         firefox
 	elif [[ "$1" == '--opt2' ]]; then
-		xdg-open 'https://github.com/'
+		nautilus
 	elif [[ "$1" == '--opt3' ]]; then
 		code
 	fi

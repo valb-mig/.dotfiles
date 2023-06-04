@@ -8,8 +8,8 @@ keymap('n', '<A-a>', ':set wrap<CR>', {})
 keymap('i', '<A-a>', '<ESC>:set wrap<CR>', {})
 
 -- Telescope
-keymap('n', '<c-y>', ':Telescope find_files<CR>', {})
-keymap('i', '<c-y>', '<ESC>:Telescope find_files<CR>', {})
+-- keymap('n', '<c-y>', ':Telescope find_files<CR>', {})
+-- keymap('i', '<c-y>', '<ESC>:Telescope find_files<CR>', {})
 
 -- Save
 keymap('n', '<c-s>', ':w<CR>', {})
@@ -22,6 +22,10 @@ keymap('i', '<c-n>', '<ESC>:NvimTreeToggle<CR>a', {})
 -- Undo
 keymap('n', '<c-z>', ':undo<CR>', {})
 keymap('i', '<c-z>', '<ESC>:undo<CR>a', {})
+
+-- Redo
+keymap('n', '<c-y>', ':redo<CR>', {})
+keymap('i', '<c-y>', '<ESC>:redo<CR>a', {})
 
 -- quit
 keymap('n', '<c-w>', ':q<CR>', {})

@@ -117,7 +117,7 @@
 						:orientation "v"
 						:spacing 10
 
-						(button :class        "sys-button-${bluetooth}" 
+						(button :class        "sys-button-${bluetooth-con}" 
 							    :onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
 							    :onrightclick "bluetoothctl disconnect ${bluetooth-mac} | notify-send 'Bluetooth' 'Disonnect'"
 						"")
@@ -199,7 +199,6 @@
 		 :spacing      5
 		 :space-evenly false 
 
-		(sys-dock)
 		(control)
 		(time)
 	)
@@ -253,13 +252,13 @@
 	      :spacing 0
 		  
 		(button 
-			:class        bluetooth
-			:tooltip      bluetooth-tooltip
+			:class    bluetooth-con
+			:tooltip  bluetooth-tooltip
 			"")
 	)
 )
 (defpoll bluetooth-tooltip :interval "1s" "scripts/bluetooth tip")
-(defpoll bluetooth         :interval "1s" "scripts/bluetooth con")
+(defpoll bluetooth-con     :interval "1s" "scripts/bluetooth con")
 
 (defwidget control []
 	(box :orientation "v"
@@ -272,18 +271,6 @@
 		(mem)
 	)
 )
-
-(defwidget sys-dock []
-				
-	(box :orientation  "v" 	  
-			:space-evenly false
-			
-			(button :class "sys-icon" 
-					:onclick "scripts/pop system" "󰇘"
-			)
-		)
-)
-
 
 (defwidget wifi []
 	(box		:orientation "v"
