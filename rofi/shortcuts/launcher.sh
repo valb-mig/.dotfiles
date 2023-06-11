@@ -21,7 +21,7 @@ option_3="󰨞 Code"
 # Rofi CMD
 rofi_cmd() {
 	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "Quicklinks";}' \
+		-theme-str 'textbox-prompt-colon {str: "quicklinks";}' \
 		-theme-str "element-text {font: \"$efonts\";}" \
 		-dmenu \
 		-p "$prompt" \

@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/"
 theme='config'
+
+prompt=''
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -32,13 +29,11 @@ rofi_cmd() {
 # Confirmation CMD
 confirm_cmd() {
 	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 290px;}' \
+          	-theme-str 'textbox-prompt-colon {str: "Quicklinks";}' \
 		-theme-str  'mainbox {children: [ "listview" ];}' \
-		-theme-str  'listview {columns: 2; lines: 1;}' \
-		-theme-str  'element-text {horizontal-align: 0.5;}' \
-		-theme-str  'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
+                -markup-rows \
 		-theme ${dir}/${theme}.rasi
 }
 

@@ -1,107 +1,157 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
+@import  "../colors.rasi"
 
-configuration {
-    show-icons: false;
-}
-
-@import "../colors.rasi"
-
-window {
-    font:             "jetBrainsMono Nerd Font 10";
+window 
+{
     transparency:     "real";
     location:         center;
     anchor:           center;
-    fullscreen:       false;
-    width:            500px;
+    width:            526px;
+    height:           170px;
     x-offset:         0px;
     y-offset:         0px;
     margin:           0px;
     padding:          0px;
-    border:           2px solid;
+    border:           0px solid;
     border-radius:    0px;
-    border-color:     @black;
-    background-color: @background;
+    border-color:     @foreground;
+    cursor:           "default";
+    background-color: @red;
 }
 
-mainbox {
+mainbox 
+{
     enabled:                     true;
-    spacing:                     15px;
-    padding:                     30px;
-    background-color:            transparent;
-    children:                    [ "message", "listview" ];
+    spacing:                     2px;
+    padding:                     2px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @foreground;
+    background-color:            @black;
+    children:                    [ "inputbar", "listview" ];
 }
 
-message {
+inputbar 
+{
     enabled:                     true;
+    spacing:                     0px;
     margin:                      0px;
-    padding:                     14px;
-    border-radius:               7px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                @orange;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "dummy", "prompt" ];
+}
+
+dummy 
+{
+    background-color:            transparent;
+}
+
+textbox-prompt-colon 
+{
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     2px;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+prompt 
+{
+    enabled:                     true;
+    padding:                     0px 7px;
+    border-radius:               5px;
+    background-color:            transparent;
+    text-color:                  @white;
+}
+
+message 
+{
+    enabled:                     true;
+    margin:                      var(message-margin);
+    padding:                     var(general-padding);
+    border:                      0px;
+    border-radius:               var(general-radius);
+    border-color:                @foreground;
     background-color:            @black;
     text-color:                  @foreground;
 }
 
-textbox {
+textbox 
+{
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
+    placeholder-color:           @foreground;
+    blink:                       true;
+    markup:                      true;
 }
 
-listview {
-    enabled:          true;
-    columns:          6;
-    lines:            1;
-    cycle:            true;
-    scrollbar:        false;
-    layout:           vertical;
-    spacing:          15px;
-    background-color: transparent;
-    cursor:           "default";
+error-message 
+{
+    padding:                     var(general-padding);
+    border:                      0px solid;
+    border-radius:               var(general-radius);
+    border-color:                @foreground;
+    background-color:            @background;
+    text-color:                  @foreground;
 }
 
-element {
-    enabled:          true;
-    padding:          20px 10px;
-    border-radius:    7px;
+listview 
+{
+    enabled:                     true;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      horizontal;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               5px;
+    border-color:                @foreground;
+    background-color:            @background;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+element 
+{
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     20px 35px;
+    border:                      0px solid;
+    border-radius:               5px;
+    cursor:                      pointer;
+    background-color:            @background;
+    border-color:                @foreground;
+    text-color:                  @gray;
+}
+
+element-text 
+{
+    font:                        "jetBrainsMono Nerd Font 34";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+element selected.normal 
+{
+    border:           1px solid;
+    border-color:     @gray;
     background-color: @black;
-    text-color:       @foreground;
-    cursor:           pointer;
+    text-color:       @white;
 }
 
-element-text {
-    font:             "Symbols Nerd Font 28";
-    background-color: transparent;
-    text-color:       inherit;
-    cursor:           inherit;
-    vertical-align:   0.5;
-    horizontal-align: 0.5;
-}
-
-element normal.normal,
-element alternate.normal {
-    background-color:            @background;
-    text-color:                  @gray;
-}
-element normal.urgent,
-element alternate.urgent,
-element selected.active {
-    background-color:            @background;
-    text-color:                  @gray;
-}
-element normal.active,
-element alternate.active,
-element selected.urgent {
-    background-color:            @background;
-    text-color:                  @gray;
-}
-element selected.normal {
-    background-color:            @black;
-    text-color:                  @white;
-}
