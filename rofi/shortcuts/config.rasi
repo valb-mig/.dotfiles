@@ -6,7 +6,7 @@ window
     location:         center;
     anchor:           center;
     width:            526px;
-    height:           133px;
+    height:           108px;
     x-offset:         0px;
     y-offset:         0px;
     margin:           0px;
@@ -27,7 +27,7 @@ mainbox
     border-radius:               0px;
     border-color:                @foreground;
     background-color:            @black;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "listview" ];
 }
 
 inputbar 
