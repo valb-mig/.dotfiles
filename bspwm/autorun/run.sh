@@ -5,6 +5,8 @@ killall picom
 killall plank
 killall stalonetray
 
+php -S localhost:8800 -t "$HOME/.dotfiles/start-page"
+
 #------
 # Var's
 # ------

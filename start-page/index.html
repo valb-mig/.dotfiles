@@ -1,0 +1,229 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title></></title>
+</head>
+<body>
+    <style>
+
+        * {
+            background-color: #0c0c0c;
+        }
+
+        body { 
+
+            margin: 0; 
+            width:   100vw;
+            height:  100vh;
+        }
+
+        main {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:   100vw;
+            height:  100vh;
+        }
+
+        .content {
+            display: flex; 
+        }
+
+        .centered-box {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button-group {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #161616;
+            border: 1px solid #1f1f1f;
+        }
+
+        .centered-box button {
+
+            cursor: pointer;
+            
+            width:  15vh;
+            height: 15vh;
+
+            border-radius: 5px;
+            outline: none;
+            border:  none;
+
+            background-color: #1d1d1d;
+            border: 1px solid #272727;
+        }
+
+        .centered-box button i {
+
+            color: #3b3b3b;
+            font-size: 4vh;
+            background-color: transparent;
+        }
+
+        .principal {
+
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0 5px;
+        }
+
+        .side-tools {
+
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            gap: 5px;
+            border-radius: 5px;
+            background-color: #1d1d1d;
+            border: 1px solid #272727;
+        }
+
+        .side-tools button {
+
+            cursor: pointer;
+            width:  50px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            background-color: green;
+        }
+        
+        .side-tools button i {
+
+            font-size: 2em;
+            background-color: transparent;
+        }
+
+        .centered-box button {
+
+            box-shadow: inset 0 0 0 0 #272727;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+        }
+
+        .slide:hover {
+            box-shadow: inset 400px 0 0 0 #27272725;
+        }
+
+        .btn-p {
+            color: #0c0c0c;
+            background-color: #6a4aa5 !important;
+        }
+
+        .btn-r {
+            color: #0c0c0c;
+            background-color: #ff3c38 !important;
+        }
+
+        .btn-o {
+            color: #0c0c0c;
+            background-color: #FF8C42 !important;
+        }
+
+        .btn-y {
+            color: #0c0c0c;
+            background-color: #FFF275 !important;
+        }
+
+        .btn-g {
+            color: #0c0c0c;
+            background-color: #60c9b2 !important;
+        }
+    </style>
+
+    <main>
+        <div class="content">
+            <div class="principal">
+                <container class="centered-box">
+
+                    <div class="button-group">
+
+                        <button class="slide" onclick="window.location.href = 'https://www.github.com'">
+                            <i class="fa-brands fa-github"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://www.linkedin.com'">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://www.gmail.com'">
+                            <i class="fa-solid fa-at"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://docs.google.com/document'">
+                            <i class="fa-solid fa-quote-right"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://chat.openai.com/'">
+                            <i class="fa-solid fa-robot"></i>
+                        </button>
+
+                    </div>
+
+                </container>
+
+                <container class="centered-box">
+
+                    <div class="button-group">
+
+                        <button class="slide" onclick="window.location.href = 'https://www.youtube.com'">
+                            <i class="fa-brands fa-youtube"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://twitch.tv/'">
+                            <i class="fa-brands fa-twitch"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://fontawesome.com/'">
+                            <i class="fa-solid fa-font"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://coolors.co'">
+                            <i class="fa-solid fa-palette"></i>
+                        </button>
+
+                        <button class="slide" onclick="window.location.href = 'https://univirtus.uninter.com/ava/web/'">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </button>
+
+                    </div>
+
+                </container>
+            </div>
+
+            <div class="side-tools">
+
+                <button class="btn-p" onclick="window.location.href = 'https://localhost:3000'">
+                    <i class="fa fa-house"></i>
+                </button>
+
+                <button class="btn-o" onclick="window.location.href = 'https://cryptii.com'">
+                    <i class="fa-solid fa-bug"></i>
+                </button>
+
+                <button class="btn-g" onclick="window.location.href = 'https://textkool.com/en/ascii-art-generator?hl=default&vl=default&font=Red%20Phoenix&text=Your%20text%20here%20'">
+                    <i class="fa-solid fa-heading"></i>
+                </button>
+
+            </div>
+        </div>
+    </main>    
+</body>
+</html>
+
+<!-- file:///home/mig/Projects/start-page/index.html -->
