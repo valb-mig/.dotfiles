@@ -8,6 +8,7 @@
     <style>
 
         * {
+            font-family: 'Montserrat', sans-serif;
             background-color: #0c0c0c;
         }
 
@@ -25,10 +26,11 @@
             align-items: center;
             width:   100vw;
             height:  100vh;
+            overflow: hidden;
         }
 
         .content {
-            display: flex; 
+            display: flex;         
         }
 
         .centered-box {
@@ -95,16 +97,15 @@
         .side-tools button {
 
             cursor: pointer;
-            width:  50px;
-            height: 50px;
+            width:  5vh;
+            height: 5vh;
             border-radius: 5px;
             border: none;
-            background-color: green;
         }
         
         .side-tools button i {
 
-            font-size: 2em;
+            font-size: 2vh;
             background-color: transparent;
         }
 
@@ -120,29 +121,89 @@
             box-shadow: inset 400px 0 0 0 #27272725;
         }
 
-        .btn-p {
+        .btn i { z-index: 2; }
+        .btn {
+
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            overflow: hidden;
+            transition: all .2s;
             color: #0c0c0c;
-            background-color: #6a4aa5 !important;
+        }
+        .btn span {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 0px;
+            height:0px;
+            background-color: #ffffff3b;
+            box-shadow: 0 0 50px #ffffff3b;
+            border-radius: 100%;
+            transition: all .4s;
+        }
+        .btn:hover span{ 
+            padding: 100%; 
+        }
+        .btn:active span{ 
+            padding: 0%; 
+        }
+        .btn:active {
+            border: 1px solid #ffffff3b;
+            background-color: #ffffff3b;
+        }
+        .btn-p { background-color: #6a4aa5; }
+        .btn-r { background-color: #ff3c38; }
+        .btn-o { background-color: #FF8C42; }
+        .btn-y { background-color: #FFF275; }
+        .btn-g { background-color: #60c9b2; }
+
+        .tooltip {
+
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background-color: transparent;
         }
 
-        .btn-r {
-            color: #0c0c0c;
-            background-color: #ff3c38 !important;
+        .tooltip .tooltiptext {
+
+            visibility: hidden;
+            width: 120px;
+            background-color: #1d1d1d;
+            border: 1px solid #272727;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 99;
+            bottom: 110%;
+            left: 50%;
+            margin-left: -65px;
+            margin-right: -65px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 0 10px 2px #00000080;
         }
 
-        .btn-o {
-            color: #0c0c0c;
-            background-color: #FF8C42 !important;
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #272727 transparent transparent transparent;
         }
 
-        .btn-y {
-            color: #0c0c0c;
-            background-color: #FFF275 !important;
-        }
-
-        .btn-g {
-            color: #0c0c0c;
-            background-color: #60c9b2 !important;
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 
@@ -153,25 +214,40 @@
 
                     <div class="button-group">
 
-                        <button class="slide" onclick="window.location.href = 'https://www.github.com'">
-                            <i class="fa-brands fa-github"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://www.github.com'">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                            <span class="tooltiptext">GitHub</span>
+                        </div> 
 
-                        <button class="slide" onclick="window.location.href = 'https://www.linkedin.com'">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://www.linkedin.com'">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+                            <span class="tooltiptext">Linkedin</span>
+                        </div>  
 
-                        <button class="slide" onclick="window.location.href = 'https://www.gmail.com'">
-                            <i class="fa-solid fa-at"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://www.gmail.com'">
+                                <i class="fa-solid fa-at"></i>
+                            </button>
+                            <span class="tooltiptext">Gmail</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://docs.google.com/document'">
-                            <i class="fa-solid fa-quote-right"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://docs.google.com/document'">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </button>
+                            <span class="tooltiptext">Docs</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://chat.openai.com/'">
-                            <i class="fa-solid fa-robot"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://chat.openai.com/'">
+                                <i class="fa-solid fa-robot"></i>
+                            </button>
+                            <span class="tooltiptext">Chat GPT</span>
+                        </div>
 
                     </div>
 
@@ -181,26 +257,40 @@
 
                     <div class="button-group">
 
-                        <button class="slide" onclick="window.location.href = 'https://www.youtube.com'">
-                            <i class="fa-brands fa-youtube"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://www.youtube.com'">
+                                <i class="fa-brands fa-youtube"></i>
+                            </button>
+                            <span class="tooltiptext">Youtube</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://twitch.tv/'">
-                            <i class="fa-brands fa-twitch"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://twitch.tv/'">
+                                <i class="fa-brands fa-twitch"></i>
+                            </button>
+                            <span class="tooltiptext">Twitch</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://fontawesome.com/'">
-                            <i class="fa-solid fa-font"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://fontawesome.com/'">
+                                <i class="fa-solid fa-font"></i>
+                            </button>
+                            <span class="tooltiptext">Fontawesome</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://coolors.co'">
-                            <i class="fa-solid fa-palette"></i>
-                        </button>
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://coolors.co'">
+                                <i class="fa-solid fa-palette"></i>
+                            </button>
+                            <span class="tooltiptext">Coolors</span>
+                        </div>
 
-                        <button class="slide" onclick="window.location.href = 'https://univirtus.uninter.com/ava/web/'">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </button>
-
+                        <div class="tooltip">
+                            <button class="slide" onclick="window.location.href = 'https://univirtus.uninter.com/ava/web/'">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </button>
+                            <span class="tooltiptext">University</span>
+                        </div>
                     </div>
 
                 </container>
@@ -208,17 +298,45 @@
 
             <div class="side-tools">
 
-                <button class="btn-p" onclick="window.location.href = 'https://localhost:3000'">
-                    <i class="fa fa-house"></i>
-                </button>
+                <div class="tooltip">
+                    <button class="btn btn-p" onclick="window.location.href = 'https://localhost:3000'">
+                        <i class="fa fa-house"></i>
+                        <span></span>
+                    </button>
+                    <span class="tooltiptext">port:3000</span>
+                </div>
 
-                <button class="btn-o" onclick="window.location.href = 'https://cryptii.com'">
-                    <i class="fa-solid fa-bug"></i>
-                </button>
+                <div class="tooltip">
+                    <button class="btn btn-o" onclick="window.location.href = 'https://cryptii.com'">
+                        <i class="fa-solid fa-bug"></i>
+                        <span></span>
+                    </button>
+                    <span class="tooltiptext">Cryptii</span>
+                </div>
 
-                <button class="btn-g" onclick="window.location.href = 'https://textkool.com/en/ascii-art-generator?hl=default&vl=default&font=Red%20Phoenix&text=Your%20text%20here%20'">
-                    <i class="fa-solid fa-heading"></i>
-                </button>
+                <div class="tooltip">
+                    <button class="btn btn-g" onclick="window.location.href = 'https://textkool.com/en/ascii-art-generator?hl=default&vl=default&font=Red%20Phoenix&text=Your%20text%20here%20'">
+                        <i class="fa-solid fa-heading"></i>
+                        <span></span>
+                    </button>
+                    <span class="tooltiptext">Textkool</span>
+                </div>
+
+                <div class="tooltip">
+                    <button class="btn btn-r" onclick="window.location.href = 'https://www.nerdfonts.com/'">
+                        <i class="fa-solid fa-glasses"></i>
+                        <span></span>
+                    </button>
+                    <span class="tooltiptext">Nerd Fonts</span>
+                </div>
+
+                <div class="tooltip">
+                    <button class="btn btn-y" onclick="window.location.href = 'https://getemoji.com/'">
+                        <i class="fa-solid fa-face-smile"></i>
+                        <span></span>
+                    </button>
+                    <span class="tooltiptext">Get Emoji</span>
+                </div>
 
             </div>
         </div>
