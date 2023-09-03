@@ -1,10 +1,19 @@
 #! /bin/sh
 
+echo -e "\n-- This Script is for recent formated computers --\n"
+echo -e "\n-- (if you have configurated your machine, don't run it) --\n"
+
+read -p "So, you wanna run it? (Y/N): " opt
+
+if [ "$opt" != "Y" ] && [ "$opt" != "y" ]; then
+  echo "Ok, good bye."
+  exit 1
+fi
+
 # Move to .Config
 
-echo " "
-echo "-- Crating symbolic links --"
-echo "-- (ignore the messages)  --"
+echo -e "\n-- Crating symbolic links --\n"
+echo -e"\n-- (ignore the messages)  --\n"
 
 if [ -d "~/.config/bspwm"]
 then
@@ -142,9 +151,7 @@ fi
 
 # Fonts
 
-echo " "
-echo "-- Copy fonts to root fonts --"
-echo " "
+echo -e "\n-- Copy fonts to root fonts --\n"
 
 sudo cp -a ~/.dotfiles/fonts /usr/share/fonts
 
@@ -169,3 +176,5 @@ else
     mkdir "~/Pictures/Screenshots"
 
 fi
+
+echo -e "\nEnd of the script :D\n"

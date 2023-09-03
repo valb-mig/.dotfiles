@@ -131,12 +131,15 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 </details>
 
+<br><h1>
+  👻 Specific points
+</h1><br>
+
 <br><h2>
-  🐸 If you want spicetify
+  🐸 Configuring Spicetify
 </h2><br>
-<p>
-🚧 This page is in construction !!
-</p>
+
+<p>Install spotify the current way, and ➡️</p>
 
 ```
 curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
@@ -152,4 +155,25 @@ cd .spicetify
 ./spicetify restart
 
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
+```
+<br><h2>
+  💾 Configuring OS Selector
+</h2><br>
+
+```
+sudo apt install os-prober
+
+sudo os-prober
+```
+
+<p>With the partition showned ➡️</p>
+
+```
+sudo mount /dev/{partition}  /mnt
+
+lsblk
+
+sudo cp -ax /mnt/EFI/Microsoft /boot/efi/EFI
+
+sudo ls -lh /boot/efi/EFI
 ```

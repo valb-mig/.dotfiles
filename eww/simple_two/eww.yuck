@@ -250,7 +250,7 @@
 	      :spacing 0
 		  
 		(button 
-			:class        bluetooth
+			:class        "bluetooth-icon"
 			:tooltip      bluetooth-tooltip
 			"")
 	)

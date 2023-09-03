@@ -115,7 +115,7 @@
 					)
 					(box :class "sys-box" 
 						:orientation "v"
-						:spacing 10
+						:spacing 10 
 
 						(button :class        "sys-button-${bluetooth-con}" 
 							    :onclick      "bluetoothctl connect ${bluetooth-mac} | notify-send 'Bluetooth' 'Connect'"
@@ -252,7 +252,7 @@
 	      :spacing 0
 		  
 		(button 
-			:class    bluetooth-con
+			:class    "bluetooth-icon"
 			:tooltip  bluetooth-tooltip
 			"")
 	)

@@ -14,7 +14,7 @@ name() {
 
         echo $device
     else
-        echo ""
+        echo "Nothing..."
     fi
 }
 
