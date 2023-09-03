@@ -135,9 +135,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   👻 Specific points
 </h1><br>
 
-<br><h2>
+<br><h3>
   🐸 Configuring Spicetify
-</h2><br>
+</h3><br>
 
 <p>Install spotify the current way, and ➡️</p>
 
@@ -156,9 +156,9 @@ cd .spicetify
 
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 ```
-<br><h2>
+<br><h3>
   💾 Configuring OS Selector
-</h2><br>
+</h3><br>
 
 ```
 sudo apt install os-prober
