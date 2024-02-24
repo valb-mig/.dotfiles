@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = true ]; then
-    stalonetray &
-else
-    killall stalonetray
-fi

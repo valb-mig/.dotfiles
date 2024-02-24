@@ -1,4 +1,4 @@
-<h1 align="center">Code Dotfiles</h1>
+<h1 align="center">👤 My Dotfiles</h1>
 
 <img src=".assets/dots.png" align="left" width="508">
 
@@ -14,15 +14,12 @@
 <br><br>
 <br><br>
 <br><br>
-<h2 align="left">⚙️ To Install.</h2>
+<h2 align="left">🧠 To Install.</h2>
 
 <h3>🤏 First install the <b>dependencies</b></h3>
 
 ```
 sudo apt install xclip libglib2.0-dev libjson-glib-dev libpurple-dev ddgr tree npm ranger cava git build-essential kitty scrot cmake libtool libtool-bin libintl-perl libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev curl wmctrl slop xclip libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson unzip feh rofi polybar bspwm sxhkd dunst jq libgtk-3-dev libgdk3.0-cil-dev libpango1.0-dev libgdk-pixbuf-2.0-dev libcairo2-dev  libgio3.0-cil-dev libglib3.0-cil-dev libgcc-10-dev glibc-tools rust-all
-```
-``` 
-npm install -g rofi-search
 ```
 <h3>👽 Without bspwm</b></h3>
 
@@ -53,6 +50,8 @@ rustup install nightly
 ```
 
 <br>
+
+<h3>⚙️ Finish the configuration</b></h3>
 
 - Execute setup.sh
 - Enter the `neovim_theme_local` and execute install.sh to install a colorscheme for nvim <b>(opitional)</b>
@@ -105,7 +104,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 <details>
   <summary><h3>📁 Gtk Theme</h3></summary>
-  <img src=".assets/thunar.png" align="center" width="1000">
+  <img src=".assets/files.png" align="center" width="1000">
 </details>
 
 <details>
@@ -135,45 +134,28 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   👻 Specific points
 </h1><br>
 
-<br><h3>
-  🐸 Configuring Spicetify
-</h3><br>
+<details>
+  <summary><h3>🎵 Spicetify</h3></summary>
 
-<p>Install spotify the current way, and ➡️</p>
+  <br><h3>
+    🐸 Configuring Spicetify
+  </h3><br>
 
-```
-curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+  <p>Install spotify the current way, and ➡️</p>
 
-sudo chmod a+wr /usr/share/spotify
+  ```
+  curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
 
-sudo chmod a+wr /usr/share/spotify/Apps -R
+  sudo chmod a+wr /usr/share/spotify
 
-cd .spicetify
+  sudo chmod a+wr /usr/share/spotify/Apps -R
 
-./spicetify backup apply enable-devtool
+  cd .spicetify
 
-./spicetify restart
+  ./spicetify backup apply enable-devtool
 
-curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
-```
-<br><h3>
-  💾 Configuring OS Selector
-</h3><br>
+  ./spicetify restart
 
-```
-sudo apt install os-prober
-
-sudo os-prober
-```
-
-<p>With the partition showned ➡️</p>
-
-```
-sudo mount /dev/{partition}  /mnt
-
-lsblk
-
-sudo cp -ax /mnt/EFI/Microsoft /boot/efi/EFI
-
-sudo ls -lh /boot/efi/EFI
-```
+  curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
+  ```
+</details>

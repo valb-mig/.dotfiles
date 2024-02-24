@@ -1,0 +1,22 @@
+#!/bin/sh
+
+connected() {
+    if bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | grep -e 'Device\|Connected\|Name' | grep yes >/dev/null; then
+        echo "bluetooth-icon-connected"
+    else
+        echo "bluetooth-icon"
+    fi
+}
+
+name() {
+    if bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | grep -e 'Device\|Connected\|Name' | grep yes >/dev/null; then
+        device=$(bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | grep -e 'Device\|Connected\|Name' | awk '/Name:/ {print $2}')
+
+        echo $device
+    else
+        echo "Nothing..."
+    fi
+}
+
+[ "$1" = "con" ]  && connected && exit
+[ "$1" = "tip" ]  && name      && exit

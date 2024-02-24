@@ -7,8 +7,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # /_/  /_/\___/_//_/_/\__/\___/_/   
 #
 
-bspc monitor eDP1  -d 1
-bspc monitor HDMI2 -d 2 3 4 5
+bspc monitor HDMI-A-0 -d 1 2 3 4 5
 
 #                 ____     
 #  _______  ___  / _(_)__ _
@@ -17,7 +16,7 @@ bspc monitor HDMI2 -d 2 3 4 5
 #                   /___/  
 
 bspc config window_gap 7
-bspc config border_width 2
+bspc config border_width 0
 
 bspc config focused_border_color  "#1c1c1c"
 bspc config normal_border_color   "#161616"

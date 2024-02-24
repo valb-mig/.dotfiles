@@ -12,12 +12,6 @@ use {
 -- Colorizer
 use 'norcalli/nvim-colorizer.lua'
 
--- Telescope
-use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
-
 -- Theme
 use 'navarasu/onedark.nvim'
 
@@ -58,6 +52,47 @@ use 'hrsh7th/vim-vsnip'
 use {
   'lewis6991/gitsigns.nvim',
   -- tag = 'release' -- To use the latest release
+}
+
+-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+use 'romgrk/barbar.nvim'
+
+-- Start Screen
+
+use {
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      
+    }
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
+
+-- Telescope
+
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v3.x',
+  requires = {
+    --- Uncomment the two plugins below if you want to manage the language servers from neovim
+    -- {'williamboman/mason.nvim'},
+    -- {'williamboman/mason-lspconfig.nvim'},
+
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/LuaSnip'},
+  }
 }
 
 end)

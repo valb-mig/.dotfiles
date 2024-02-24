@@ -1,0 +1,174 @@
+(defpoll memory :interval "15s" "scripts/memory")
+(defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
+(defvar  eww "$HOME/.local/bin/eww -c $HOME/.config/eww/work")
+(defvar  orientation "h")
+
+(defwindow horizontal
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "20px" 
+						:width  "100%")
+	:monitor 0
+	:reserve (struts :distance "37px" 
+					 :side     "top")
+	:wm-ignore "false"
+	:hexpand   "false"
+	:vexpand   "false"
+	(horizontal))
+
+(defwidget launcher []
+	(box :orientation     orientation					
+			:space-evenly "false" 	 
+			:vexpand      "false" 	
+			:class        "launcher-box"
+		
+	(button :class   "launcher" 
+	        :onclick "bash ~/.config/rofi/find/launcher.sh"	"󰾍")))
+
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+(defwidget mem []
+	(box :orientation  orientation 
+		 :space-evenly false 
+		 :class        "memory-content"
+		
+		(scale 
+			:class       "bars"
+			:value       memory
+			:orientation orientation
+			:flipped     true
+			:max         100
+			:min         0)
+
+		(button 
+			:class   "memory-icon"
+			:tooltip "using ${memory}% ram" "")))
+
+(defwidget volum []
+	(eventbox :onhover     "${eww} update volum=true" 		
+			  :onhoverlost "${eww} update volum=false"
+
+	(box      :orientation  orientation 	  
+			  :space-evenly false 
+			  :class        "volume-content"
+
+	(revealer :transition "slideleft" 
+			  :reveal     volum         
+			  :duration   "550ms"
+
+	(scale    :class       "volbar" 	  
+			  :value       current-volume 
+			  :orientation orientation      
+			  :flipped     true 
+			  :max         101 
+			  :min         0 
+			  :onchange    "amixer -D pulse sset Master {}%" ))
+			  
+	(button   :onclick "scripts/popup audio"   :class "volume-icon" " "))))
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volum false)
+
+(defwidget wifi []
+	(box		:class       "wifi-content"
+				:orientation orientation  
+				:tooltip     wifi-name
+	(button		:onclick     "scripts/popup wifi" 
+				:class       "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
+(defwidget power []
+	(box :orientation  orientation
+		 :space-evenly "false" 
+		 :class        "power-content"
+  	(button :class     "power-icon" 
+		   	:onclick   "bash ~/.config/rofi/powermenu/launcher.sh"
+			"")))
+
+(defwidget sys []
+	(box :orientation  orientation 
+		 :space-evenly "false" 
+		 :class        "control"
+(tray)))
+
+(defwidget tray []
+	(box :orientation  orientation 
+		 :space-evenly "false" 
+		 :class        "tray-content"
+
+  	(button :class        "tray-icon" 
+			:onclick      "${tray}"
+			:onrightclick "${close-tray}"
+			"")))
+(defvar  tray       "stalonetray")
+(defvar  close-tray "pkill stalonetray")
+
+(defwidget control []
+	(box :orientation  orientation
+		 :space-evenly "false"  
+		 :class 	   "control"
+(volum)
+(wifi)
+(power)))
+
+(defwidget system []
+	(box :orientation  orientation
+		 :space-evenly "false"  
+		 :class        "control"
+(mem)))
+
+(defwidget time []
+	(box	:orientation orientation 
+			:class       "time" 
+			:halign      "end"
+	(button	
+			:onclick "~/.local/bin/eww -c ~/.config/eww/pop open calendar"
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/pop close calendar"
+			:class "time-hour" hour)
+	
+	(button	
+			:onclick "~/.local/bin/eww -c ~/.config/eww/pop open calendar"	
+			:onrightclick "~/.local/bin/eww -c ~/.config/eww/pop close calendar"
+			:class "time-min"  min)))
+(defpoll hour :interval "1s" "date '+%H'")
+(defpoll min  :interval "1s" "date '+%M'")
+
+(defwidget top []
+	(box	:orientation  orientation
+			:space-evenly "false"
+			:halign 	  "start" 
+	(launcher)
+	(workspaces)))
+
+(defwidget mid []
+	(box	:orientation  orientation 
+			:space-evenly "false"
+			:halign       "center" 
+	(bottom)))
+
+(defwidget end []
+	(box :orientation  orientation 
+		 :space-evenly "false"
+		 :halign       "end" 
+		 :class        "bg"
+	(system)
+	(control)
+	(sys)))
+
+(defwidget bottom []
+	(box	:orientation  orientation 
+			:space-evenly "false"
+	(time)))
+
+(defwidget horizontal []
+	(box :class       "horizontal" 
+		 :orientation orientation 
+		 :vexpand     "false" 
+		 :hexpand     "false"
+	(top)
+	(mid)
+	(end)))

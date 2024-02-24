@@ -1,0 +1,195 @@
+*{
+  all: unset;
+}
+
+/* -------- Colors ------- */
+
+$white:           #c4c1d9;
+$foreground:      #2f2c42;
+$foreground-dark: #221c33;
+$gray:            #181624;
+$black:           #13111c;
+$background:      #0B0A10;
+
+/*                         */
+
+$green:  #85CA79;
+$cyan:   #79BACA;
+$purple: #A079CA;
+$pink:   #CA79B7;
+$red:    #CA7D79;
+$orange: #CA8679;
+$yellow: #CAA579;
+
+/* ------------------------ */
+
+.work 
+{
+  padding: 2px;
+  background-color: $background;
+}
+
+.works 
+{
+  font-family:      "Symbols Nerd Font";
+  padding:          9px;
+  border-radius:    2px;
+  min-width:        10px;
+  margin-right:     2px;
+  background-color: $black;
+}
+
+.0, .01, .02, .03, .04, .05, .06,.011, .022, .033, .044, .055, .066 
+{
+  color:      transparent;
+  font-size:  6px;
+  padding:    0px 7px;
+  transition: all 0.2s;
+  margin:     0px 2px;
+}
+
+.0 
+{
+  background-color: $gray;
+  border-radius:    2px;
+  transition:       all 0.2s;
+}
+
+.01, .02, .03, .04, .05, .06 
+{
+  background-color: $foreground-dark;
+  border-radius:    2px;
+  transition:       all 0.2s;
+}
+
+.011, .022, .033, .044, .055, .066 
+{
+  background-color: $foreground;
+  border-radius:    2px;
+  transition:       all 0.2s;
+}
+
+.focused 
+{
+  background-color: $white;
+  border-radius:    2px;
+  padding:          0px 15px;
+}
+
+.launcher-box
+{
+  font-family:      "Symbols Nerd Font";
+  font-size:        1.2em;
+  border-radius:    2px;
+  padding:          0px 10px;
+  transition:       0.5s;
+  margin-right:     2px;
+  color:            $white;
+  background-color: $black;
+}
+
+.time-hour 
+{
+  margin-right: 2px;
+}
+
+.time-min 
+{
+  margin-left:  2px;
+}
+
+.time 
+{
+  font-family:      "JetBrainsMono Nerd Font";
+  font-size:        1.2em;
+  font-weight:      bold;
+  border-radius:    2px;
+  margin-left:      2px;
+  padding:          0px 7px;
+  color:            $white;
+  background-color: $black;
+}
+
+.control 
+{
+  font-size:        1.2em;
+  border-radius:    2px;
+  margin-left:      2px;
+  background-color: $black;
+  
+  .bars trough highlight {
+    border-radius:    2px;
+    background-color: $white;
+  }
+  
+  .volbar trough highlight {
+    border-radius:    2px;
+    background-color: $white;
+  }
+    
+  .memory-content{
+    padding: 0px 8px;
+  }
+
+  .tray-icon {
+    color:         $white;
+    font-size:     1.2em;
+    border-radius: 2px;
+    padding:       0px 8px;
+    transition:    all 0.2s;
+  }
+
+  .volume-content {
+    padding: 0px 0px 0px 8px;
+  }
+
+  .wifi-icon,.power-icon,.volume-icon{
+    font-family:      "Symbols Nerd Font";
+    font-size:        1.2em;
+    padding:          0px 8px 0px 8px;
+    border-radius:    2px;
+    transition:       all 0.2s;
+    color:            $white;
+    background-color: $black;
+  }
+  
+  .memory-icon{
+    font-family: "Symbols Nerd Font";
+    font-size:   1.2em;
+    color:       $white;
+  }
+
+  .wifi-icon {
+    padding: 0px 2px 0px 4px;
+  }
+
+  .volume-icon {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .power-icon:hover{
+    background-color: $gray;
+  }
+
+  .power-icon:active{
+    background-color: $white;
+  }
+
+  .tray-icon:hover{
+    background-color: $gray;
+  }
+
+  .tray-icon:active {
+    background-color: $white;
+  }
+
+  scale trough {
+
+    all:              unset;
+    border-radius:    2px;
+    min-height:       10px;
+    min-width:        50px;
+    margin-right:     5px;
+    background-color: $background;
+  }
+}

@@ -7,10 +7,6 @@ keymap('i', '<A-z>', '<ESC>:set nowrap<CR>', {})
 keymap('n', '<A-a>', ':set wrap<CR>', {})
 keymap('i', '<A-a>', '<ESC>:set wrap<CR>', {})
 
--- Telescope
--- keymap('n', '<c-y>', ':Telescope find_files<CR>', {})
--- keymap('i', '<c-y>', '<ESC>:Telescope find_files<CR>', {})
-
 -- Save
 keymap('n', '<c-s>', ':w<CR>', {})
 keymap('i', '<c-s>', '<ESC>:w<CR>a', {})
@@ -34,13 +30,23 @@ keymap('i', '<c-w>', '<ESC>:q<CR>', {})
 -- Colors
 keymap('n', '<F7>', ':ColorizerToggle<CR>', {})
 
+-- Format PHP
+keymap('n', '<F8>', ':set ft=php.html<CR>', {})
+
 -- Move
 local opts = { noremap = true }
-keymap('n', '<c-UP>', '<c-w>j', opts)
-keymap('n', '<c-LEFT>', '<c-w>h', opts)
-keymap('n', '<c-DOWN>', '<c-w>k', opts)
+keymap('n', '<c-UP>',    '<c-w>j', opts)
+keymap('n', '<c-LEFT>',  '<c-w>h', opts)
+keymap('n', '<c-DOWN>',  '<c-w>k', opts)
 keymap('n', '<c-RIGHT>', '<c-w>l', opts)
 
--- Move buffer
-keymap('n', '<TAB>', ':BufferLineCycleNext<CR>', {})
+-- Telescope
+keymap('n', '<c-f>', ':Telescope find_files<CR>', {})
+keymap('n', '<c-f>', ':Telescope find_files<CR>', {})
 
+-- Move buffer
+keymap('n', '<TAB>', ':BufferNext<CR>', {})
+
+keymap('n', '<A-w>', ':BufferClose<CR>', {})
+keymap('n', '<A-,>', ':BufferNext<CR>', {})
+keymap('n', '<A-.>', ':BufferPrevious<CR>', {})

@@ -1,0 +1,286 @@
+;; ---- ;;
+;; Vars ;;
+;; ---- ;;
+
+(defpoll memory          :interval "15s" "scripts/memory")
+(defpoll memory_used_mb  :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb  :interval "2m" "scripts/mem-ad free")
+(defvar  eww             "$HOME/.local/bin/eww -c $HOME/.config/eww/vertical")
+
+;; ------- ;;
+;; General ;;
+;; ------- ;;
+
+(defwindow vertical
+	:geometry (geometry :x "1883px" 
+						:y "0" 
+						:height "100%" 
+						:width  "37px")
+	:monitor 0
+	:reserve (struts :distance "37px" 
+					 :side "right")
+	:wm-ignore false
+	:hexpand   false
+	:vexpand   false
+	(bar)
+)
+(defwidget workspaces [] (literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+(defwidget bar []
+	(box :class       "eww_bar" 
+		 :orientation "v" 
+		 :vexpand     false 
+		 :hexpand     false
+		(top)
+		(middle)
+		(end)
+	)
+)
+
+;; --------- ;;
+;;  Widgets  ;;
+;; --------- ;;
+
+(defwindow system
+	:geometry (geometry :x "748" 
+						:y "260" 
+                        :anchor "center"
+						:width  "290px" 
+						:height "120px")
+(system))
+
+(defwidget system []
+
+	(box :orientation  "v" 
+		 :space-evenly false 
+		 :spacing 	   10
+		 :class 	   "system-box"
+
+
+		(box :orientation  "h" 
+			:space-evenly false 
+			:spacing 	   10
+
+			(box :orientation  "v" 
+				:space-evenly false 
+				:spacing 	   10
+
+				(box :spacing 10
+
+					(box :class   "profile-box"
+						:spacing 10
+						:orientation  "h"
+						:space-evenly false 
+						(button :class "profile-pic" :style "background-image: url('images/me.jpeg');")
+						(button :class "profile-name" "valb-mig")
+					)
+					(box :spacing 10
+						(button :class "git-button-p1" "")
+						(button :class "git-button-p2" "")
+					)
+				)
+				
+				(box :spacing 10
+					:orientation  "h"
+
+					(box :spacing 10
+						:orientation  "v"
+
+						(box :class   "time-box"
+							:spacing 10
+							:orientation  "h"
+							(button :class "time-button"  "${hour}:${min}")
+						)
+
+						(box :class   "music-box"
+							 :spacing  0
+							 :orientation  "v"
+							 :space-evenly false 
+
+							(box :class  "music-info"
+								:spacing 10
+								(button :class "music-pic" :style "background-image: url('${music}');")
+							)
+
+							(box :orientation "h"
+								:spacing 10
+								(button :class "control-button" :onclick "playerctl --player=spotify previous" "")
+								(button :class "control-button" :onclick "playerctl --player=spotify play-pause" "")
+								(button :class "control-button" :onclick "playerctl --player=spotify next" "")
+							)
+						)
+					)
+					(box :class "sys-box" 
+						:orientation "v"
+						:spacing 10 
+
+						(button :class "sys-button" wifi-icon)
+					)
+				)
+			)
+		)
+		(box :orientation  "v"
+			 :spacing 10
+			 :class "bars-box"
+
+			(box :orientation  "h" 
+				:space-evenly "false" 
+				:spacing 10
+			
+				(button :class "volume-icon-menu" "󰋎")
+
+				(scale :class "volume-bar"
+					:value current-volume
+					:orientation "h"
+					:flipped false
+					:max 101
+					:min 0
+					:onchange "amixer -D pulse sset Master {}%" 
+				)
+			)
+
+			(box :orientation  "h" 
+			:space-evenly "false" 
+			:spacing 10
+		
+				(button :class "memory-icon-menu" "")
+
+				(scale :class "memory-bar"
+					:value memory
+					:orientation "h"
+					:flipped false
+					:max 101
+					:min 0
+				)
+			)
+		)
+	)
+)
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar  volum false)
+
+(defpoll music :interval "1s" "scripts/spotify icon")
+;(deflisten music "scripts/spotify icon")
+
+;; -------- ;;
+;;  Layout  ;;
+;; -------- ;;
+
+(defwidget top []
+	(box :orientation  "v" 
+		 :valign 	   "start" 
+		 :space-evenly false 
+		(launcher)
+		(workspaces)
+		(caps)
+		(repo)
+		(project-repo)
+	)
+)
+
+(defwidget middle []
+	(box :orientation  "v" 
+		 :valign       "center" 
+		 :space-evenly false 
+	)
+)
+
+(defwidget end []
+	(box :orientation  "v" 
+		 :valign       "end" 
+		 :class        "bg"
+		 :spacing      5
+		 :space-evenly false 
+
+		(control)
+		(time)
+	)
+)
+
+;; --------- ;;
+;;  Widgets  ;;
+;; --------- ;;
+
+(defwidget launcher []
+	(box :orientation  "v" 
+		 :space-evenly false 
+		 :spacing 	   0
+
+  	(button :class        "launcher_icon" 
+			:onclick      "scripts/tray true"
+			:onrightclick "scripts/tray false"
+			"")
+	)
+)
+(defvar tray true)
+
+(defwidget caps []
+	(box		:orientation "v"  
+		(button :class caps-class caps-icon)
+	)
+)
+(defpoll caps-icon  :interval "1s" "scripts/caps icon")
+(defpoll caps-class :interval "1s" "scripts/caps class")
+
+(defwidget repo []
+	(box		:orientation "v" 
+		(button		:class repo-class repo-icon)
+	)
+)
+(defpoll repo-icon     :interval "60s" "scripts/repo icon")
+(defpoll repo-class    :interval "60s" "scripts/repo class")
+
+(defwidget project-repo []
+	(box		:orientation "v" 
+		(button		:class project-class project-icon)
+	)
+)
+(defpoll project-icon  :interval "60s" "scripts/repo_two project_icon")
+(defpoll project-class :interval "60s" "scripts/repo_two project_class")
+
+(defwidget control []
+	(box :orientation "v"
+		 :spacing 5
+		 :class "control"
+		 :space-evenly false
+		
+		(wifi)
+	)
+)
+
+(defwidget wifi []
+	(box		:orientation "v"
+				:tooltip wifi-name
+				:space-evenly true
+
+		(button :class wifi-class wifi-icon)
+	)
+)
+(defpoll wifi-icon  :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name  :interval "1s" "scripts/wifi name")
+(defpoll wifi-class :interval "1s" "scripts/wifi class")
+
+(defwidget mem []
+
+	(box :orientation  "v" 
+         :space-evenly true
+
+		(button 
+			:class   "memory-icon"
+			:tooltip "using ${memory}% ram"
+			"󰍛")
+	)
+)
+
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+		(button	:class "time-hour" hour)
+		(button	:class "time-min"  min)
+	)
+)
+(defpoll hour :interval "1s" "date '+%H'")
+(defpoll min  :interval "1s" "date '+%M'")

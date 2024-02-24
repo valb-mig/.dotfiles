@@ -4,6 +4,7 @@ require('plugins')
 
 -- Configs
 require('tree-config')
+require('telescope-config')
 require('line-config')
 require('indent-config')
 require('buffer-config')
@@ -14,6 +15,7 @@ require('git-config')
 require('theme')
 
 -- LSP
+require'lspconfig'.phpactor.setup{}
 require'lspconfig'.pyright.setup{}
 
 -- Tab
@@ -21,7 +23,6 @@ vim.o.expandtab = true
 vim.o.shiftwidth =  2
 vim.o.softtabstop = 2
 
--- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -36,6 +37,9 @@ vim.o.cursorline = true
 
 -- Copy
 vim.o.clipboard = unnamed
+
+-- Encode
+vim.opt.encoding = "utf-8"
 
 -- Theme_Load
 require('onedark').load()
