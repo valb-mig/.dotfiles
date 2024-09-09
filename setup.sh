@@ -1,180 +1,72 @@
-#! /bin/sh
+#!/bin/bash
 
-echo -e "\n-- This Script is for recent formated computers --\n"
-echo -e "\n-- (if you have configurated your machine, don't run it) --\n"
+echo -e "\n-- This Script is for recently formatted computers --\n"
+echo -e "\n-- (If you've already configured your machine, don't run it) --\n"
 
-read -p "So, you wanna run it? (Y/N): " opt
+read -p "So, do you want to run it? (Y/N): " opt
 
 if [ "$opt" != "Y" ] && [ "$opt" != "y" ]; then
-  echo "Ok, good bye."
+  echo "Ok, goodbye."
   exit 1
 fi
 
-# Move to .Config
+# Function to create symbolic links
+create_symlink() {
+  local target="$1"
+  local link_name="$2"
 
-echo -e "\n-- Crating symbolic links --\n"
-echo -e"\n-- (ignore the messages)  --\n"
+  if [ -d "$link_name" ]; then
+    rm -rf "$link_name"
+  fi
+  ln -s "$target" "$link_name"
+  echo "-- Created symlink for $link_name --"
+}
 
-if [ -d "~/.config/bspwm"]
-then
+# Move to .config
+echo -e "\n-- Creating symbolic links --\n"
+echo -e "\n-- (ignore the messages) --\n"
 
-  rm -rf ~/.config/bspwm
-  ln -s ~/.dotfiles/bspwm ~/.config
+# List of dotfiles directories
+configs=(
+  bspwm
+  sxhkd
+  kitty
+  nvim
+  dunst
+  rofi
+  picom
+  eww
+)
 
-else
+for config in "${configs[@]}"; do
+  create_symlink "$HOME/.dotfiles/$config" "$HOME/.config/$config"
+done
 
-  ln -s ~/.dotfiles/bspwm ~/.config
-
-fi
-
-if [ -d "~/.config/sxhkd"]
-then
-
-  rm -rf ~/.config/sxhkd
-  ln -s ~/.dotfiles/sxhkd ~/.config
-
-else
-
-  ln -s ~/.dotfiles/sxhkd ~/.config
-
-fi
-
-if [ -d "~/.config/polybar"]
-then
-
-  rm -rf ~/.config/polybar
-  ln -s ~/.dotfiles/polybar ~/.config
-
-else
-
-  ln -s ~/.dotfiles/polybar ~/.config
-
-fi
-
-if [ -d "~/.config/kitty"]
-then
-
-  rm -rf ~/.config/kitty
-  ln -s ~/.dotfiles/kitty ~/.config
-
-else
-
-  ln -s ~/.dotfiles/kitty ~/.config
-
-fi
-
-if [ -d "~/.config/nvim"]
-then
-
-  rm -rf ~/.config/nvim
-  ln -s ~/.dotfiles/nvim ~/.config
-
-else
-
-  ln -s ~/.dotfiles/nvim ~/.config
-
-fi
-
-if [ -d "~/.config/dunst"]
-then
-
-  rm -rf ~/.config/dunst
-  ln -s ~/.dotfiles/dunst ~/.config
-
-else
-
-  ln -s ~/.dotfiles/dunst ~/.config
-
-fi
-
-if [ -d "~/.config/rofi"]
-then
-
-  rm -rf ~/.config/rofi
-  ln -s ~/.dotfiles/rofi ~/.config
-
-else
-
-  ln -s ~/.dotfiles/rofi ~/.config
-
-fi
-
-if [ -d "~/.config/picom"]
-then
-
-  rm -rf ~/.config/picom
-  ln -s ~/.dotfiles/picom ~/.config
-
-else
-
-  ln -s ~/.dotfiles/picom ~/.config
-
-fi
-
-if [ -d "~/.config/eww"]
-then
-
-  rm -rf ~/.config/eww
-  ln -s ~/.dotfiles/eww ~/.config
-
-else
-
-  ln -s ~/.dotfiles/eww ~/.config
-
-fi
-
-if [ -d "~/.local/bin"]
-then
-
-  rm -rf ~/.local/bin
-  ln -s ~/.dotfiles/bin ~/.local/bin
-
-else
-
-  ln -s ~/.dotfiles/bin ~/.local/bin
-
-fi
+# Local bin
+create_symlink "$HOME/.dotfiles/bin" "$HOME/.local/bin"
 
 # Move to ${HOME}
-
-if [ -d "~/src"]
-then
-
-  rm -rf ~/src
-  ln -s ~/.dotfiles/src ~/
-
-else
-
-  ln -s ~/.dotfiles/src ~/
-
-fi
+create_symlink "$HOME/.dotfiles/src" "$HOME/src"
 
 # Fonts
-
-echo -e "\n-- Copy fonts to root fonts --\n"
-
-sudo cp -a ~/.dotfiles/fonts /usr/share/fonts
+echo -e "\n-- Copying fonts to system fonts --\n"
+sudo cp -a "$HOME/.dotfiles/fonts" /usr/share/fonts
 
 # Images
-cp ~/.dotfiles/wallpapers/macd2.jpg ~/Pictures
-cp ~/.dotfiles/wallpapers/wallpaper_switch_1.png ~/Pictures
+echo -e "\n-- Copying wallpapers --\n"
+cp "$HOME/.dotfiles/wallpapers/macd2.jpg" "$HOME/Pictures"
+cp "$HOME/.dotfiles/wallpapers/wallpaper_switch_1.png" "$HOME/Pictures"
 
 # Zsh theme
-rm -rf ~/.oh-my-zsh/themes/code.zsh-theme
-cp ~/.dotfiles/zsh_theme/code.zsh-theme ~/.oh-my-zsh/themes
+echo -e "\n-- Copying Zsh theme --\n"
+rm -rf "$HOME/.oh-my-zsh/themes/code.zsh-theme"
+cp "$HOME/.dotfiles/zsh_theme/code.zsh-theme" "$HOME/.oh-my-zsh/themes"
 
 # Screenshots directory
-
-if [ -d "~/Pictures/Screenshots"]
-then
-
-  rm -rf ~/Pictures/Screenshots
-  mkdir "~/Pictures/Screenshots"
-
-else
-
-    mkdir "~/Pictures/Screenshots"
-
+screenshots_dir="$HOME/Pictures/Screenshots"
+if [ -d "$screenshots_dir" ]; then
+  rm -rf "$screenshots_dir"
 fi
+mkdir -p "$screenshots_dir"
 
 echo -e "\nEnd of the script :D\n"

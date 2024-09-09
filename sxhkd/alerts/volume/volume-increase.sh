@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Notification
-notify-send '' -i $HOME/Pictures/Icons/vol.png
+notify-send '' -i $HOME/.config/sxhkd/icons/vol.png
 
 # Open
 amixer -q sset Master 5%+

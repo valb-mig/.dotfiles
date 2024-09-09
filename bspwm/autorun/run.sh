@@ -3,9 +3,7 @@
 # -------
 
 killall eww
-killall polybar
 killall picom
-killall plank
 killall stalonetray
 
 #------
@@ -46,12 +44,6 @@ $EWW -c "$HOME/.config/eww/$EWW_BAR_PRIMARY" --restart open $EWW_BAR_PRIMARY
 
 xsetroot -cursor_name left_ptr &
 
-# -------
-# Borders
-# -------
-
-# bash $CONFIG'bspwm/borders'
-
 # ------
 # Picom
 # ------
@@ -64,8 +56,16 @@ picom &
 
 php -S 127.0.0.1:7000 -t $HOME/.dotfiles/start-page/
 
+# -- No longer used --
+
+# -------
+# Borders
+# -------
+
+# bash $CONFIG'bspwm/borders'
+
 # ---------
 # Clipboard
 # ---------
 
-./.local/bin/greenclip daemon
+# ./.local/bin/greenclip daemon

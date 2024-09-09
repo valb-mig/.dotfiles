@@ -1,5 +1,5 @@
 [global]
-monitor = HDMI2
+monitor = HDMI-A-0
 follow  = true
 
 width  = 280

@@ -3,13 +3,11 @@ require('mappings')
 require('plugins')
 
 -- Configs
-require('tree-config')
 require('telescope-config')
 require('line-config')
 require('indent-config')
 require('buffer-config')
 require('cmp-config')
-require('git-config')
 
 -- Theme
 require('theme')

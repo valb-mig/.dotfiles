@@ -160,9 +160,7 @@
 )
 (defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defvar  volum false)
-
 (defpoll music :interval "1s" "scripts/spotify icon")
-;(deflisten music "scripts/spotify icon")
 
 ;; -------- ;;
 ;;  Layout  ;;
@@ -172,11 +170,8 @@
 	(box :orientation  "v" 
 		 :valign 	   "start" 
 		 :space-evenly false 
-		(launcher)
 		(workspaces)
 		(caps)
-		(repo)
-		(project-repo)
 	)
 )
 
@@ -203,19 +198,6 @@
 ;;  Widgets  ;;
 ;; --------- ;;
 
-(defwidget launcher []
-	(box :orientation  "v" 
-		 :space-evenly false 
-		 :spacing 	   0
-
-  	(button :class        "launcher_icon" 
-			:onclick      "scripts/tray true"
-			:onrightclick "scripts/tray false"
-			"")
-	)
-)
-(defvar tray true)
-
 (defwidget caps []
 	(box		:orientation "v"  
 		(button :class caps-class caps-icon)
@@ -223,22 +205,6 @@
 )
 (defpoll caps-icon  :interval "1s" "scripts/caps icon")
 (defpoll caps-class :interval "1s" "scripts/caps class")
-
-(defwidget repo []
-	(box		:orientation "v" 
-		(button		:class repo-class repo-icon)
-	)
-)
-(defpoll repo-icon     :interval "60s" "scripts/repo icon")
-(defpoll repo-class    :interval "60s" "scripts/repo class")
-
-(defwidget project-repo []
-	(box		:orientation "v" 
-		(button		:class project-class project-icon)
-	)
-)
-(defpoll project-icon  :interval "60s" "scripts/repo_two project_icon")
-(defpoll project-class :interval "60s" "scripts/repo_two project_class")
 
 (defwidget control []
 	(box :orientation "v"

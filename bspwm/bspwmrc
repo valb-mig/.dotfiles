@@ -15,7 +15,7 @@ bspc monitor HDMI-A-0 -d 1 2 3 4 5
 # \__/\___/_//_/_//_/\_, / 
 #                   /___/  
 
-bspc config window_gap 7
+bspc config window_gap 15
 bspc config border_width 0
 
 bspc config focused_border_color  "#1c1c1c"
@@ -29,10 +29,11 @@ bspc config split_ratio 0.52
 bspc rule -a "Lxappearance"   state=floating
 bspc rule -a "gpick"          state=floating
 
+bspc rule -a "*:Toolkit:Picture-in-Picture" state=floating sticky=on
+
 #    ___           
 #   / _ \__ _____  
 #  / , _/ // / _ \ 
 # /_/|_|\_,_/_//_/
 
-# Normal
 bash ~/.config/bspwm/autorun/run.sh

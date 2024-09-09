@@ -1,0 +1,15 @@
+{
+  "name": "code theme",
+  "version": "0.1.0",
+  "description": "K",
+  "manifest_version": 1,
+
+  "applications": {
+    "gecko": {
+      "id": "valb.mig@gmail.com"
+    }
+  },
+  "theme_experiment": {
+    "stylesheet": "userChrome.css"
+  }
+}
