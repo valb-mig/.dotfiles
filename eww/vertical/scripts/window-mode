@@ -1,0 +1,26 @@
+#!/bin/sh
+
+symbol() {
+    layout=$(bspc query -T -d | grep -oP '"layout":"\K[^"]+')
+
+    if [ "$layout" = "monocle" ]; then
+      echo ""
+      exit
+    fi
+
+    echo "󰙀"
+}
+
+class() {
+    layout=$(bspc query -T -d | grep -oP '"layout":"\K[^"]+')
+
+    if [ "$layout" = "monocle" ]; then
+      echo "maximized-on"
+      exit
+    fi
+
+    echo "tiling-on"
+}
+
+[ "$1" = "icon" ]  && symbol && exit
+[ "$1" = "class" ] && class  && exit

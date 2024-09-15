@@ -37,3 +37,4 @@ bspc rule -a "*:Toolkit:Picture-in-Picture" state=floating sticky=on
 # /_/|_|\_,_/_//_/
 
 bash ~/.config/bspwm/autorun/run.sh
+

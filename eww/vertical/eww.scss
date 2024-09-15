@@ -124,6 +124,27 @@ $big-symbol-size: 2.3em;
   margin-top:       5px;
 }
 
+.tiling-on {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $orange;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
+.maximized-on {
+  font-family:      $symbol;
+  font-size:        $symbol-size;
+  border-radius:    5px;
+  color:            $background;
+  background-color: $red;
+  padding:          2px 0px;
+  margin-top:       5px;
+}
+
+
 .git-mod {  
   font-family:      $symbol;
   font-size:        $symbol-size;

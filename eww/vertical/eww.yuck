@@ -172,6 +172,7 @@
 		 :space-evenly false 
 		(workspaces)
 		(caps)
+		(window-state)
 	)
 )
 
@@ -203,8 +204,16 @@
 		(button :class caps-class caps-icon)
 	)
 )
-(defpoll caps-icon  :interval "1s" "scripts/caps icon")
-(defpoll caps-class :interval "1s" "scripts/caps class")
+(defpoll caps-icon  :interval "1s" "scripts/window-mode icon")
+(defpoll caps-class :interval "1s" "scripts/window-mode class")
+
+(defwidget window-state []
+	(box		:orientation "v"  
+		(button :class window-state-class window-state-icon)
+	)
+)
+(defpoll window-state-icon  :interval "1s" "scripts/caps icon")
+(defpoll window-state-class :interval "1s" "scripts/caps class")
 
 (defwidget control []
 	(box :orientation "v"
