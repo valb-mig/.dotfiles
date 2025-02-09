@@ -1,0 +1,108 @@
+@import "../colors.rasi"
+
+window 
+{
+    font:             "jetBrainsMono Nerd Font 10";
+    transparency:     "real";
+    width:		      551px;
+    height:		      505px;
+    border-color:     @black;
+    cursor:           "default";
+    background-color: @background;
+    border:           1px solid;
+}
+
+prompt 
+{
+    font:             "jetBrainsMono Nerd Font 7";
+    enabled:          true;
+    background-color: @black;
+    padding:          10px;
+    text-color:       inherit;
+    border-radius:    8px;
+}
+
+inputbar 
+{
+  children:		    [ prompt ];
+  background-image:	url("/tmp/cover.png");
+  expand:		    false;
+  border-radius:	8px;
+  padding:		    290px 15px 15px 15px;
+}
+
+listview 
+{
+    enabled:                     true;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      horizontal;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               5px;
+    border-color:                @foreground;
+    background-color:            @background;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+mainbox { children: [ inputbar, listview ]; }
+
+element 
+{
+    padding:		  10px;
+    enabled:          true;
+    spacing:          0px;
+    margin:           0px;
+    border:           0px solid;
+    border-radius:    5px;
+    cursor:           pointer;
+    background-color: transparent;
+    border-color:     @foreground;
+    text-color:       @gray;
+}
+
+element-text 
+{
+    margin:		      18px 31px;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+    background-color: transparent;
+    text-color:		  inherit; 
+}
+
+element selected 
+{
+    border:           1px solid;
+    border-color:     @gray;
+    background-color: @black;
+    text-color:       @white;
+}
+
+element normal.active 
+{
+    border:           1px solid;
+    border-color:     @gray;
+    background-color: @black;
+    text-color:       @white;
+}
+
+element selected.normal 
+{
+    border:           1px solid;
+    border-color:     @gray;
+    background-color: @black;
+    text-color:       @white;
+}
+
+element alternate.normal 
+{
+    background-color: transparent;
+    text-color:       @white;
+}

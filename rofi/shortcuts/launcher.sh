@@ -2,7 +2,6 @@
 
 # Import Current Theme
 theme="$HOME"/.config/rofi/shortcuts/config.rasi
-BROWSER="Firefox"
 
 # Theme Elements
 prompt=''
@@ -14,7 +13,7 @@ efonts="Symbols Nerd Font 15"
 
 # Options
 
-option_1="󰈹 Firefox"
+option_1=" Zen"
 option_2="󰝰 Files"
 option_3="󰨞 Code"
 
@@ -37,7 +36,7 @@ run_rofi() {
 # Execute Command
 run_cmd() {
 	if   [[ "$1" == '--opt1' ]]; then
-                firefox
+    $HOME/App/ZenBrowser/zen.AppImage 
 	elif [[ "$1" == '--opt2' ]]; then
 		nautilus
 	elif [[ "$1" == '--opt3' ]]; then

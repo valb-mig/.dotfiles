@@ -19,7 +19,7 @@ EWW="$HOME/.local/bin/eww"
 # Monitor
 # -------
 
-xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal
+xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output DVI-D-0 --mode 1920x1080 --left-of HDMI-A-0
 
 # --------
 # Fix java
@@ -55,6 +55,13 @@ picom &
 # ---------
 
 php -S 127.0.0.1:7000 -t $HOME/.dotfiles/start-page/
+
+
+# -------
+# Ratbag
+# -------
+
+# ratbagd
 
 # -- No longer used --
 

@@ -5,7 +5,7 @@ window
     transparency:     "real";
     location:         center;
     anchor:           center;
-    width:            526px;
+    width:            501px;
     height:           108px;
     x-offset:         0px;
     y-offset:         0px;

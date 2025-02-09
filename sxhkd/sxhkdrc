@@ -41,6 +41,10 @@ super + ctrl + p
 super + d
     bash ~/.config/rofi/find/launcher.sh
 
+#  Music / Spotify launcher
+super + F8
+    .config/rofi/music/launcher
+
 #  Powermenu launcher
 super + k
     bash ~/.config/rofi/powermenu/launcher.sh

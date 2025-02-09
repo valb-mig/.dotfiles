@@ -8,13 +8,12 @@
  **/
 
 configuration {
-    modi:                       "drun,run,window";
+    modi:                       "drun,window";
     show-icons:                 true;
     display-drun:               "󰏖";
-    display-run:                "󰚗";
     display-window:             "󱂬";
     drun-display-format:        "{name}";
-    window-format:             "{w} · {c} · {t}";
+    window-format:             "{w} · {t}";
 }
 
 @import  "../colors.rasi"
